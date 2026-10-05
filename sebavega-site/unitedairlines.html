@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>United Airlines — UX Case Study — Sebastian Vega</title>
+    <meta name="description" content="A mobile app concept that brings travel tasks into focus. I redesigned the entire rewards section and helped the team keep the broader experience consistent.">
+    <link rel="icon" href="assets/seba-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600&family=Pixelify+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/rzu3vfi.css">
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="assets/site.js" defer></script>
+    <link rel="stylesheet" href="assets/case-pages.css">
+    <script src="assets/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+    <script src="assets/paper-motion.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a href="index.html" aria-label="Sebastian Vega — home" class="brand">
+        <img src="assets/seba-logo.png" width="240" height="120" alt="SEBA">
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation menu">
+        <span class="hamburger" aria-hidden="true">
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+        </span>
+      </button>
+      <nav id="main-nav" aria-label="Main navigation">
+        <a href="work.html" aria-current="page">work</a>
+        <a href="gallery.html">gallery</a>
+        <a href="contact.html">contact</a>
+      </nav>
+    </header>
+    <main id="main" class="cs-page cs-ux">
+      <a class="cs-back" href="work.html">All selected work</a>
+      <header class="cs-heading">
+        <div>
+          <p class="cs-kicker">UX / Product design</p>
+          <h1>United Airlines</h1>
+          <p class="cs-status">Independent team concept · Not commissioned by United Airlines</p>
+        </div>
+        <div>
+          <h2>Make rewards worth exploring.</h2>
+          <p class="cs-intro">A mobile app concept that brings travel tasks into focus. I redesigned the entire rewards section and helped the team keep the broader experience consistent.</p>
+        </div>
+      </header>
+      <div class="cs-reveal">
+        <figure class="cs-visual cs-landscape">
+          <div class="cs-placeholder" role="img" aria-label="Hero image: final app screens, with rewards as the focus placeholder">
+            <span aria-hidden="true">[Hero image: final app screens, with rewards as the focus]</span>
+          </div>
+          <figcaption>Landscape · 16:9</figcaption>
+        </figure>
+      </div>
+      <nav class="cs-index" aria-label="Project sections">
+        <a href="#overview">Overview</a>
+        <a href="#process">Process</a>
+        <a href="#solution">Final design</a>
+        <a href="#reflection">Outcome & reflection</a>
+        <a href="#prototype">Prototype</a>
+      </nav>
+      <div class="cs-overview" id="overview">
+        <aside class="cs-paper cs-glance" aria-labelledby="glance-title">
+          <h2 id="glance-title">At a glance</h2>
+          <dl>
+            <div>
+              <dt>My role</dt>
+              <dd>Team lead &amp; rewards designer</dd>
+            </div>
+            <div>
+              <dt>Timeline</dt>
+              <dd>[placeholder: add project dates and duration]</dd>
+            </div>
+            <div>
+              <dt>Team</dt>
+              <dd>Sebastian, Ryan, Madison, Sara, Kristine &amp; Angelina</dd>
+            </div>
+            <div>
+              <dt>Tools</dt>
+              <dd>[placeholder: list design and research tools]</dd>
+            </div>
+          </dl>
+        </aside>
+        <div class="cs-context">
+          <section>
+            <p class="cs-kicker">Context</p>
+            <h2>The problem</h2>
+            <p>Our interface review and interview synthesis pointed to crowded layouts and difficulty finding key tasks. For occasional travelers, earning points did not always translate into understanding a useful benefit.</p>
+          </section>
+          <section>
+            <h2>My goal</h2>
+            <p>Make reward options easier to discover and understand, while giving booking, trips, and support clear places in the app. The aim was clearer decisions, not simply more engagement.</p>
+          </section>
+          <section class="cs-contribution">
+            <h3>My contribution</h3>
+            <p>I owned the rewards redesign, assisted teammates, and reviewed their designs for consistency. Booking, boarding, trip management, and support are team work.</p>
+          </section>
+        </div>
+      </div>
+      <section id="process" class="cs-section">
+        <header class="cs-section-heading">
+          <p class="cs-kicker">From question to direction</p>
+          <h2>The process</h2>
+          <p>The observations, decisions, and open questions behind the concept.</p>
+        </header>
+        <article class="cs-process-row cs-reveal">
+          <div class="cs-copy">
+            <p class="cs-kicker">Research</p>
+            <h3>Look for friction around real travel tasks.</h3>
+            <p>The team combined interface and competitive reviews with interviews, affinity mapping, personas, and journey maps. Rewards emerged as a comprehension problem: travelers needed to see what points could mean for their next trip.</p>
+            <p class="cs-missing">[placeholder: add interview sample, recruitment criteria, and one traceable finding]</p>
+          </div>
+          <figure class="cs-visual cs-landscape">
+            <div class="cs-placeholder" role="img" aria-label="Research image: affinity map and rewards insight placeholder">
+              <span aria-hidden="true">[Research image: affinity map and rewards insight]</span>
+            </div>
+            <figcaption>Landscape · 16:9</figcaption>
+          </figure>
+        </article>
+        <article class="cs-process-row cs-reveal">
+          <div class="cs-copy">
+            <p class="cs-kicker">Direction</p>
+            <h3>Give each task a predictable home.</h3>
+            <p>The proposed architecture separates Home, Bookings, My Trips, Rewards, and Profile. Giving rewards its own destination creates room to explain benefits without crowding the day-of-travel experience.</p>
+          </div>
+          <figure class="cs-visual cs-landscape">
+            <div class="cs-placeholder" role="img" aria-label="Process image: original and proposed information architecture placeholder">
+              <span aria-hidden="true">[Process image: original and proposed information architecture]</span>
+            </div>
+            <figcaption>Landscape · 16:9</figcaption>
+          </figure>
+        </article>
+        <article class="cs-process-row cs-reveal">
+          <div class="cs-copy">
+            <p class="cs-kicker">My design</p>
+            <h3>Put potential value beside the balance.</h3>
+            <p>I redesigned rewards around the points balance, reward options, missions, and cards. The detail concept shows proposed upgrade and gifting actions. Eligibility, pricing, and benefits are concept content that would need business validation.</p>
+          </div>
+          <figure class="cs-visual cs-phone">
+            <div class="cs-placeholder" role="img" aria-label="Phone screen: my rewards overview placeholder">
+              <span aria-hidden="true">[Phone screen: my rewards overview]</span>
+            </div>
+            <figcaption>Phone screen · 9:19.5</figcaption>
+          </figure>
+        </article>
+        <article class="cs-process-row cs-reveal">
+          <div class="cs-copy">
+            <p class="cs-kicker">Iteration &amp; testing</p>
+            <h3>Test comprehension before adding complexity.</h3>
+            <p>The presentation contains final concepts but no documented usability-test results. A next study would ask travelers to explain an available benefit, identify restrictions, and find a redemption path. Missions should earn their place by helping rather than distracting.</p>
+            <p class="cs-missing">[placeholder: add a documented before-and-after iteration and the feedback behind it]</p>
+          </div>
+          <figure class="cs-visual cs-landscape">
+            <div class="cs-placeholder" role="img" aria-label="Comparison image: rewards overview and redemption flow placeholder">
+              <span aria-hidden="true">[Comparison image: rewards overview and redemption flow]</span>
+            </div>
+            <figcaption>Landscape · 16:9</figcaption>
+          </figure>
+        </article>
+      </section>
+      <section id="solution" class="cs-section">
+        <header class="cs-section-heading">
+          <p class="cs-kicker">The design direction</p>
+          <h2>Final design</h2>
+          <p>The final team concept covers booking, trips, boarding, rewards, and support. My rewards work makes available options more visible and gives each benefit a place for explanation.</p>
+        </header>
+        <div class="cs-gallery cs-reveal">
+          <figure class="cs-visual cs-phone">
+            <div class="cs-placeholder" role="img" aria-label="Phone screen: rewards balance and options placeholder">
+              <span aria-hidden="true">[Phone screen: rewards balance and options]</span>
+            </div>
+            <figcaption>Phone screen · 9:19.5</figcaption>
+          </figure>
+          <figure class="cs-visual cs-phone">
+            <div class="cs-placeholder" role="img" aria-label="Phone screen: reward details and restrictions placeholder">
+              <span aria-hidden="true">[Phone screen: reward details and restrictions]</span>
+            </div>
+            <figcaption>Phone screen · 9:19.5</figcaption>
+          </figure>
+          <figure class="cs-visual cs-phone">
+            <div class="cs-placeholder" role="img" aria-label="Phone screen: proposed redemption action placeholder">
+              <span aria-hidden="true">[Phone screen: proposed redemption action]</span>
+            </div>
+            <figcaption>Phone screen · 9:19.5</figcaption>
+          </figure>
+        </div>
+        <div class="cs-decisions">
+          <article>
+            <h3>Show the next useful action</h3>
+            <p>Pair the balance with options rather than making points the end of the journey.</p>
+          </article>
+          <article>
+            <h3>Keep team screens coherent</h3>
+            <p>Review hierarchy and visual consistency across the broader concept.</p>
+          </article>
+        </div>
+      </section>
+      <section id="reflection" class="cs-section cs-paper cs-reflection cs-reveal">
+        <p class="cs-kicker">What this work establishes</p>
+        <h2>Outcome & reflection</h2>
+        <div>
+          <section>
+            <h3>What was delivered</h3>
+            <p>Delivered research synthesis, a revised architecture, and mobile concepts. No launch, usability improvement, or retention increase is claimed.</p>
+          </section>
+          <section>
+            <h3>What comes next</h3>
+            <p>Next, I would test reward eligibility and redemption comprehension with frequent and occasional travelers, then use the observed errors to refine the hierarchy.</p>
+          </section>
+        </div>
+      </section>
+      <section id="prototype" class="cs-section cs-prototype cs-reveal" aria-labelledby="prototype-title">
+        <div class="cs-copy">
+          <p class="cs-kicker">Interactive prototype</p>
+          <h2 id="prototype-title">Try it yourself</h2>
+          <p>Explore the mobile prototype at your own pace, starting with the rewards section I redesigned.</p>
+          <p class="cs-prototype-hint">Click or tap inside the phone to interact. Use the expand button in the prototype to view it full screen.</p>
+        </div>
+        <figure class="cs-prototype-frame">
+          <!-- FIGMA PROTOTYPE EMBED
+               1. In Figma, open the prototype (Present), then Share → "Get embed code".
+               2. Copy only the src="…" link from that code.
+               3. Delete the placeholder <div> below and uncomment the <iframe>, pasting the link into src.
+          <iframe src="PASTE-FIGMA-EMBED-LINK-HERE" title="Interactive Figma prototype of the United Airlines redesign" loading="lazy" allowfullscreen></iframe>
+          -->
+          <div class="cs-placeholder" role="img" aria-label="Figma prototype embed placeholder">
+            <span aria-hidden="true">[Figma mobile prototype embed]</span>
+          </div>
+        </figure>
+      </section>
+      <details class="cs-source">
+        <summary>Project context & draft notes</summary>
+        <p>United Airlines team presentation; Sebastian’s confirmed ownership of the entire rewards redesign and team design consistency.</p>
+        <p>Bracketed prompts identify information still to confirm. Labeled visual spaces reserve the intended image proportions; original project assets remain saved.</p>
+      </details>
+      <nav class="cs-next" aria-label="More projects">
+        <a class="cs-back-work" href="work.html">
+          <img src="assets/scroll-arrow.svg" alt="" aria-hidden="true" width="22" height="32">
+          <span>Back to selected work</span>
+        </a>
+        <a class="cs-next-note" href="yelp.html" style="--note-bg: #efe3de">
+          <span class="cs-tape" aria-hidden="true"></span>
+          <span class="cs-next-label">Next project</span>
+          <strong>Yelp</strong>
+          <img class="cs-next-arrow" src="assets/scroll-arrow.svg" alt="" aria-hidden="true" width="22" height="32">
+        </a>
+      </nav>
+      <div class="cs-back-top-wrap">
+        <a class="cs-back-top" href="#main">
+          <img src="assets/scroll-arrow.svg" alt="" aria-hidden="true" width="22" height="32">
+          <span>Back to top</span>
+        </a>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <p>© Sebastian Vega 2026</p>
+      <p>Always a little curious.</p>
+    </footer>
+    <div class="page-loader" hidden role="status" aria-live="polite">
+      <canvas width="96" height="96" aria-hidden="true">
+      </canvas>
+      <p>Drawing things together…</p>
+    </div>
+  </body>
+</html>

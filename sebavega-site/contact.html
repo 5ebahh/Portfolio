@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact — Sebastian Vega</title>
+    <meta name="description" content="Sebastian Vega — design and photography portfolio.">
+    <link rel="icon" href="assets/seba-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600&family=Pixelify+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/rzu3vfi.css">
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/contact.css">
+    <script src="assets/site.js" defer></script>
+    <script src="assets/contact-desk.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a href="index.html" aria-label="Sebastian Vega — home" class="brand">
+        <img src="assets/seba-logo.png" width="240" height="120" alt="SEBA">
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation menu">
+        <span class="hamburger" aria-hidden="true">
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+        </span>
+      </button>
+      <nav id="main-nav" aria-label="Main navigation">
+        <a href="work.html">work</a>
+        <a href="gallery.html">gallery</a>
+        <a href="contact.html" aria-current="page">contact</a>
+      </nav>
+    </header>
+    <main id="main" class="contact-page">
+      <!--
+        THE COMPUTER
+        On screens 900px and wider: a pixel-art monitor on a desktop case
+        (drawn by assets/contact-desk.js) sitting on a pixel desk, with the
+        "screen" below laid over it.
+        Below 900px: a simpler beige screen and its buttons.
+        This page has no footer and never scrolls.
+      -->
+      <div class="desk">
+        <canvas class="desk-scene" width="164" height="150" aria-hidden="true"></canvas>
+
+        <!-- The computer screen: real HTML, so the buttons are proper links. -->
+        <div class="desk-screen">
+          <div class="os-menubar" aria-hidden="true">
+            <span>File</span>
+            <span>Edit</span>
+            <span>Help</span>
+            <span class="os-clock"></span>
+          </div>
+
+          <section class="os-window" aria-labelledby="contact-title">
+            <div class="os-titlebar" aria-hidden="true">
+              <span class="os-close"></span>
+              <span class="os-title">contact.app</span>
+            </div>
+
+            <div class="os-content">
+              <p class="os-kicker">Let’s connect</p>
+              <h1 id="contact-title">Have something in mind?</h1>
+              <p class="os-lead">Let’s talk design, photography, or your next project.</p>
+
+              <!--
+                ICONS: each button has a small pixel <svg> icon. To use the official
+                LinkedIn or Instagram icon instead, download it from their brand
+                pages and replace that button's <svg ...>...</svg> with:
+                  <img class="os-icon" src="assets/icons/linkedin.svg" alt="">
+              -->
+              <nav class="os-buttons" aria-label="Find me online">
+                <a class="os-button" href="https://www.linkedin.com/in/5ebah/" target="_blank" rel="noopener noreferrer">
+                  <svg class="os-icon" viewBox="0 0 8 7" aria-hidden="true" focusable="false"><!-- briefcase --><rect x="3" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="5" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="1" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="5" y="2" width="1" height="1"/><rect x="6" y="2" width="1" height="1"/><rect x="7" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="7" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="1" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/><rect x="5" y="4" width="1" height="1"/><rect x="6" y="4" width="1" height="1"/><rect x="7" y="4" width="1" height="1"/><rect x="0" y="5" width="1" height="1"/><rect x="7" y="5" width="1" height="1"/><rect x="0" y="6" width="1" height="1"/><rect x="1" y="6" width="1" height="1"/><rect x="2" y="6" width="1" height="1"/><rect x="3" y="6" width="1" height="1"/><rect x="4" y="6" width="1" height="1"/><rect x="5" y="6" width="1" height="1"/><rect x="6" y="6" width="1" height="1"/><rect x="7" y="6" width="1" height="1"/></svg>
+                  <span>LinkedIn</span>
+                </a>
+                <a class="os-button" href="https://www.instagram.com/se.bas7ian/" target="_blank" rel="noopener noreferrer">
+                  <svg class="os-icon" viewBox="0 0 8 7" aria-hidden="true" focusable="false"><!-- camera --><rect x="2" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="1" y="1" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="4" y="1" width="1" height="1"/><rect x="5" y="1" width="1" height="1"/><rect x="6" y="1" width="1" height="1"/><rect x="7" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="1" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="5" y="2" width="1" height="1"/><rect x="6" y="2" width="1" height="1"/><rect x="7" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="1" y="3" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="6" y="3" width="1" height="1"/><rect x="7" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="1" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/><rect x="6" y="4" width="1" height="1"/><rect x="7" y="4" width="1" height="1"/><rect x="0" y="5" width="1" height="1"/><rect x="1" y="5" width="1" height="1"/><rect x="2" y="5" width="1" height="1"/><rect x="5" y="5" width="1" height="1"/><rect x="6" y="5" width="1" height="1"/><rect x="7" y="5" width="1" height="1"/><rect x="0" y="6" width="1" height="1"/><rect x="1" y="6" width="1" height="1"/><rect x="2" y="6" width="1" height="1"/><rect x="3" y="6" width="1" height="1"/><rect x="4" y="6" width="1" height="1"/><rect x="5" y="6" width="1" height="1"/><rect x="6" y="6" width="1" height="1"/><rect x="7" y="6" width="1" height="1"/></svg>
+                  <span>Instagram</span>
+                </a>
+                <!-- RESUME: save your PDF as assets/resume.pdf (or change this link). -->
+                <a class="os-button" href="assets/resume.pdf" target="_blank" rel="noopener">
+                  <svg class="os-icon" viewBox="0 0 6 8" aria-hidden="true" focusable="false"><!-- document --><rect x="0" y="0" width="1" height="1"/><rect x="1" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="4" y="1" width="1" height="1"/><rect x="5" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="2" width="1" height="1"/><rect x="5" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="5" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="5" y="4" width="1" height="1"/><rect x="0" y="5" width="1" height="1"/><rect x="5" y="5" width="1" height="1"/><rect x="0" y="6" width="1" height="1"/><rect x="2" y="6" width="1" height="1"/><rect x="3" y="6" width="1" height="1"/><rect x="5" y="6" width="1" height="1"/><rect x="0" y="7" width="1" height="1"/><rect x="1" y="7" width="1" height="1"/><rect x="2" y="7" width="1" height="1"/><rect x="3" y="7" width="1" height="1"/><rect x="4" y="7" width="1" height="1"/><rect x="5" y="7" width="1" height="1"/></svg>
+                  <span>Resume</span>
+                </a>
+              </nav>
+            </div>
+          </section>
+        </div>
+
+        <!-- Bottom of the computer (only shown below 900px). -->
+        <div class="desk-chin" aria-hidden="true"></div>
+      </div>
+
+      <!-- The desk under the computer, with a plant on it (only shown 900px and wider). -->
+      <div class="desk-table" aria-hidden="true">
+        <canvas class="desk-plant" width="40" height="52"></canvas>
+        <div class="desk-top"></div>
+        <div class="desk-front"></div>
+        <div class="desk-legs"></div>
+      </div>
+    </main>
+    <div class="page-loader" hidden role="status" aria-live="polite">
+      <canvas width="96" height="96" aria-hidden="true">
+      </canvas>
+      <p>Drawing things together…</p>
+    </div>
+  </body>
+</html>

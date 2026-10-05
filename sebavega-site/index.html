@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Designer &amp; Photographer — Sebastian Vega</title>
+    <meta name="description" content="Sebastian Vega — design and photography portfolio.">
+    <link rel="icon" href="assets/seba-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600&family=Pixelify+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/rzu3vfi.css">
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="assets/site.js" defer></script>
+    <link rel="stylesheet" href="assets/hero.css">
+    <script src="assets/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Draggable.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+    <script src="assets/home.js" defer></script>
+    <script src="assets/scroll-cue.js" defer></script>
+    <link rel="stylesheet" href="assets/home-notes.css">
+    <script src="assets/home-notes.js" defer></script>
+  </head>
+  <body class="home-notes-draft">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a href="index.html" aria-label="Sebastian Vega — home" class="brand">
+        <img src="assets/seba-logo.png" width="240" height="120" alt="SEBA">
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation menu">
+        <span class="hamburger" aria-hidden="true">
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+        </span>
+      </button>
+      <nav id="main-nav" aria-label="Main navigation">
+        <a href="work.html">work</a>
+        <a href="gallery.html">gallery</a>
+        <a href="contact.html">contact</a>
+      </nav>
+    </header>
+    <div id="pixel-paper">
+      <section class="pp-home" id="main">
+        <canvas class="pp-pencil" width="92" height="24" data-art="pencil" aria-hidden="true">
+        </canvas>
+        <canvas class="pp-ruler" width="96" height="28" data-art="ruler" aria-hidden="true">
+        </canvas>
+        <canvas class="pp-paperclip" width="18" height="30" data-art="paperclip" aria-hidden="true">
+        </canvas>
+        <canvas class="pp-sticker" width="32" height="32" data-art="sticker" aria-hidden="true">
+        </canvas>
+        <canvas class="pp-eraser" width="40" height="24" data-art="eraser" aria-hidden="true">
+        </canvas>
+        <canvas class="pp-sd-card" width="40" height="36" data-art="sd-card" aria-hidden="true">
+        </canvas>
+        <div class="pp-intro">
+          <h1>Hey, I’m <span>Sebastian!</span>
+          </h1>
+          <span class="pp-overline">DESIGNER, PHOTOGRAPHER & CURIOUS HUMAN</span>
+        </div>
+        <div class="pp-scene">
+          <span class="pp-scene-note">A few things to explore</span>
+          <button class="pp-folders pp-object" data-page="work">
+            <span class="pp-sprite">
+              <canvas width="120" height="100" data-art="folders" aria-hidden="true">
+              </canvas>
+              <span class="pp-folder-title">MY<br>WORK</span>
+            </span>
+            <span class="pp-object-label">Selected Work</span>
+          </button>
+          <button class="pp-camera pp-object" data-page="photos">
+            <span class="pp-sprite">
+              <canvas width="104" height="86" data-art="camera" aria-hidden="true">
+              </canvas>
+            </span>
+            <span class="pp-object-label">Photo Gallery</span>
+          </button>
+          <button class="pp-note pp-object" data-page="contact">
+            <span class="pp-sprite">
+              <canvas width="60" height="72" data-art="note" aria-hidden="true">
+              </canvas>
+              <span class="pp-note-text">CONTACT<br>ME</span>
+            </span>
+            <span class="pp-object-label">Get in Touch</span>
+          </button>
+        </div>
+        <div class="pp-under">
+          <a class="pp-restored-cue" href="#about">
+            <img src="assets/scroll-arrow.svg" alt="" aria-hidden="true">
+            <span>Scroll</span>
+          </a>
+        </div>
+      </section>
+      <div class="paper-journey">
+        <section class="paper-chapter" id="about" aria-labelledby="about-title">
+          <article class="paper-sheet paper-about">
+            <span class="paper-tape" aria-hidden="true">
+            </span>
+            <p class="paper-kicker">A little about me</p>
+            <div class="paper-about-layout">
+              <div>
+                <h2 id="about-title">Different mediums.<br>Same curiosity.</h2>
+                <p class="paper-lead">I’m Sebastian Vega, a designer and photographer who likes looking at things a little differently.</p>
+                <p>I work across product design, graphic design, and photography—exploring how things work, how they feel, and what makes someone stop and look.</p>
+                <p>People first. Details matter. Stay curious.</p>
+              </div>
+              <!-- Photo-booth strip: replace each placeholder <div> with an <img>, e.g.
+                   <img class="photostrip-frame" src="assets/me/photo-1.webp" alt="Me at …"> -->
+              <figure class="paper-photostrip">
+                <div class="photostrip-frame" role="img" aria-label="Photo of me placeholder 1">[Photo 1]</div>
+                <div class="photostrip-frame" role="img" aria-label="Photo of me placeholder 2">[Photo 2]</div>
+                <div class="photostrip-frame" role="img" aria-label="Photo of me placeholder 3">[Photo 3]</div>
+                <figcaption>A little of me.</figcaption>
+              </figure>
+            </div>
+          </article>
+        </section>
+        <section class="paper-chapter" id="experience" aria-labelledby="experience-title">
+          <article class="paper-sheet paper-experience">
+            <span class="paper-tape" aria-hidden="true">
+            </span>
+            <p class="paper-kicker">Experience</p>
+            <h2 id="experience-title">Where I’ve put<br>design into practice.</h2>
+            <p class="paper-lead">Product work, visual design, and the teams I help grow.</p>
+            <div class="resume-groups">
+              <section class="resume-group">
+                <h3>UX / Product roles</h3>
+                <article class="resume-entry">
+                  <div>
+                    <h4>Product Designer</h4>
+                    <p>Hack4Impact</p>
+                    <p class="resume-dates">Sept 2026 – Present</p>
+                  </div>
+                  <p>Co-designing an AI knowledge platform for Justice and Care with two fellow designers and a 10+ person team. The interface prioritizes source-cited answers and clear next steps for frontline workers.</p>
+                </article>
+                <article class="resume-entry">
+                  <div>
+                    <h4>Vice President · Team Lead · UX Designer</h4>
+                    <p>Design Innovation Illinois</p>
+                    <p class="resume-dates">Vice President: Sept 2026 – Present<br>Team Lead: Sept 2025 – Aug 2026<br>UX Designer: Sept 2024 – Aug 2025</p>
+                  </div>
+                  <p>Led and mentored a 5–6 person team through research and high-fidelity mobile concepts. Scoped the United Airlines and Yelp redesigns across three milestone checkpoints. Across my time with the organization, recruited and onboarded 30+ members and helped add two design teams per year for two consecutive years.</p>
+                </article>
+              </section>
+              <section class="resume-group">
+                <h3>Other design roles</h3>
+                <article class="resume-entry">
+                  <div>
+                    <h4>Design Intern</h4>
+                    <p>Cancer Center @ Illinois</p>
+                    <p class="resume-dates">Sept 2025 – May 2026</p>
+                  </div>
+                  <p>Delivered 30+ projects across social, event, and website graphics. Directed photo shoots producing 50+ professional images and expanding usable brand assets by 40%.</p>
+                </article>
+                <article class="resume-entry">
+                  <div>
+                    <h4>Graphic / Product Design Intern</h4>
+                    <p>Surge Iconics</p>
+                    <p class="resume-dates">June – Aug 2025</p>
+                  </div>
+                  <p>Created 50+ mockups and product concepts for client presentations and internal reviews. Took concepts through material selection, layout, and print preparation for production.</p>
+                </article>
+              </section>
+            </div>
+          </article>
+        </section>
+        <header class="paper-favorites-heading" id="favorites">
+          <h2>Three of my favorites.</h2>
+        </header>
+        <div class="paper-favorites-grid">
+          <section class="paper-chapter paper-project-chapter" aria-labelledby="favorite-0">
+            <article class="paper-sheet paper-project paper-project-0">
+              <span class="paper-tape" aria-hidden="true">
+              </span>
+              <div class="paper-project-heading">
+                <div>
+                  <p class="paper-kicker">UX / Product design</p>
+                  <h2 id="favorite-0"><a class="paper-card-link" href="unitedairlines.html">United Airlines</a></h2>
+                </div>
+              </div>
+              <div class="paper-project-image">
+                <img src="assets/united/rewards.webp" alt="United Airlines rewards redesign screens" loading="lazy" width="960" height="600">
+              </div>
+              <div class="paper-project-caption">
+                <div>
+                  <h3>Making rewards easier to navigate.</h3>
+                  <p>I redesigned the rewards section and helped oversee the team’s designs to keep the experience consistent.</p>
+                </div>
+              </div>
+            </article>
+          </section>
+          <section class="paper-chapter paper-project-chapter" aria-labelledby="favorite-1">
+            <article class="paper-sheet paper-project paper-project-1">
+              <span class="paper-tape" aria-hidden="true">
+              </span>
+              <div class="paper-project-heading">
+                <div>
+                  <p class="paper-kicker">UX / Research & design</p>
+                  <h2 id="favorite-1"><a class="paper-card-link" href="cura.html">Cura</a></h2>
+                </div>
+              </div>
+              <div class="paper-project-image">
+                <img src="assets/clinical/home.webp" alt="Cura clinical-trial app home-screen concepts" loading="lazy" width="960" height="600">
+              </div>
+              <div class="paper-project-caption">
+                <div>
+                  <h3>Clinical trials, with people in mind.</h3>
+                  <p>Exploring how clinical-trial discovery can better fit people’s lives, commitments, and questions.</p>
+                </div>
+              </div>
+            </article>
+          </section>
+          <section class="paper-chapter paper-project-chapter" aria-labelledby="favorite-2">
+            <article class="paper-sheet paper-project paper-project-2">
+              <span class="paper-tape" aria-hidden="true">
+              </span>
+              <div class="paper-project-heading">
+                <div>
+                  <p class="paper-kicker">Graphic / Packaging design</p>
+                  <h2 id="favorite-2"><a class="paper-card-link" href="cinnamontoastpunk.html">Cinnamon Toast Punk</a></h2>
+                </div>
+              </div>
+              <div class="paper-project-image">
+                <img src="assets/ctp/page-07.webp" alt="Cinnamon Toast Punk cereal-box mockup" loading="lazy" width="960" height="600">
+              </div>
+              <div class="paper-project-caption">
+                <div>
+                  <h3>A familiar cereal. A louder personality.</h3>
+                  <p>A punk-inspired reimagining of Cinnamon Toast Crunch, from expressive packaging to a collectible extension.</p>
+                </div>
+              </div>
+            </article>
+          </section>
+        </div>
+        <div class="paper-back-top-wrap">
+          <a class="paper-back-top" href="#main">
+            <img src="assets/scroll-arrow.svg" alt="" aria-hidden="true" width="22" height="32">
+            <span>Back to top</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <footer class="site-footer">
+      <p>© Sebastian Vega 2026</p>
+      <p>Always a little curious.</p>
+    </footer>
+    <div class="page-loader" hidden role="status" aria-live="polite">
+      <canvas width="96" height="96" aria-hidden="true">
+      </canvas>
+      <p>Drawing things together…</p>
+    </div>
+  </body>
+</html>

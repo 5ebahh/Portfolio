@@ -1,0 +1,473 @@
+/* =====================================================================
+   CONTACT.CSS — the Contact page (contact.html) only
+   Loaded after styles.css.
+
+   HOW THIS FILE IS ORGANISED
+     1  Page layout (one window tall, no footer), the computer's size
+        and the desk it sits on
+     2  The computer screen (menu bar, window, heading)
+     3  The three buttons (LinkedIn, Instagram, Resume)
+     4  Below 900px: just the computer screen
+     5  Reduced motion
+
+   Sizes inside the screen use "cqw": 1cqw = 1% of the screen's width.
+   That's how the text and buttons grow and shrink with the computer.
+   max(13px, 2.8cqw) means "2.8cqw, but never smaller than 13px".
+   ===================================================================== */
+
+
+/* =====================================================================
+   1 — PAGE LAYOUT, THE COMPUTER'S SIZE AND THE DESK
+   The page is exactly one window tall and never scrolls (no footer).
+   The computer sits on a pixel desk, with equal space above it and
+   desk below it, so the computer stays in the middle of the page.
+   ===================================================================== */
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.contact-page {
+  /* --room is the space kept above the computer (and the same amount of
+     desk below it). Bigger --room = smaller computer, more desk. */
+  --room: clamp(28px, 7svh, 110px);
+
+  /* The computer's width (and height): as big as the window allows after
+     leaving --room above and below, up to 1150px wide. 84px = navbar. */
+  --comp-w: min(100vw - 32px, (100svh - 84px - 2 * var(--room)) * 164 / 150, 1150px);
+  --comp-h: calc(var(--comp-w) * 150 / 164);
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px;
+}
+
+/* Empty space above the computer. It grows exactly as much as the desk
+   below it (both are flex: 1), which keeps the computer centred. */
+.contact-page::before {
+  content: "";
+  flex: 1 1 0;
+}
+
+/* The computer is 164 × 150 canvas pixels (size set by --comp-w above). */
+.desk {
+  position: relative;
+  flex: none;
+  width: var(--comp-w);
+  aspect-ratio: 164 / 150;
+}
+
+/* The pixel art, drawn small by contact-desk.js and scaled up crisply. */
+.desk-scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+
+/* Bottom of the computer, only used on small screens (see Part 4). */
+.desk-chin {
+  display: none;
+}
+
+/* ---- The desk the computer sits on -----------------------------------
+   A wooden top, a front panel and two legs that run to the bottom of the
+   window, plus a plant. Wood colours match the homepage folders. */
+
+.desk-table {
+  --wood: #a17c50;
+  --wood-light: #c49a64;
+  --wood-highlight: #dcb57c;
+  --wood-dark: #7a5c3c;
+  position: relative;
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 1500px);
+}
+
+.desk-top {
+  flex: none;
+  height: clamp(16px, 2.4svh, 28px);
+  background: var(--wood-light);
+  border: 3px solid var(--wood-dark);
+  box-shadow: inset 0 3px 0 var(--wood-highlight);
+}
+
+.desk-front {
+  flex: 0 1 clamp(16px, 3.5svh, 40px);
+  min-height: 0;
+  margin: 0 3%;
+  background: var(--wood);
+  border: 3px solid var(--wood-dark);
+  border-top: 0;
+}
+
+
+/* The plant stands on the desk to the left of the computer. It's about a
+   third as tall as the computer, but shrinks if the gap beside the
+   computer is too narrow for it. */
+.desk-plant {
+  position: absolute;
+  bottom: 100%;
+  right: calc(50% + var(--comp-w) / 2 + 20px);
+  height: min(var(--comp-h) * 0.36, ((min(100vw - 32px, 1500px) - var(--comp-w)) / 2 - 40px) * 52 / 40);
+  width: auto;
+  image-rendering: pixelated;
+}
+
+/* No plant on screens narrower than 1200px (there isn't room beside the computer). */
+@media (max-width: 1199px) {
+  .desk-plant {
+    display: none;
+  }
+}
+
+.desk-legs {
+  position: relative;
+  flex: 1;
+  margin: 0 3%;
+}
+
+.desk-legs::before,
+.desk-legs::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(20px, 2.2vw, 34px);
+  background: #8a6a45;
+  border: 3px solid var(--wood-dark);
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.desk-legs::before {
+  left: 0;
+}
+
+.desk-legs::after {
+  right: 0;
+}
+
+
+/* =====================================================================
+   2 — THE COMPUTER SCREEN
+   Positioned exactly over the screen in the drawing:
+   canvas pixels x 17 → 147 and y 9 → 85, out of 164 × 150.
+   ===================================================================== */
+
+.desk-screen {
+  position: absolute;
+  left: 10.3659%;      /*  17 / 164 */
+  top: 6%;             /*   9 / 150 */
+  width: 79.2683%;     /* 130 / 164 */
+  height: 50.6667%;    /*  76 / 150 */
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* light blue glass with a soft glow in the middle */
+  background: radial-gradient(ellipse at 50% 45%, #eaf5f9 0%, #cfe6f0 60%, #b5d3e1 100%);
+  box-shadow: inset 0 0 2cqw #8fb3c4;
+  font-family: 'Pixelify Sans', monospace;
+  color: var(--ink);
+}
+
+/* Menu bar across the top of the screen */
+.os-menubar {
+  display: flex;
+  align-items: center;
+  gap: 4cqw;
+  padding: 0.6cqw 2.4cqw;
+  background: #fffbee;
+  border-bottom: 2px solid var(--ink);
+  font-size: max(11px, 2.5cqw);
+  line-height: 1.4;
+}
+
+.os-clock {
+  margin-left: auto;
+}
+
+/* The window */
+/* The window sits centred in the space below the menu bar. */
+.os-window {
+  margin: auto 8cqw;
+  background: #fffbee;
+  border: 2px solid var(--ink);
+  box-shadow: 1cqw 1cqw 0 #39434a40;
+}
+
+/* Title bar with the classic striped look */
+.os-titlebar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4.6cqw;
+  border-bottom: 2px solid var(--ink);
+  background: repeating-linear-gradient(#fffbee 0 1px, var(--ink) 1px 2px) 0 50% / 100% 60% no-repeat, #fffbee;
+}
+
+.os-title {
+  padding: 0 2cqw;
+  background: #fffbee;
+  font-size: max(11px, 2.5cqw);
+}
+
+.os-close {
+  position: absolute;
+  left: 2cqw;
+  width: 2.5cqw;
+  height: 2.5cqw;
+  border: 2px solid var(--ink);
+  background: #fffbee;
+}
+
+.os-content {
+  padding: 2.4cqw 4cqw 3.2cqw;
+}
+
+.os-kicker {
+  margin: 0;
+  color: var(--blue);
+  font-size: max(10px, 2.3cqw);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.os-content h1 {
+  margin: 0.8cqw 0 1.2cqw;
+  color: var(--blue);
+  font: 400 max(24px, 5.2cqw)/1.05 salted, Gabarito, sans-serif;
+  letter-spacing: 0;
+}
+
+.os-lead {
+  max-width: none;
+  margin: 0;
+  font-family: Gabarito, sans-serif;
+  font-size: max(13px, 2.7cqw);
+  line-height: 1.35;
+}
+
+
+/* =====================================================================
+   3 — THE THREE BUTTONS
+   A pixel icon beside a label, in a chunky box (on phones the icon sits
+   above the label). Hovering lifts the button and adds a hard shadow. Hover: lifts and turns light blue.
+   Click: presses down.
+   ===================================================================== */
+
+.os-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4cqw;
+  margin-top: 2.6cqw;
+}
+
+.os-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4cqw;
+  min-height: 44px;
+  padding: 1.4cqw 1cqw;
+  border: 2px solid var(--ink);
+  background: #fffbee;
+  box-shadow: 0 0 0 var(--ink);     /* no shadow until hovered */
+  color: var(--blue);
+  font-size: max(13px, 2.8cqw);
+  line-height: 1.1;
+  text-decoration: none;
+  transition: transform .12s steps(2), box-shadow .12s steps(2), background-color .12s steps(2);
+}
+
+/* Every icon is the same height, so the labels line up. */
+.os-icon {
+  height: max(16px, 3.6cqw);
+  width: auto;
+  fill: currentColor;
+  shape-rendering: crispEdges;
+}
+
+/* Hover or keyboard focus: the button lifts and casts a hard shadow. */
+.os-button:hover,
+.os-button:focus-visible {
+  transform: translate(-0.6cqw, -0.6cqw);
+  box-shadow: 0.9cqw 0.9cqw 0 var(--ink);
+  background: #e3f0f6;
+}
+
+/* Click: pressed flat again. */
+.os-button:active {
+  transform: none;
+  box-shadow: 0 0 0 var(--ink);
+}
+
+.os-button:focus-visible {
+  outline: 3px solid #b27050;
+  outline-offset: 3px;
+}
+
+
+/* =====================================================================
+   4 — BELOW 900px: A SIMPLER COMPUTER
+   The pixel monitor is hidden. The screen sits in a beige bezel with a
+   chin underneath (floppy slot and lights), drawn with plain CSS, and
+   centred on the page.
+   ===================================================================== */
+
+@media (max-width: 899px) {
+  /* No desk: centre the screen in the space below the navbar. */
+  .contact-page {
+    --top-gap: clamp(16px, 4svh, 48px);
+    justify-content: center;
+    padding: var(--top-gap) 10px;   /* thinner side margins so the screen can be wider */
+  }
+
+  .contact-page::before,
+  .desk-table {
+    display: none;
+  }
+
+  /* As wide as possible (up to 720px), but never too tall for the window:
+     the screen is roughly as tall as it is wide, so its width is also
+     limited by the space below the navbar (84px). */
+  .desk {
+    width: min(100%, 720px, (100svh - 84px - 2 * var(--top-gap)) * 1.05);
+    aspect-ratio: auto;
+    padding: clamp(14px, 5vw, 26px) clamp(14px, 5vw, 26px) 0;
+    background: #e9dcc0;
+    border: 3px solid #a8987a;
+    box-shadow: inset 4px 4px 0 #f6eedb, inset -4px -4px 0 #cdbd99, 6px 8px 0 #8f877444;
+  }
+
+  .desk-scene {
+    display: none;
+  }
+
+  .desk-screen {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    border: 4px solid #6e6550;
+  }
+
+  .os-window {
+    margin: 5cqw 5cqw 6cqw;
+  }
+
+  /* On narrow screens the text needs to be a bit larger relative to the screen. */
+  .os-menubar,
+  .os-title {
+    font-size: max(12px, 3.2cqw);
+  }
+
+  .os-kicker {
+    font-size: max(11px, 3cqw);
+  }
+
+  .os-content h1 {
+    font-size: max(28px, 8cqw);
+  }
+
+  .os-lead {
+    font-size: max(15px, 4cqw);
+  }
+
+  .os-button {
+    flex-direction: column;
+    padding: 2.2cqw 1cqw 1.8cqw;
+    font-size: max(13px, 3.8cqw);
+  }
+
+  .os-icon {
+    height: max(16px, 6cqw);
+  }
+
+  .os-content {
+    padding: 3cqw 5cqw 4cqw;
+  }
+
+  .os-content h1 {
+    margin: 1cqw 0 1.6cqw;
+  }
+
+  .os-buttons {
+    gap: 3cqw;
+    margin-top: 3.4cqw;
+  }
+
+  .os-titlebar {
+    height: max(22px, 6cqw);
+  }
+
+  .os-close {
+    left: 2.5cqw;
+    width: max(12px, 3.2cqw);
+    height: max(12px, 3.2cqw);
+  }
+
+  .os-menubar {
+    padding: 0.8cqw 3cqw;
+  }
+
+  /* Chin: floppy slot on the left, three little lights on the right. */
+  .desk-chin {
+    display: block;
+    height: clamp(44px, 12vw, 64px);
+    background:
+      linear-gradient(#6e6550, #6e6550) 8% 50% / 32% 4px no-repeat,
+      linear-gradient(#8fae7a, #8fae7a) 92% 50% / 8px 5px no-repeat,
+      linear-gradient(#8a7b5f, #8a7b5f) calc(92% - 14px) 50% / 8px 5px no-repeat,
+      linear-gradient(#8a7b5f, #8a7b5f) calc(92% - 28px) 50% / 8px 5px no-repeat;
+  }
+}
+
+@media (max-width: 899px) and (max-height: 600px) {
+  /* Short phones: drop the intro sentence so everything fits without scrolling. */
+  .os-lead {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  /* Very small phones: stack the buttons so the labels fit. */
+  .os-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .os-button {
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+  }
+}
+
+
+/* =====================================================================
+   5 — REDUCED MOTION
+   ===================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .os-button {
+    transition: none;
+  }
+
+  .os-button:hover,
+  .os-button:focus-visible,
+  .os-button:active {
+    transform: none;
+  }
+}
