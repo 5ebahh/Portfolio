@@ -3,8 +3,10 @@
 Live at **sebavega.com** (GitHub Pages, domain from Porkbun).
 
 Plain HTML, CSS and JavaScript. There's no build step: upload this folder's
-contents as-is to any static host. All links are relative, so you can also
-open `index.html` directly.
+contents as-is to GitHub Pages. Links between pages are written without ".html" (e.g. `href="work"`), so
+addresses look like `sebavega.com/work`. GitHub Pages adds the ".html" for
+you. Because of that, test changes on the live site (or in a GitHub Pages
+preview) rather than by double-clicking files on your computer.
 
 ## Publishing on GitHub Pages
 
@@ -20,10 +22,6 @@ open `index.html` directly.
 To update the site later: edit the files, then commit and push with GitHub
 Desktop (or upload the changed files on github.com).
 
-To test it locally with the Salted font, run this in the folder and open
-http://localhost:8000:
-
-    python3 -m http.server 8000
 
 ## Pages
 
@@ -63,13 +61,13 @@ how it's organised. Start there.
 - **Site colours:** `styles.css` → Part 2, the `:root` block (`--blue`, `--paper`, `--ink`…).
 - **Navbar / footer colour:** `--nav-bg` in the same block. The footer follows automatically.
 - **Mr. Blue's odds, jump height, swim speed:** `work-fishbowl.js` → SETTINGS at the top.
-  Add `?fish=betta` to the address (e.g. `work.html?fish=betta`) to always see Mr. Blue.
+  Add `?fish=betta` to the address (e.g. `sebavega.com/work?fish=betta`) to always see Mr. Blue.
 - **Where the homepage stationery sits:** `home.js` → `TARGETS`.
 - **Where the three homepage icons go:** `home.js` → `PAGES`.
 - **What the fishbowl note shouts:** `work-fishbowl.js` → `EXCLAMATIONS`.
 - **Photo-booth strip photos (homepage):** see the comment above `paper-photostrip` in `index.html`.
 - **Pixel art colours:** `home.js` → section 1 (each shape has a hex colour).
-- **Resume:** save your PDF as `assets/resume.pdf` (the Resume button already points there).
+- **Resume:** the Resume button opens your PDF on Google Drive. Update the file in Drive, or change the link in `contact.html` (search for "RESUME").
 - **Figma prototypes:** in each UX page's HTML, find "FIGMA PROTOTYPE EMBED" and follow the steps.
 
 ## Images still to add

@@ -369,13 +369,14 @@
   /* -------------------------------------------------------------------
      4. THE THREE BIG ICONS
      Each icon opens a page. To change where one goes, edit PAGES.
+     Addresses are written without ".html" (e.g. 'work' opens work.html).
      (data-page="..." on each icon in index.html picks its entry.)
      ------------------------------------------------------------------- */
 
   const PAGES = {
-    work: 'work.html',        // My Work folder
-    photos: 'gallery.html',   // camera
-    contact: 'contact.html',  // Contact Me sticky note
+    work: 'work',             // My Work folder
+    photos: 'gallery',        // camera
+    contact: 'contact',       // Contact Me sticky note
   };
 
   root.querySelectorAll('[data-page]').forEach((button) => {
