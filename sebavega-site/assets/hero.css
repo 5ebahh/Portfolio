@@ -737,11 +737,12 @@
   }
 }
 
-/* Center the lettering on the paper face, below the pin. */
+/* Center the lettering on the note, below the tape
+   (% of the note drawing, 48 x 58 canvas pixels). */
 #pixel-paper #main .pp-note-text {
   left: 50%;
-  top: 49%;
-  width: 80%;
+  top: 54%;
+  width: 100%;
   /* scale(0.88) shrinks the lettering a touch so "CONTACT" fits the note */
   transform: translate(-50%, -50%) scale(0.88);
   text-align: center;
@@ -789,3 +790,68 @@
 #pixel-paper #main .pp-intro .pp-overline {
   margin-top: clamp(6px, .7vw, 12px);
 }
+
+
+/* =====================================================================
+   THREE BIG ICONS: SAME SIZE AND LEVEL AT EVERY SCREEN SIZE
+   Each icon has a box (.pp-sprite) whose size the rules above set for each
+   screen size, and inside it the drawing plus its lettering (.pp-art).
+   - The boxes in a row are always the same height (on desktop the folder
+     and note stretch to match the camera, which sets the row height), so
+     the layout, Scroll button and stationery stay where they were.
+   - Every drawing is --icon-art (72%) of its box's height, centred, so all
+     three are the same height and line up top and bottom. Each drawing's
+     width follows its own shape (--art-ratio = width / height).
+   To make all three icons bigger or smaller, change --icon-art.
+   ===================================================================== */
+#pixel-paper #main .pp-object {
+  --icon-art: .72;
+}
+
+#pixel-paper #main .pp-folders { --art-ratio: calc(100 / 78); }
+#pixel-paper #main .pp-camera  { --art-ratio: calc(74 / 54); }
+#pixel-paper #main .pp-note    { --art-ratio: calc(48 / 58); }
+
+#pixel-paper #main .pp-object .pp-sprite {
+  position: relative;
+  container-type: size;   /* lets .pp-art size itself from the box height */
+}
+
+#pixel-paper #main .pp-art {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: calc(100cqh * var(--icon-art));
+  width: calc(100cqh * var(--icon-art) * var(--art-ratio));
+  transform: translate(-50%, -50%);
+  container-type: inline-size;   /* lettering sizes from the drawing width */
+}
+
+#pixel-paper #main .pp-art > canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  image-rendering: pixelated;
+}
+
+/* Desktop: icons sit side by side. The camera's box sets the row height
+   (its original shape, 104 x 86); the folder and note boxes stretch to it. */
+@media (min-width: 1024.01px) {
+  #pixel-paper #main .pp-object {
+    align-self: stretch;
+  }
+
+  #pixel-paper #main .pp-camera .pp-sprite {
+    flex: none;
+    aspect-ratio: 104 / 86;
+  }
+
+  #pixel-paper #main .pp-folders .pp-sprite,
+  #pixel-paper #main .pp-note .pp-sprite {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+}
+

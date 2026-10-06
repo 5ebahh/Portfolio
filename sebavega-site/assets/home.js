@@ -4,6 +4,7 @@
    2. Places the stationery around the hero so it never covers content
    3. Lets visitors drag the stationery around (needs GSAP Draggable)
    4. Makes the three big icons open their pages (Work, Gallery, Contact)
+   5. Hover animations for the three big icons (folder, camera, note)
    ===================================================================== */
 
 (() => {
@@ -22,9 +23,26 @@
      To recolour something, change its hex colour below.
      ------------------------------------------------------------------- */
 
+  // The three big icons' canvases are trimmed to just their drawing (so all
+  // three can be sized to the same height in hero.css). Their drawings below
+  // still use the original coordinates; TRIM shifts them into the canvas.
+  // [left, top] = the original coordinates of each trimmed canvas's corner.
+  const TRIM = {
+    folders: [5, 9],    // canvas 100 x 78
+    camera: [13, 13],   // canvas 74 x 54
+    note: [6, 4],       // canvas 48 x 58
+  };
+
   function draw(canvas, type) {
     const g = canvas.getContext('2d');
+    g.setTransform(1, 0, 0, 1, 0, 0);
     g.clearRect(0, 0, canvas.width, canvas.height);
+    const [trimX, trimY] = TRIM[type] || [0, 0];
+    g.translate(-trimX, -trimY);
+
+    // Hover animation frame for the three big icons: 0 = resting,
+    // 3 = fully animated (part 5 steps through 0 → 3 and back).
+    const frame = Number(canvas.dataset.frame) || 0;
 
     const rect = (x, y, w, h, color) => {
       g.fillStyle = color;
@@ -36,6 +54,12 @@
     };
 
     if (type === 'folders') {
+      // On hover the front folder tips forward (its top edge drops) and the
+      // papers inside rise up to peek out. Each list is indexed by frame.
+      const drop = [0, 2, 3, 4][frame];        // front folder's top edge, px
+      const rise = [0, 2, 4, 6][frame];        // ruled paper, px
+      const photoRise = [0, 4, 8, 11][frame];  // photo print behind it, px
+
       // Back folder
       stair(12, 17, 92, 64, '#9d7954');
       rect(60, 9, 31, 12, '#9d7954');
@@ -50,28 +74,40 @@
       rect(9, 28, 91, 52, '#e7cd94');
       rect(12, 29, 86, 3, '#f7e5b4');
 
+      // Photo print tucked behind the paper (only shows when it rises)
+      const py = 22 - photoRise;
+      rect(57, py, 30, 26, '#b9b9a8');
+      rect(58, py + 1, 28, 24, '#fffdf4');
+      rect(60, py + 3, 24, 16, '#9cc3d6');     // sky
+      rect(60, py + 13, 24, 6, '#8fae7a');     // hill
+      rect(66, py + 11, 8, 2, '#8fae7a');
+      rect(77, py + 5, 3, 3, '#f3d58a');       // sun
+
       // Paper sticking out, with blue ruled lines and a little photo
-      rect(17, 25, 77, 53, '#b9b9a8');
-      rect(17, 22, 74, 53, '#fffbee');
-      rect(22, 27, 60, 1, '#a6bfd0');
-      rect(22, 32, 48, 1, '#a6bfd0');
-      rect(22, 37, 61, 1, '#a6bfd0');
-      rect(77, 23, 12, 7, '#b9cdd5');
+      const ry = 22 - rise;
+      rect(17, ry + 3, 77, 53, '#b9b9a8');
+      rect(17, ry, 74, 53, '#fffbee');
+      rect(22, ry + 5, 60, 1, '#a6bfd0');
+      rect(22, ry + 10, 48, 1, '#a6bfd0');
+      rect(22, ry + 15, 61, 1, '#a6bfd0');
+      rect(77, ry + 1, 12, 7, '#b9cdd5');
 
-      // Front folder
-      stair(5, 39, 100, 48, '#9c794e');
-      rect(8, 40, 94, 43, '#e7c786');
-      rect(8, 40, 94, 3, '#f5dca4');
+      // Front folder (its top edge drops by "drop" when it tips open)
+      stair(5, 39 + drop, 100, 48 - drop, '#9c794e');
+      rect(8, 40 + drop, 94, 43 - drop, '#e7c786');
+      rect(8, 40 + drop, 94, 3, '#f5dca4');
       rect(8, 81, 94, 3, '#c5a26a');
-      rect(101, 43, 3, 38, '#b89762');
+      rect(101, 43 + drop, 3, 38 - drop, '#b89762');
 
-      // Label on the front folder (the "MY WORK" text is HTML on top of this)
-      rect(18, 48, 69, 30, '#efe3bd');
-      rect(20, 50, 65, 26, '#faf3d6');
+      // Label on the front folder (the "MY WORK" text is HTML on top of this;
+      // part 5 moves the text down with the label)
+      rect(18, 48 + drop, 69, 30 - drop, '#efe3bd');
+      rect(20, 50 + drop, 65, 26 - drop, '#faf3d6');
 
       // Speckles of paper texture
       for (let i = 0; i < 22; i++) {
-        rect(10 + (i * 19) % 88, 44 + (i * 11) % 33, 1, 1, '#d4b67b');
+        const y = 44 + (i * 11) % 33;
+        if (y > 42 + drop) rect(10 + (i * 19) % 88, y, 1, 1, '#d4b67b');
       }
     }
 
@@ -94,9 +130,9 @@
       rect(33, 16, 13, 7, '#344750');
       rect(36, 17, 7, 3, '#658c99');
 
-      // Orange light and small details
-      rect(73, 25, 7, 4, '#c39163');
-      rect(75, 26, 3, 2, '#efc693');
+      // Orange light and small details (the light brightens on hover)
+      rect(73, 25, 7, 4, frame ? '#f0b46c' : '#c39163');
+      rect(75, 26, 3, 2, frame ? '#fff3c4' : '#efc693');
       rect(63, 28, 5, 2, '#34414a');
 
       // Lens: rings from the outside in, then the glass and its reflections
@@ -114,19 +150,78 @@
         rect(30 + i * 4, 64, 2, 2, '#687971');
         rect(82, 34 + i * 3, 2, 1, '#899184');
       }
+
+      // Hover: a shine sweeps across the lens glass, left to right...
+      if (frame) {
+        const x = [0, 44, 47, 50][frame];
+        g.globalAlpha = 0.55;
+        rect(x, 42, 2, 10, '#ffffff');
+        rect(x + 2, 44, 1, 6, '#ffffff');
+        g.globalAlpha = 1;
+      }
+
+      // ...and a pixel sparkle pops on the lens ring where the shine ends.
+      // (It sits on the camera body so the hover shadow can't copy it onto
+      // the paper.) size = arm length in px for each frame.
+      const size = [0, 0, 2, 4][frame];
+      if (size) {
+        const cx = 59, cy = 37;
+        rect(cx - size, cy, size * 2 + 1, 1, '#f3c95f');   // arms
+        rect(cx, cy - size, 1, size * 2 + 1, '#f3c95f');
+        rect(cx - 1, cy - 1, 3, 3, '#ffe7a3');             // glow
+        rect(cx, cy, 1, 1, '#ffffff');                     // bright centre
+        if (size > 2) rect(cx - 6, cy + 4, 1, 1, '#ffe7a3');   // tiny twinkle
+      }
     }
 
     if (type === 'note') {
-      // Yellow sticky note with a folded corner and a pin
-      rect(5, 7, 48, 55, '#c9b75d');
-      rect(5, 7, 48, 48, '#f3de87');
-      rect(5, 7, 48, 8, '#e6cb72');
-      rect(8, 15, 42, 2, '#f9e9a7');
-      rect(5, 56, 43, 5, '#ddc56b');
-      rect(48, 52, 5, 5, '#c1a750');
-      rect(43, 57, 5, 4, '#b59b4b');
-      rect(24, 3, 9, 8, '#b27050');   // pin
-      rect(26, 2, 5, 3, '#d09c78');
+      // One yellow sticky note held on with a strip of tape. Its bottom-right
+      // corner lies flat until hover, then folds up (see part 5 below).
+      // No shadow is drawn here: like the folder and camera, it only gets a
+      // shadow on hover (see .pp-object:hover in styles.css).
+      // "CONTACT ME" is HTML on top (.pp-note-text in hero.css).
+
+      rect(6, 8, 48, 54, '#f3de87');
+      rect(6, 8, 48, 9, '#e8cf76');               // sticky strip at the top
+      rect(6, 17, 48, 1, '#f9e9a7');              // highlight under the strip
+      rect(52, 8, 2, 54, '#e2c86f');              // right edge
+      rect(6, 60, 48, 2, '#e2c86f');              // bottom edge
+
+      // Two faint ruled lines under the lettering
+      rect(11, 49, 34, 1, '#e6cc74');
+      rect(11, 55, 30, 1, '#e6cc74');
+
+      // Folded corner (bottom right). F is how far it's folded, in pixels
+      // (0 = flat, 9 = fully folded), set by the hover frame. The fold
+      // runs diagonally across an F x F box at the corner: past the fold the
+      // corner is gone (clear canvas), and the flap's paler underside folds
+      // back over the note.
+      const F = [0, 3, 6, 9][frame];
+      const FX = 54 - F, FY = 62 - F;
+      for (let dy = 0; dy < F; dy++) {
+        for (let dx = 0; dx < F; dx++) {
+          const d = dx + dy;
+          if (d > F - 1) {
+            g.clearRect(FX + dx, FY + dy, 1, 1);               // lifted away
+            continue;
+          }
+          let color = '#fbf0c4';                                // flap underside
+          if (d === F - 1) color = '#c9b75d';                   // fold line
+          else if (dx === 0 || dy === 0) color = '#e2cd7f';     // flap edge
+          rect(FX + dx, FY + dy, 1, 1, color);
+        }
+      }
+      if (F > 1) rect(FX - 1, FY + 1, 1, F - 1, '#e2c86f');   // small shade left of the flap
+
+      // Strip of tape across the top edge (see-through, with torn ends)
+      g.globalAlpha = 0.75;
+      rect(19, 4, 22, 9, '#efe9d6');
+      g.globalAlpha = 1;
+      for (let y = 4; y < 13; y += 2) {
+        rect(18, y, 1, 1, '#e3dcc4');             // torn left end
+        rect(41, y + 1, 1, 1, '#e3dcc4');         // torn right end
+      }
+      rect(20, 5, 20, 1, '#fbf8ee');              // shine on the tape
     }
 
     if (type === 'pencil') {
@@ -383,6 +478,62 @@
     button.addEventListener('click', () => {
       const url = PAGES[button.dataset.page];
       if (url) location.href = url;
+    });
+  });
+
+
+  /* -------------------------------------------------------------------
+     5. HOVER ANIMATIONS FOR THE THREE BIG ICONS
+     Hovering (or tabbing to) an icon steps its drawing through frames
+     1 → 3, timed with the icon's 3-step lift; leaving steps it back to 0.
+       Folder: tips open and the papers rise to peek out
+       Camera: lens shine, brighter light and a sparkle
+       Sticky note: the bottom-right corner folds up
+     The frames themselves are drawn in part 1.
+     ------------------------------------------------------------------- */
+
+  const LAST_FRAME = 3;
+  const FRAME_MS = 60;
+
+  root.querySelectorAll('.pp-object[data-page]').forEach((button) => {
+    const canvas = button.querySelector('canvas[data-art]');
+    if (!canvas) return;
+
+    let frame = 0;
+    let timer;
+
+    const showFrame = (n) => {
+      frame = n;
+      canvas.dataset.frame = n;
+      draw(canvas, canvas.dataset.art);
+
+      // The folder's label drops as the front folder tips open, so the
+      // "MY WORK" text (HTML) follows it. See .pp-folder-title in styles.css.
+      if (canvas.dataset.art === 'folders') {
+        button.style.setProperty('--folder-drop', [0, 2, 3, 4][n]);
+      }
+    };
+
+    // Step toward the last frame (open = true) or back to resting.
+    const animateTo = (open) => {
+      clearInterval(timer);
+      const target = open ? LAST_FRAME : 0;
+
+      // With reduced motion, jump straight to the end.
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        showFrame(target);
+        return;
+      }
+
+      timer = setInterval(() => {
+        if (frame === target) return clearInterval(timer);
+        showFrame(frame + (target > frame ? 1 : -1));
+      }, FRAME_MS);
+    };
+
+    const update = () => animateTo(button.matches(':hover, :focus-visible'));
+    ['pointerenter', 'pointerleave', 'focus', 'blur'].forEach((eventName) => {
+      button.addEventListener(eventName, update);
     });
   });
 })();

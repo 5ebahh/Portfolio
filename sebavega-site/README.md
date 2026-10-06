@@ -70,18 +70,56 @@ how it's organised. Start there.
 - **Resume:** the Resume button opens your PDF on Google Drive. Update the file in Drive, or change the link in `contact.html` (search for "RESUME").
 - **Figma prototypes:** in each UX page's HTML, find "FIGMA PROTOTYPE EMBED" and follow the steps.
 
-## Images still to add
+## Favicon (browser tab icon)
 
-Create these folders inside `assets/` and add the files:
+The tab icon is Mr. Blue the betta from the Work page fishbowl, in pixel art:
+`favicon.ico` (in the main folder, where browsers look for it automatically),
+`assets/favicon-16.png`, `assets/favicon-32.png`, and
+`assets/apple-touch-icon.png` (used when someone saves the site to a phone's
+home screen). Every page links to them near the top of its `<head>`.
+Browsers cache favicons hard, so after publishing you may need to reload or
+open the site in a private window to see a change.
 
-- `united/rewards.webp`, `united/redemption.webp`
-- `yelp/home.webp`
-- `clinical/home.webp`
-- `scope/page-01.webp`
-- `ctp/page-07.webp`
-- `bauhaus/page-03.webp`
+## Link previews (share cards)
 
-See `portfolio-thumbnail-sizes.xlsx` for the ideal sizes.
+When a page is shared (LinkedIn, iMessage, Discord, Slack, forums, X), sites
+read the Open Graph tags near the top of each page's `<head>` and show a card
+with the page title, description and a 1200 x 630 image from `assets/og/`:
+
+- `home.png`: the pixel-paper card, used by the homepage, Work, Gallery and
+  Contact pages.
+- `united.jpg`, `yelp.jpg`, `cura.jpg`, `scope.jpg`, `ctp.jpg`, `bauhaus.jpg`:
+  one per case study.
+
+The tags use full addresses (https://sebavega.com/...), so previews only work
+once the site is live on that domain. To check a page, paste its link into
+https://www.opengraph.xyz or LinkedIn's Post Inspector. Sites cache previews,
+so after changing an image, re-check the link there to refresh it.
+
+## Project thumbnails
+
+The homepage favorites and Work page cards use the images in
+`assets/thumbs/` (united, yelp, cura, scope, ctp, bauhaus `.webp`).
+To swap one, replace the file with the same name.
+
+Frames always fill edge to edge without stretching; anything outside the
+frame's shape is trimmed evenly. Shapes are set in `styles.css` (Part 2):
+
+- `--thumb-ratio` (3:2): graphic design cards on the Work page.
+- `--thumb-ratio-wide` (16:9): the Yelp and Cura cards and the homepage
+  favorites. Cura's current thumbnail is 16:9 with
+  text near its edges, so 3:2 would cut it off. Export Cura at 3:2 and you
+  can switch this to `3 / 2`.
+
+Best export sizes: 3:2 at 1200 x 800, 16:9 at 1600 x 900, saved as WebP.
+
+The Work page's featured United card has its own two covers:
+`united-featured.webp` (wide, 1600 x 1014) on screens 900px and wider, and
+`united-mobile.webp` (tall, 1000 x 1250, 4:5) below 900px. The switch is
+the `<picture>` in `work.html`; the frame shapes are in `work.css`. If you
+re-export either one at a different shape, update its `aspect-ratio` there.
+
+The case-study pages still use grey placeholder boxes for their images.
 
 ## Fonts
 

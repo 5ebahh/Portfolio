@@ -3,7 +3,8 @@
    Optional motion, added with GSAP. If GSAP doesn't load, everything is
    still visible and every link still works.
    1. Sections slide up slightly as they scroll into view
-   2. Work page cards lift on hover (project-page notes lift with CSS instead)
+   2. Work page cards lift and cast a shadow on hover (no shadow at rest;
+      project-page notes lift with CSS instead)
    ===================================================================== */
 
 (() => {
@@ -65,7 +66,7 @@
 
           gsap.to(card, {
             y: active ? -5 : 0,
-            boxShadow: active ? '6px 10px 0 rgba(188,179,152,0.30)' : '4px 5px 0 rgba(188,179,152,0.19)',
+            boxShadow: active ? '6px 10px 0 rgba(188,179,152,0.30)' : '0px 0px 0 rgba(188,179,152,0)',   // shadow only while lifted
             duration: 0.3,
             ease: 'power2.out',
             overwrite: 'auto',

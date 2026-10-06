@@ -1,7 +1,7 @@
 /* =====================================================================
    HOME-NOTES.CSS — homepage sections below the hero (index.html)
    The sticky-note look for "A little about me" and "Experience", the
-   photo-booth strip, and the "Three of my favorites" cards.
+   photo-booth strip, and the "Three of my favorites" polaroids.
    Loaded after styles.css and hero.css.
 
    Colours used: blue #376399, yellow #f7e59a, cream #f5ebd2,
@@ -160,26 +160,52 @@ body.home-notes-draft #pixel-paper .paper-favorites-grid .paper-project-chapter 
   padding: 0;
 }
 
+/* "Three of my favorites" as polaroids: an off-white frame with a thin
+   border on the sides and top, a deeper strip at the bottom for the title
+   and caption, and a pixel pushpin (its colour is --pin-color below). */
 body.home-notes-draft #pixel-paper .paper-favorites-grid .paper-project {
+  --polaroid-edge: clamp(12px, 1.1vw, 16px);
   text-align: center;
-  padding: clamp(22px, 2.4vw, 36px);
+  padding: var(--polaroid-edge) var(--polaroid-edge) clamp(24px, 2.4vw, 34px);
+  background: #fffefa;
+  border: 2px solid #e2dac6;      /* crisp pixel edge instead of a soft shadow */
   transition: none;
   transform: rotate(var(--note-tilt));
 }
 
+/* The photo inside the frame */
+body.home-notes-draft #pixel-paper .paper-favorites-grid .paper-project-image {
+  background: #e9eef1;
+  border: 2px solid #39434a1f;
+}
+
+/* Title and caption in the bottom strip */
+body.home-notes-draft #pixel-paper .paper-favorites-grid .paper-project-heading,
+body.home-notes-draft #pixel-paper .paper-favorites-grid .paper-project-caption {
+  padding-inline: clamp(6px, 1vw, 14px);
+}
+
+body.home-notes-draft #pixel-paper .paper-favorites-grid .paper-project-heading {
+  padding-top: clamp(18px, 1.8vw, 26px);
+}
+
+body.home-notes-draft #pixel-paper .paper-favorites-grid .paper-pin {
+  color: var(--pin-color);
+}
+
 body.home-notes-draft #pixel-paper .paper-project-0 {
-  --note-tilt: -1deg;
-  background: #f5ebd2;
+  --note-tilt: -1.6deg;
+  --pin-color: #2f5fb3;   /* United: blue pushpin */
 }
 
 body.home-notes-draft #pixel-paper .paper-project-1 {
-  --note-tilt: .8deg;
-  background: #e6ecdf;
+  --note-tilt: 1.2deg;
+  --pin-color: #4f9a4b;   /* Cura: green pushpin */
 }
 
 body.home-notes-draft #pixel-paper .paper-project-2 {
-  --note-tilt: -.6deg;
-  background: #eee1d5;
+  --note-tilt: -.9deg;
+  --pin-color: #e2662f;   /* Scope: orange pushpin */
 }
 
 /* Center the layout containers themselves, not a translated text child. */
@@ -204,10 +230,6 @@ body.home-notes-draft #pixel-paper .paper-favorites-grid .paper-project-caption 
 
 body.home-notes-draft #pixel-paper .paper-favorites-grid p {
   margin-inline: auto;
-}
-
-body.home-notes-draft #pixel-paper .paper-favorites-grid .paper-project-image img {
-  height: clamp(150px, 15vw, 210px);
 }
 
 @media (max-width: 900px) {

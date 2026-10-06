@@ -275,9 +275,12 @@
 }
 
 #pixel-paper .pp-folder-title {
-  left: 15%;
-  top: 50%;
-  width: 58%;
+  /* Positions are % of the folder drawing (100 x 78 canvas pixels).
+     --folder-drop is set by home.js while the folder tips open on hover;
+     the label's centre moves half that many canvas pixels. */
+  left: 13%;
+  top: calc(52.5% + var(--folder-drop, 0) * .64%);
+  width: 69.6%;
   text-align: center;
   font: 500 24px/1 var(--pp-object-font);
   letter-spacing: 0;
@@ -503,6 +506,18 @@
      so the two always stay in sync. */
   --nav-bg: var(--paper);
   --footer-bg: color-mix(in srgb, var(--nav-bg) 92%, #000);
+
+  /* PROJECT THUMBNAIL SHAPES
+     Thumbnails always fill their frame edge to edge without stretching:
+     anything outside the frame's shape is trimmed evenly from the edges.
+     Export thumbnails at the same shape to avoid any trimming.
+       --thumb-ratio       graphic design cards on the Work page (3:2)
+       --thumb-ratio-wide  United featured card, the UX cards and the
+                           homepage favorites (16:9, because the Cura
+                           thumbnail's design runs too close to its edges
+                           for 3:2). Change to 3 / 2 once Cura has a 3:2 export. */
+  --thumb-ratio: 3 / 2;
+  --thumb-ratio-wide: 16 / 9;
   /* Navbar link colours */
   --nav-link: #8a8f8c;
   /* idle: light grey */
@@ -818,12 +833,25 @@ body.js #main-nav:not(.is-open) {
   container-type: inline-size;
 }
 
+/* Lettering size is a share of the drawing's width (cqw = 1% of .pp-art). */
 #pixel-paper .pp-folder-title {
-  font-size: 11cqw;
+  font-size: 13.2cqw;
 }
 
 #pixel-paper .pp-note-text {
-  font-size: 18cqw;
+  font-size: 22.5cqw;
+}
+
+/* Tablets and phones: the icons are smaller, so the lettering on them is
+   scaled down to leave breathing room inside the folder label and note. */
+@media (max-width: 1023px) {
+  #pixel-paper .pp-folder-title {
+    font-size: 10.8cqw;
+  }
+
+  #pixel-paper .pp-note-text {
+    font-size: 17.5cqw;
+  }
 }
 
 @media (min-width: 760px) {
@@ -1379,19 +1407,20 @@ html {
   font-size: clamp(34px, 4.4vw, 62px);
 }
 
+/* Favorites thumbnail frame: the image fills it completely (see --thumb-ratio-wide). */
 #pixel-paper .paper-project-image {
   display: block;
   background: #e9eef1;
   border: 1px solid #39434a15;
-  padding: clamp(12px, 2vw, 24px);
   overflow: hidden;
 }
 
 #pixel-paper .paper-project-image img {
   display: block;
   width: 100%;
-  height: clamp(230px, 35vw, 430px);
-  object-fit: contain;
+  height: auto;
+  aspect-ratio: var(--thumb-ratio-wide);
+  object-fit: cover;
 }
 
 #pixel-paper .paper-project-image:hover img {
@@ -1446,10 +1475,6 @@ html {
   #pixel-paper .paper-project-caption {
     grid-template-columns: 1fr;
     gap: 24px;
-  }
-
-  #pixel-paper .paper-project-image img {
-    height: 240px;
   }
 }
 
@@ -1522,11 +1547,26 @@ html {
   outline-offset: 6px;
 }
 
-#pixel-paper .paper-favorites-grid .paper-tape {
-  width: 76px;
-  height: 24px;
-  top: -12px;
-  left: calc(50% - 38px);
+/* Pushpin holding each favorites polaroid (pixel SVG in index.html, 14 x 19
+   pixels drawn at 3x). It's tilted around the needle tip, which lands on the
+   top of the photo. It sits above the clickable overlay but lets clicks
+   pass through. */
+#pixel-paper .paper-favorites-grid .paper-pin {
+  position: absolute;
+  top: -40px;
+  left: calc(50% - 19.5px);
+  z-index: 2;
+  width: 42px;
+  height: 57px;
+  transform: rotate(18deg);
+  transform-origin: 19.5px 54px;   /* the needle tip */
+  pointer-events: none;
+}
+
+#pixel-paper .paper-favorites-grid .paper-pin svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 #pixel-paper .paper-favorites-grid .paper-kicker {
@@ -1543,10 +1583,6 @@ html {
   margin-bottom: 18px;
 }
 
-#pixel-paper .paper-favorites-grid .paper-project-image {
-  padding: 12px;
-}
-
 #pixel-paper .paper-favorites-grid .paper-project-image img {
   transform: none;
   transition: none;
@@ -1556,7 +1592,7 @@ html {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-top: 22px;
+  margin-top: 4px;
 }
 
 #pixel-paper .paper-favorites-grid .paper-project-caption h3 {

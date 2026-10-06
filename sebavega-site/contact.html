@@ -5,7 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Contact — Sebastian Vega</title>
     <meta name="description" content="Sebastian Vega — design and photography portfolio.">
-    <link rel="icon" href="assets/seba-logo.png">
+    <!-- Link previews (Open Graph / social cards): what sites like LinkedIn, iMessage,
+         Discord and forums show when this page is shared. Image is 1200 x 630 in assets/og/. -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sebastian Vega">
+    <meta property="og:title" content="Contact — Sebastian Vega">
+    <meta property="og:description" content="Sebastian Vega — design and photography portfolio.">
+    <meta property="og:url" content="https://sebavega.com/contact">
+    <meta property="og:image" content="https://sebavega.com/assets/og/home.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Mr. Blue, a pixel-art betta fish, blowing bubbles in his fishbowl on notebook paper">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Favicon (browser tab icon): Mr. Blue the betta, in pixel art. -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600&family=Pixelify+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -58,40 +74,32 @@
             <span class="os-clock"></span>
           </div>
 
-          <section class="os-window" aria-labelledby="contact-title">
-            <div class="os-titlebar" aria-hidden="true">
-              <span class="os-close"></span>
-              <span class="os-title">contact.app</span>
-            </div>
+          <!-- The desktop: one line of text and three app icons, centred on the
+               screen's background (no window). -->
+          <section class="os-desktop" aria-labelledby="contact-title">
+            <h1 class="os-kicker" id="contact-title">Let’s connect</h1>
 
-            <div class="os-content">
-              <p class="os-kicker">Let’s connect</p>
-              <h1 id="contact-title">Have something in mind?</h1>
-              <p class="os-lead">Let’s talk design, photography, or your next project.</p>
-
-              <!--
-                ICONS: each button has a small pixel <svg> icon. To use the official
-                LinkedIn or Instagram icon instead, download it from their brand
-                pages and replace that button's <svg ...>...</svg> with:
-                  <img class="os-icon" src="assets/icons/linkedin.svg" alt="">
-              -->
-              <nav class="os-buttons" aria-label="Find me online">
-                <a class="os-button" href="https://www.linkedin.com/in/5ebah/" target="_blank" rel="noopener noreferrer">
-                  <svg class="os-icon" viewBox="0 0 8 7" aria-hidden="true" focusable="false"><!-- briefcase --><rect x="3" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="5" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="1" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="5" y="2" width="1" height="1"/><rect x="6" y="2" width="1" height="1"/><rect x="7" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="7" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="1" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/><rect x="5" y="4" width="1" height="1"/><rect x="6" y="4" width="1" height="1"/><rect x="7" y="4" width="1" height="1"/><rect x="0" y="5" width="1" height="1"/><rect x="7" y="5" width="1" height="1"/><rect x="0" y="6" width="1" height="1"/><rect x="1" y="6" width="1" height="1"/><rect x="2" y="6" width="1" height="1"/><rect x="3" y="6" width="1" height="1"/><rect x="4" y="6" width="1" height="1"/><rect x="5" y="6" width="1" height="1"/><rect x="6" y="6" width="1" height="1"/><rect x="7" y="6" width="1" height="1"/></svg>
-                  <span>LinkedIn</span>
-                </a>
-                <a class="os-button" href="https://www.instagram.com/se.bas7ian/" target="_blank" rel="noopener noreferrer">
-                  <svg class="os-icon" viewBox="0 0 8 7" aria-hidden="true" focusable="false"><!-- camera --><rect x="2" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="1" y="1" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="4" y="1" width="1" height="1"/><rect x="5" y="1" width="1" height="1"/><rect x="6" y="1" width="1" height="1"/><rect x="7" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="1" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="5" y="2" width="1" height="1"/><rect x="6" y="2" width="1" height="1"/><rect x="7" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="1" y="3" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="6" y="3" width="1" height="1"/><rect x="7" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="1" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/><rect x="6" y="4" width="1" height="1"/><rect x="7" y="4" width="1" height="1"/><rect x="0" y="5" width="1" height="1"/><rect x="1" y="5" width="1" height="1"/><rect x="2" y="5" width="1" height="1"/><rect x="5" y="5" width="1" height="1"/><rect x="6" y="5" width="1" height="1"/><rect x="7" y="5" width="1" height="1"/><rect x="0" y="6" width="1" height="1"/><rect x="1" y="6" width="1" height="1"/><rect x="2" y="6" width="1" height="1"/><rect x="3" y="6" width="1" height="1"/><rect x="4" y="6" width="1" height="1"/><rect x="5" y="6" width="1" height="1"/><rect x="6" y="6" width="1" height="1"/><rect x="7" y="6" width="1" height="1"/></svg>
-                  <span>Instagram</span>
-                </a>
-                <!-- RESUME: opens the resume PDF on Google Drive. To update it, replace the
-                     file in Drive (keeping the same link), or paste a new link here. -->
-                <a class="os-button" href="https://drive.google.com/file/d/1t8mQrOinqBeGehFvhAvp8cQb30OGEW70/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                  <svg class="os-icon" viewBox="0 0 6 8" aria-hidden="true" focusable="false"><!-- document --><rect x="0" y="0" width="1" height="1"/><rect x="1" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="4" y="1" width="1" height="1"/><rect x="5" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="2" width="1" height="1"/><rect x="5" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="5" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="5" y="4" width="1" height="1"/><rect x="0" y="5" width="1" height="1"/><rect x="5" y="5" width="1" height="1"/><rect x="0" y="6" width="1" height="1"/><rect x="2" y="6" width="1" height="1"/><rect x="3" y="6" width="1" height="1"/><rect x="5" y="6" width="1" height="1"/><rect x="0" y="7" width="1" height="1"/><rect x="1" y="7" width="1" height="1"/><rect x="2" y="7" width="1" height="1"/><rect x="3" y="7" width="1" height="1"/><rect x="4" y="7" width="1" height="1"/><rect x="5" y="7" width="1" height="1"/></svg>
-                  <span>Resume</span>
-                </a>
-              </nav>
-            </div>
+            <!--
+              ICONS: 16 x 16 pixel images in assets/icons/, scaled up with crisp
+              pixels by contact.css. To change one, replace its .png (keep it
+              16 x 16, or update the width/height below).
+            -->
+            <nav class="os-buttons" aria-label="Find me online">
+              <a class="os-button" href="https://www.linkedin.com/in/5ebah/" target="_blank" rel="noopener noreferrer">
+                <img class="os-icon" src="assets/icons/linkedin.png" alt="" width="16" height="16">
+                <span class="os-label">LinkedIn</span>
+              </a>
+              <a class="os-button" href="https://www.instagram.com/se.bas7ian/" target="_blank" rel="noopener noreferrer">
+                <img class="os-icon" src="assets/icons/instagram.png" alt="" width="16" height="16">
+                <span class="os-label">Instagram</span>
+              </a>
+              <!-- RESUME: opens the resume PDF on Google Drive. To update it, replace the
+                   file in Drive (keeping the same link), or paste a new link here. -->
+              <a class="os-button" href="https://drive.google.com/file/d/1t8mQrOinqBeGehFvhAvp8cQb30OGEW70/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                <img class="os-icon" src="assets/icons/resume.png" alt="" width="16" height="16">
+                <span class="os-label">Resume</span>
+              </a>
+            </nav>
           </section>
         </div>
 

@@ -196,10 +196,22 @@
   color: var(--ink);
   background: #fffdf5;
   border: 1px solid #d7cfba;
-  box-shadow: 4px 5px 0 #bcb39830;
+  box-shadow: 0 0 0 #bcb39800;   /* no shadow at rest; it appears on hover */
   text-decoration: none;
   position: relative;
   min-width: 0;
+}
+
+/* Hover/keyboard shadow. paper-motion.js animates the same shadow (with the
+   lift) when GSAP is available; this rule covers the case when it isn't. */
+@media (hover: hover) {
+  .work-page a.work-paper:hover {
+    box-shadow: 6px 10px 0 #bcb3984d;
+  }
+}
+
+.work-page a.work-paper:focus-visible {
+  box-shadow: 6px 10px 0 #bcb3984d;
 }
 
 .work-page a.work-paper {
@@ -214,46 +226,43 @@
 
 .work-page .work-feature {
   grid-template-columns: 1.12fr 1fr;
-  align-items: stretch;
+  align-items: center;
 }
 
+/* Featured United card: a wide cover on desktop and a tall cover below
+   900px (swapped by the <picture> in work.html). Each frame matches its
+   image's shape, so the cover fills it with nothing cut off. */
 .work-page .work-feature-art {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  padding: clamp(24px, 3vw, 48px);
-  background: #e4ebf1;
+  position: relative;
   min-width: 0;
+  margin: clamp(16px, 1.7vw, 28px);
+  margin-right: 0;
+  overflow: hidden;
+  background: #e4ebf1;
+}
+
+.work-page .work-feature-art picture {
+  display: block;
+}
+
+.work-page .work-feature-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1600 / 1014;   /* wide cover (united-featured.webp) */
+  object-fit: cover;
 }
 
 .work-page .work-stamp {
-  align-self: flex-start;
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 1;
   color: var(--blue);
   font: 1.125rem/1.2 'Pixelify Sans', monospace;
+  background: #fffdf5;
   border: 1px solid #37639980;
   padding: 7px 10px;
-}
-
-.work-page .work-phone-pair {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(16px, 2.4vw, 36px);
-  width: 100%;
-}
-
-.work-page .work-phone-pair img {
-  width: min(40%, 190px);
-  height: clamp(220px, 25vw, 365px);
-  object-fit: contain;
-}
-
-.work-page .work-art-caption {
-  color: #48596b;
-  font-size: .875rem;
-  text-align: center;
 }
 
 .work-page .work-feature-copy {
@@ -335,23 +344,23 @@
   margin-bottom: 24px;
 }
 
+/* Card thumbnails fill their frame edge to edge (shapes set in styles.css).
+   The background colour only shows while the image is loading. */
 .work-page .work-art {
   background: #e7e9df;
-  aspect-ratio: 4 / 3;
-  padding: 20px;
-  display: grid;
-  place-items: center;
+  aspect-ratio: var(--thumb-ratio);
+  overflow: hidden;
 }
 
 .work-page .work-art img {
+  display: block;
   width: 100%;
   height: 100%;
-  min-height: 0;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .work-page .work-ux-grid .work-art {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: var(--thumb-ratio-wide);
 }
 
 .work-page .work-yelp .work-art {
@@ -387,6 +396,26 @@
 
   .work-page .work-feature {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Tablets and phones: the tall cover (united-mobile.webp, 4:5) takes over. */
+@media (max-width: 899px) {
+  .work-page .work-feature {
+    grid-template-columns: minmax(0, 0.9fr) 1fr;
+  }
+
+  .work-page .work-feature-art img {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+/* Large phones / small tablets (one column, 480–767px): a square crop keeps
+   the tall cover from filling the whole screen. Only empty gradient above
+   the logo and below the phones is trimmed. */
+@media (min-width: 480px) and (max-width: 767px) {
+  .work-page .work-feature-art img {
+    aspect-ratio: 1 / 1;
   }
 }
 
@@ -436,15 +465,14 @@
   }
 
   .work-page .work-feature-art {
-    gap: 18px;
+    margin: 16px 16px 0;
   }
 
-  .work-page .work-phone-pair img {
-    height: clamp(225px, 62vw, 330px);
-  }
-
-  .work-page .work-ux-grid .work-art {
-    aspect-ratio: 4 / 3;
+  .work-page .work-stamp {
+    top: 8px;
+    left: 8px;
+    padding: 4px 7px;
+    font-size: .8125rem;
   }
 }
 
