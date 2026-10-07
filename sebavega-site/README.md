@@ -45,16 +45,28 @@ how it's organised. Start there.
 | `hero.css` | home | The first screen of the homepage |
 | `home-notes.css` | home | Sticky notes and favorites cards |
 | `work.css` | work | Selected Work page and fishbowl layout |
-| `case-pages.css` | project pages | The six case studies |
+| `case-pages.css` | project pages | Base styles for the six case studies |
+| `case-study.css` | project pages | Case-study layout: header, side nav, steps, carousel, embeds |
+| `case-study.js` | project pages | Side nav progress, step panels, phone carousel, Figma placeholders |
+| `cereal-model.css` / `.js` | Cinnamon Toast Punk | The 3D box viewer, idle turn and drag |
+| `ctp-box.css` / `.js` | Cinnamon Toast Punk | Sketch sheets, the scroll-driven 3D box sequence, the keychain section |
+| `scope-flipbook.css` / `.js` | Scope | The self-hosted magazine flipbook (StPageFlip) |
+| `page-flip.browser.js` | Scope | Backup copy of StPageFlip 2.0.7 (MIT), used only if its CDN fails (don't edit) |
+| `ScrollTrigger.min.js` | Cinnamon Toast Punk | GSAP scroll plugin for the 3D box (don't edit) |
 | `contact.css` | contact | The desk scene and the computer screen |
 | `site.js` | every page | Phone menu and page loader |
 | `home.js` | home | Pixel art, stationery placement and dragging |
 | `home-notes.js` | home | Favorites cards lift on hover |
 | `scroll-cue.js` | home | The "Scroll" arrow |
-| `paper-motion.js` | work + project pages | Scroll-in motion and card hover |
+| `paper-motion.js` | work | Scroll-in motion and card hover |
 | `work-fishbowl.js` | work | The fish, its jump and Mr. Blue |
 | `contact-desk.js` | contact | Draws the desk scene; menu bar clock |
-| `gsap.min.js` | home, work, project pages | Animation library (don't edit) |
+| `gsap.min.js` | home, work, Cinnamon Toast Punk | Animation library (don't edit) |
+
+Folders: `model/` holds the 3D cereal box (`cinnamon-toast-punk.glb`, its
+lighting, flat face images and the model-viewer library); `ctp/` holds the
+Cinnamon Toast Punk sketch, drafts and keychain images; `scope-pages/` holds
+the 48 Scope magazine pages (`page-01.webp` … `page-48.webp`, in reading order).
 
 ## Common changes
 
@@ -68,7 +80,22 @@ how it's organised. Start there.
 - **Photo-booth strip photos (homepage):** see the comment above `paper-photostrip` in `index.html`.
 - **Pixel art colours:** `home.js` → section 1 (each shape has a hex colour).
 - **Resume:** the Resume button opens your PDF on Google Drive. Update the file in Drive, or change the link in `contact.html` (search for "RESUME").
-- **Figma prototypes:** in each UX page's HTML, find "FIGMA PROTOTYPE EMBED" and follow the steps.
+- **Figma prototypes:** in `unitedairlines.html`, `yelp.html` and `cura.html`, search for "FIGMA:" and
+  paste the embed link over the `[Figma embed URL: …]` placeholder in the iframe's `src`. Until then the
+  page shows a labelled placeholder box.
+- **Scope magazine pages:** replace the images in `assets/scope-pages/` (same names, 1000 x 1294 px).
+  If the page count changes, update the list near "FLIPBOOK" in `scopemagazine.html`.
+
+## After updating CSS or JavaScript (cache version)
+
+Every page loads its CSS and JS with a version tag, e.g.
+`assets/styles.css?v=2026-10-06`. Browsers keep old copies of these files
+for a while; changing the tag makes them download the new ones, so returning
+visitors never see new HTML mixed with old styles or scripts.
+
+Whenever you change any file in `assets/` that ends in `.css` or `.js`,
+find and replace the old tag (e.g. `?v=2026-10-06d`) with today's date across
+all the `.html` pages, and upload those pages along with the changed files.
 
 ## Favicon (browser tab icon)
 

@@ -26,12 +26,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600&family=Pixelify+Sans:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/rzu3vfi.css">
-    <link rel="stylesheet" href="assets/styles.css">
-    <script src="assets/site.js" defer></script>
-    <link rel="stylesheet" href="assets/case-pages.css">
-    <script src="assets/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
-    <script src="assets/paper-motion.js" defer></script>
+    <!-- CACHE VERSION: "?v=..." on the CSS/JS links makes browsers download fresh
+         copies after an update. When you change any CSS or JS file, change this
+         date on every page (find and replace "?v=2026-10-06e"). -->
+    <link rel="stylesheet" href="assets/styles.css?v=2026-10-06e">
+    <script src="assets/site.js?v=2026-10-06e" defer></script>
+    <link rel="stylesheet" href="assets/case-pages.css?v=2026-10-06e">
+    <link rel="stylesheet" href="assets/case-study.css?v=2026-10-06e">
+    <script src="assets/case-study.js?v=2026-10-06e" defer></script>
+    <link rel="stylesheet" href="assets/cereal-model.css?v=2026-10-06e">
+    <link rel="stylesheet" href="assets/ctp-box.css?v=2026-10-06e">
+    <script src="assets/gsap.min.js?v=2026-10-06e" defer></script>
+    <script src="assets/ScrollTrigger.min.js?v=2026-10-06e" defer></script>
+    <!-- model-viewer 4.1.0 (Google, BSD-3-Clause), served from this site -->
+    <script type="module" src="assets/model/model-viewer-4.1.0.min.js"></script>
+    <script src="assets/cereal-model.js?v=2026-10-06e" defer></script>
+    <script src="assets/ctp-box.js?v=2026-10-06e" defer></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -55,198 +65,255 @@
         <a href="contact">contact</a>
       </nav>
     </header>
-    <main id="main" class="cs-page cs-graphic">
-      <a class="cs-back" href="work">All selected work</a>
-      <header class="cs-heading">
-        <div>
-          <p class="cs-kicker">Graphic design / Packaging &amp; identity</p>
-          <h1>Cinnamon Toast Punk</h1>
-          <p class="cs-status">Solo ARTD 251 project · Special-edition concept</p>
+
+    <main id="main" class="cs-page cs-graphic csx">
+      <header class="csx-hero">
+        <a class="csx-back" href="work"><span class="csx-back-arrow" aria-hidden="true"></span>Back to selected work</a>
+        <p class="csx-tag">Graphic / Packaging design</p>
+        <h1>Cinnamon Toast Punk</h1>
+        <div class="csx-pitch">
+          <p class="csx-subtitle">A familiar cereal. A louder personality.</p>
+          <p>A punk-inspired reimagining of Cinnamon Toast Crunch, from expressive packaging to a spray-can collectible. The cereal stays recognizable while the attitude changes.</p>
         </div>
-        <div>
-          <h2>A familiar cereal. A louder personality.</h2>
-          <p class="cs-intro">A punk-inspired reimagining of Cinnamon Toast Crunch, from expressive packaging to a spray-can collectible. The cereal stays recognizable while the attitude changes.</p>
-        </div>
+        <p class="csx-status">Solo ARTD 251 project, special-edition concept</p>
       </header>
-      <div class="cs-reveal">
-        <figure class="cs-visual cs-landscape">
-          <div class="cs-placeholder" role="img" aria-label="Hero image: three views of the final cereal package placeholder">
-            <span aria-hidden="true">[Hero image: three views of the final cereal package]</span>
-          </div>
-          <figcaption>Landscape · 16:9</figcaption>
-        </figure>
-      </div>
-      <nav class="cs-index" aria-label="Project sections">
-        <a href="#overview">Overview</a>
-        <a href="#process">Process</a>
-        <a href="#solution">Final design</a>
-        <a href="#reflection">Outcome & reflection</a>
-      </nav>
-      <div class="cs-overview" id="overview">
-        <aside class="cs-paper cs-glance" aria-labelledby="glance-title">
-          <h2 id="glance-title">At a glance</h2>
-          <dl>
-            <div>
-              <dt>My role</dt>
-              <dd>Concept, identity, illustration &amp; packaging</dd>
-            </div>
-            <div>
-              <dt>Timeline</dt>
-              <dd>[placeholder: add project dates and duration]</dd>
-            </div>
-            <div>
-              <dt>Team</dt>
-              <dd>Solo project · Sebastian Vega</dd>
-            </div>
-            <div>
-              <dt>Tools</dt>
-              <dd>[placeholder: list illustration, packaging, and mockup tools]</dd>
-            </div>
-          </dl>
-        </aside>
-        <div class="cs-context">
-          <section>
-            <p class="cs-kicker">Context</p>
-            <h2>The brief</h2>
-            <p>Reimagine an existing cereal as a special edition for younger audiences and collectors. The package needed a distinctive personality while keeping a clear connection to the original product.</p>
-          </section>
-          <section>
-            <h2>The concept</h2>
-            <p>Translate the brand’s chaotic energy into graffiti lettering, punk-styled Cinnamojis, paint splatters, and a controlled blue, pink, and purple palette.</p>
-          </section>
-          <section class="cs-contribution">
-            <h3>My contribution</h3>
-            <p>I developed the concept, visual identity, illustrations, box design, dieline, mockups, and collectible direction.</p>
-          </section>
-        </div>
-      </div>
-      <section id="process" class="cs-section">
-        <header class="cs-section-heading">
-          <p class="cs-kicker">From question to direction</p>
-          <h2>The process</h2>
-          <p>Sketches, explorations, and the choices that hold the work together.</p>
-        </header>
-        <article class="cs-process-row cs-reveal">
-          <div class="cs-copy">
-            <p class="cs-kicker">Sketches</p>
-            <h3>Start with attitude, then find structure.</h3>
-            <p>The project developed from an initial sketch through multiple drafts. The central idea was a rebellious street-inspired edition that still reads as a cereal package.</p>
-          </div>
-          <figure class="cs-visual cs-landscape">
-            <div class="cs-placeholder" role="img" aria-label="Sketch image: initial cereal-box concepts placeholder">
-              <span aria-hidden="true">[Sketch image: initial cereal-box concepts]</span>
-            </div>
-            <figcaption>Landscape · 16:9</figcaption>
-          </figure>
-        </article>
-        <article class="cs-process-row cs-reveal">
-          <div class="cs-copy">
-            <p class="cs-kicker">Explorations</p>
-            <h3>Let feedback sharpen the direction.</h3>
-            <p>Feedback called for more focused graffiti references, a stronger cereal cutout, a believable brick setting, and a tighter palette. Those comments helped move the package from general visual noise toward a clearer concept.</p>
-          </div>
-          <figure class="cs-visual cs-landscape">
-            <div class="cs-placeholder" role="img" aria-label="Exploration image: sketch, first draft, and second draft placeholder">
-              <span aria-hidden="true">[Exploration image: sketch, first draft, and second draft]</span>
-            </div>
-            <figcaption>Landscape · 16:9</figcaption>
-          </figure>
-        </article>
-        <article class="cs-process-row cs-reveal">
-          <div class="cs-copy">
-            <p class="cs-kicker">Typography &amp; color</p>
-            <h3>Keep the chaos intentional.</h3>
-            <p>A graffiti title leads the front panel. Blue, pink, and purple unify the splatters and characters, while the cereal opening preserves a product cue.</p>
-          </div>
-          <figure class="cs-visual cs-landscape">
-            <div class="cs-placeholder" role="img" aria-label="Study image: graffiti lettering and three-color system placeholder">
-              <span aria-hidden="true">[Study image: graffiti lettering and three-color system]</span>
-            </div>
-            <figcaption>Landscape · 16:9</figcaption>
-          </figure>
-        </article>
-        <article class="cs-process-row cs-reveal">
-          <div class="cs-copy">
-            <p class="cs-kicker">Refinement</p>
-            <h3>Think beyond the front panel.</h3>
-            <p>The design extends across the dieline with nutrition information and character details. Spray-can keychains carry the same visual language into blue, pink, purple, and a rare chromatic concept.</p>
-          </div>
-          <figure class="cs-visual cs-spread">
-            <div class="cs-placeholder" role="img" aria-label="Production image: complete dieline and panel details placeholder">
-              <span aria-hidden="true">[Production image: complete dieline and panel details]</span>
-            </div>
-            <figcaption>Spread · 2:1</figcaption>
-          </figure>
-        </article>
-      </section>
-      <section id="solution" class="cs-section">
-        <header class="cs-section-heading">
-          <p class="cs-kicker">The design direction</p>
-          <h2>Final design</h2>
-          <p>The special edition combines a graffiti identity, wall-shaped cereal window, expressive characters, and a coordinated collectible extension.</p>
-        </header>
-        <div class="cs-gallery cs-reveal">
-          <figure class="cs-visual cs-portrait">
-            <div class="cs-placeholder" role="img" aria-label="Packaging image: final front panel placeholder">
-              <span aria-hidden="true">[Packaging image: final front panel]</span>
-            </div>
-            <figcaption>Portrait · 3:4</figcaption>
-          </figure>
-          <figure class="cs-visual cs-spread">
-            <div class="cs-placeholder" role="img" aria-label="Packaging image: complete box dieline placeholder">
-              <span aria-hidden="true">[Packaging image: complete box dieline]</span>
-            </div>
-            <figcaption>Spread · 2:1</figcaption>
-          </figure>
-          <figure class="cs-visual cs-landscape">
-            <div class="cs-placeholder" role="img" aria-label="Product image: spray-can collectible colorways placeholder">
-              <span aria-hidden="true">[Product image: spray-can collectible colorways]</span>
-            </div>
-            <figcaption>Landscape · 16:9</figcaption>
-          </figure>
-        </div>
-        <div class="cs-decisions">
-          <article>
-            <h3>Keep recognition</h3>
-            <p>Retain the Cinnamojis and a visible cereal cue.</p>
-          </article>
-          <article>
-            <h3>Extend one concept</h3>
-            <p>Carry lettering, color, and attitude from box to collectible.</p>
-          </article>
-        </div>
-      </section>
-      <section id="reflection" class="cs-section cs-paper cs-reflection cs-reveal">
-        <p class="cs-kicker">What this work establishes</p>
-        <h2>Outcome & reflection</h2>
+
+      <dl class="csx-facts">
         <div>
-          <section>
-            <h3>What was delivered</h3>
-            <p>Delivered the box design, dieline, mockups, and collectible concept. [placeholder: add final critique or production feedback]</p>
-          </section>
-          <section>
-            <h3>What comes next</h3>
-            <p>Planning the package as a connected object helped keep later decisions consistent. With more time, I would explore a wider range of sketches before committing to a direction.</p>
-          </section>
+          <dt>My role</dt>
+          <dd>Concept, identity, illustration &amp; packaging</dd>
         </div>
-      </section>
-      <details class="cs-source">
-        <summary>Project context & draft notes</summary>
-        <p>Sebastian Vega ARTD 251 Final Presentation.</p>
-        <p>Bracketed prompts identify information still to confirm. Labeled visual spaces reserve the intended image proportions; original project assets remain saved.</p>
-      </details>
-      <nav class="cs-next" aria-label="More projects">
-        <a class="cs-back-work" href="work">
-          <img src="assets/scroll-arrow.svg" alt="" aria-hidden="true" width="22" height="32">
-          <span>Back to selected work</span>
-        </a>
-        <a class="cs-next-note" href="bauhausai" style="--note-bg: #dfe5d7">
-          <span class="cs-tape" aria-hidden="true"></span>
-          <span class="cs-next-label">Next project</span>
-          <strong>If Bauhaus Had AI</strong>
-          <img class="cs-next-arrow" src="assets/scroll-arrow.svg" alt="" aria-hidden="true" width="22" height="32">
-        </a>
-      </nav>
+        <div>
+          <dt>Timeline</dt>
+          <dd class="csx-todo">[add project dates and duration]</dd>
+        </div>
+        <div>
+          <dt>Tools</dt>
+          <dd class="csx-todo">[add illustration, packaging, and mockup tools]</dd>
+        </div>
+      </dl>
+
+      <figure class="csx-cover">
+        <img src="assets/thumbs/ctp.webp" width="1200" height="740" alt="The Cinnamon Toast Punk cereal box: a graffiti title over spray-painted brick, with punk Cinnamojis around the cereal window" fetchpriority="high" decoding="async">
+      </figure>
+
+      <div class="csx-body">
+        <nav class="csx-toc" aria-label="Case study sections">
+          <ol class="csx-toc-list">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#sketches">Sketches</a></li>
+            <li><a href="#box">The box in 3D</a></li>
+            <li><a href="#collectible">The collectible</a></li>
+            <li><a href="#reflection">Outcome &amp; reflection</a></li>
+          </ol>
+        </nav>
+
+        <div class="csx-content">
+          <section id="overview" class="csx-section" aria-labelledby="overview-title">
+            <h2 id="overview-title">Overview</h2>
+            <div class="csx-two">
+              <div>
+                <h3>The brief</h3>
+                <p>Reimagine an existing cereal as a special edition. Cinnamon Toast Crunch’s current box is playful and family friendly, built on colorful swirls, bold type, and the “cinnamilk” swirl. The redesign had to keep that recognition and give it a new personality.</p>
+              </div>
+              <div>
+                <h3>The concept</h3>
+                <p>The brand already calls itself crazy. Cinnamon Toast Punk takes that word somewhere rebellious: graffiti, spray paint, and punk energy on a cereal box, about breaking the rules and starting the day loud.</p>
+              </div>
+            </div>
+            <div class="csx-goals">
+              <h3>Three goals</h3>
+              <ol>
+                <li>Build an edgy, street-art look from vibrant color and graffiti forms.</li>
+                <li>Position the cereal as the snack for chaotic, adventurous people, not just for kids.</li>
+                <li>Keep the brand’s mischief recognizable while speaking to an older, trend-conscious buyer.</li>
+              </ol>
+            </div>
+            <div class="csx-callout">
+              <h3>Who it’s for</h3>
+              <p>Gen Z, pre-teens, and young adults drawn to bold visuals and self-expression, plus collectors chasing every Cinnamon Toast Crunch box or building a graffiti and punk collection.</p>
+            </div>
+          </section>
+
+          <section id="sketches" class="csx-section" aria-labelledby="sketches-title">
+            <h2 id="sketches-title">Sketches</h2>
+            <p class="csx-lede">The cover went through four rounds, from a pencil sketch to the final box. Each round answered the feedback from the one before.</p>
+            <ol class="ctp-rounds">
+              <li>
+                <figure class="ctp-sheet">
+                  <img src="assets/ctp/sketch.webp" width="600" height="900" alt="Pencil sketch of the box: graffiti lettering reading Cinnamon Toast Crunch with a crown and arrows, Cinnamojis holding spray cans around a paint drip pouring over the cereal, and GRAFFITI written down the side panel." loading="lazy" decoding="async">
+                </figure>
+                <h3>Initial sketch</h3>
+                <p>Set the idea: a street-art box that still reads as cereal. Feedback was direct: try other graffiti styles, rethink the cutout’s shape and size, find a better brick background, and commit to one color scheme.</p>
+              </li>
+              <li>
+                <figure class="ctp-sheet">
+                  <img src="assets/ctp/draft-1.webp" width="600" height="900" alt="First draft: the Cinnamon Toast Punk graffiti logo on white brick with pink, purple, and blue splatter, three Cinnamojis below it, and the nutrition banner across the top." loading="lazy" decoding="async">
+                </figure>
+                <h3>First draft</h3>
+                <p>Added the main logo, the blue, pink, and purple scheme, paint splatter, the Cinnamojis, and a nutrition label across the top.</p>
+              </li>
+              <li>
+                <figure class="ctp-sheet">
+                  <img src="assets/ctp/draft-2.webp" width="600" height="900" alt="Second draft: punk-styled Cinnamojis with mohawks around a cereal window ringed in blue paint splatter, below the logo." loading="lazy" decoding="async">
+                </figure>
+                <h3>Second draft</h3>
+                <p>Made the Cinnamojis more punk to fit the theme and cut a “hole in the wall” to show the cereal, ringed in paint splatter.</p>
+              </li>
+              <li>
+                <figure class="ctp-sheet ctp-sheet--final">
+                  <img src="assets/ctp/final-cover.webp" width="600" height="900" alt="Final cover: the second draft’s layout finished with the product description, net weight, and nutrition badges along the bottom." loading="lazy" decoding="async">
+                </figure>
+                <h3>Final</h3>
+                <p>One system carried around every side of the box, so the back and sides work as hard as the front.</p>
+              </li>
+            </ol>
+          </section>
+
+          <!-- THE BOX IN 3D
+               ctp-box.js picks how it behaves:
+               • With motion: as the section scrolls in, the box slides up and
+                 pins in place. One scroll timeline (GSAP ScrollTrigger,
+                 scrubbed) turns it to each side, then fades in that side's
+                 caption; the caption fades out before the next turn.
+                 Scrolling back reverses it. After the last side the pin lets
+                 go. Phones get a shorter run with three stops (no Nutrition
+                 side). The box can be dragged at any time.
+               • Reduced motion, or no JavaScript: the faces and captions as a
+                 plain list.
+               Outside the sequence the box turns slowly on its own and can be
+               dragged (cereal-model.js). Zoom is off. -->
+          <section id="box" class="csx-section ctp-box" aria-labelledby="box-title">
+            <h2 id="box-title">The box in 3D</h2>
+            <p class="csx-lede">Each side of the box carries one design decision: type, layout, illustration, and color.</p>
+
+            <div class="ctp-turn" data-turn>
+              <div class="ctp-sticky">
+                <figure class="cs-cereal-model ctp-stage">
+                  <div class="cs-cereal-stage">
+                    <img class="cs-cereal-fallback" src="assets/model/front.webp" width="844" height="1266" alt="" aria-hidden="true">
+                    <model-viewer
+                    id="cereal-model"
+                    src="assets/model/cinnamon-toast-punk.glb"
+                    alt="Interactive 3D model of the Cinnamon Toast Punk cereal box."
+                    environment-image="assets/model/readable-lighting.hdr"
+                    exposure="1"
+                    shadow-intensity="0.6"
+                    shadow-softness="1"
+                    camera-controls
+                    disable-zoom
+                    disable-pan
+                    touch-action="pan-y"
+                    interaction-prompt="none"
+                    camera-orbit="-34deg 80deg auto"
+                    field-of-view="28deg"
+                    min-field-of-view="28deg"
+                    max-field-of-view="28deg"
+                    rotation-per-second="14deg"
+                    auto-rotate-delay="0"
+                    loading="lazy"
+                    reveal="auto"></model-viewer>
+                  </div>
+                </figure>
+
+                <div class="ctp-captions">
+                  <ol class="ctp-faces" aria-label="The box, side by side">
+                    <li class="ctp-face" data-theta="0" data-phone>
+                      <img class="ctp-face-img" src="assets/model/faces/front.webp" width="600" height="900" alt="Front panel: the graffiti title over spray-painted brick, two Cinnamojis, and the cereal window ringed in blue splatter." loading="lazy" decoding="async">
+                      <div class="ctp-face-copy">
+                        <p class="ctp-face-name"><span class="ctp-face-num" aria-hidden="true">1</span> Front <span class="ctp-face-tag">Typography</span></p>
+                        <h3>A loud title that stays legible.</h3>
+                        <p>The graffiti title is the first thing you see, with a subtle blue gradient so it pops without turning into noise. Four typefaces split the work: Nerko One, Sedgwick Ave Display, Knewave, and Ruslan Display.</p>
+                      </div>
+                    </li>
+                    <li class="ctp-face" data-theta="90">
+                      <img class="ctp-face-img" src="assets/model/faces/right.webp" width="256" height="1266" alt="Nutrition side: the graffiti logo above a standard black-and-white nutrition facts panel." loading="lazy" decoding="async">
+                      <div class="ctp-face-copy">
+                        <p class="ctp-face-name"><span class="ctp-face-num" aria-hidden="true">2</span> Nutrition side <span class="ctp-face-tag">Layout</span></p>
+                        <h3>Every side follows one system.</h3>
+                        <p>The graffiti logo tops this panel so the side still belongs to the box. The nutrition facts stay in the standard black-and-white format, so they read as quickly as on any other cereal.</p>
+                      </div>
+                    </li>
+                    <li class="ctp-face" data-theta="180" data-phone>
+                      <img class="ctp-face-img" src="assets/model/faces/back.webp" width="600" height="900" alt="Back panel: Cinnamojis with a crown, a halo, and wings diving into a blue bowl through a purple milk splash, painted on brick." loading="lazy" decoding="async">
+                      <div class="ctp-face-copy">
+                        <p class="ctp-face-name"><span class="ctp-face-num" aria-hidden="true">3</span> Back <span class="ctp-face-tag">Illustration</span></p>
+                        <h3>Restyle the Cinnamojis, don’t replace them.</h3>
+                        <p>They’re how people spot the brand, so they keep their wild faces and gain punk style. One in a crown rides the paint splash into the bowl, one stares in awe under little hearts, and Chomp eyes the one relaxing in the bowl.</p>
+                      </div>
+                    </li>
+                    <li class="ctp-face" data-theta="270" data-phone>
+                      <img class="ctp-face-img" src="assets/model/faces/left.webp" width="262" height="1266" alt="Stencil side: a pink skull, a purple X-eyed smiley, and a blue diamond sprayed on brick." loading="lazy" decoding="async">
+                      <div class="ctp-face-copy">
+                        <p class="ctp-face-name"><span class="ctp-face-num" aria-hidden="true">4</span> Stencil side <span class="ctp-face-tag">Color</span></p>
+                        <h3>Three colors, not a pile.</h3>
+                        <p>Early drafts used too many colors. Narrowing to neon blue, pink, and purple, tied together with paint splatter, gave the box a scheme. Each stencil here takes one of the three, inspired by street artists’ tags.</p>
+                      </div>
+                    </li>
+                  </ol>
+
+                  <div class="ctp-dots" role="group" aria-label="Turn the box to a side" hidden>
+                    <button type="button" class="ctp-dot" aria-label="Front"></button>
+                    <button type="button" class="ctp-dot" aria-label="Nutrition side"></button>
+                    <button type="button" class="ctp-dot" aria-label="Back"></button>
+                    <button type="button" class="ctp-dot" aria-label="Stencil side"></button>
+                  </div>
+                  <p class="ctp-hint" data-hint>Drag to turn the box.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="collectible" class="csx-section ctp-collectible" aria-labelledby="collectible-title">
+            <h2 id="collectible-title">The collectible</h2>
+            <p class="csx-lede">The special edition comes with a spray-can keychain, so the box’s graffiti look leaves the cereal aisle as a small accessory.</p>
+            <figure class="ctp-keychains">
+              <img src="assets/ctp/keychains.webp" width="1400" height="1003" alt="Four spray-can keychains wrapped in brick and paint splatter with the Cinnamon Toast Punk logo: purple, blue, and pink caps, and a taller chromatic can with an iridescent cap." loading="lazy" decoding="async">
+            </figure>
+            <div class="csx-two">
+              <div>
+                <h3>One can for each color</h3>
+                <p>Blue, pink, and purple, the same three colors as the box, so every can reads as part of the set.</p>
+              </div>
+              <div>
+                <h3>One in a thousand</h3>
+                <p>An ultra rare chromatic can with a gradient finish turns up in 1 of every 1,000 boxes, adding excitement and making the set worth collecting.</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="reflection" class="csx-section" aria-labelledby="reflection-title">
+            <div class="cs-paper csx-note">
+              <h2 id="reflection-title">Outcome &amp; reflection</h2>
+              <div class="csx-two">
+                <div>
+                  <h3>What was delivered</h3>
+                  <p>The box design, its full dieline, mockups, and the spray-can keychain collectible. <span class="csx-todo">[add final critique or production feedback]</span></p>
+                </div>
+                <div>
+                  <h3>The hardest part</h3>
+                  <p>Creative blocks. I’d finish a design and dislike it right away. Asking peers and friends for feedback was the most reliable way out.</p>
+                </div>
+                <div>
+                  <h3>What I learned</h3>
+                  <p>Stick with one idea instead of drifting, plan the work so there’s time to change course, and design the sides of a box to work together.</p>
+                </div>
+                <div>
+                  <h3>What comes next</h3>
+                  <p>More sketching up front, so there are more ideas to draw from before committing to a direction.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <details class="cs-source">
+          <summary>Project context &amp; draft notes</summary>
+          <p>Summarized from Sebastian Vega’s ARTD 251 Final Presentation.</p>
+          <p>Bracketed prompts identify information still to confirm. Labeled visual spaces reserve the intended image proportions; original project assets remain saved.</p>
+          </details>
+        </div>
+      </div>
+
       <div class="cs-back-top-wrap">
         <a class="cs-back-top" href="#main">
           <img src="assets/scroll-arrow.svg" alt="" aria-hidden="true" width="22" height="32">
@@ -259,8 +326,7 @@
       <p>Always a little curious.</p>
     </footer>
     <div class="page-loader" hidden role="status" aria-live="polite">
-      <canvas width="96" height="96" aria-hidden="true">
-      </canvas>
+      <canvas width="96" height="96" aria-hidden="true"></canvas>
       <p>Drawing things together…</p>
     </div>
   </body>

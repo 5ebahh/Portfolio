@@ -26,12 +26,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600&family=Pixelify+Sans:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/rzu3vfi.css">
-    <link rel="stylesheet" href="assets/styles.css">
-    <script src="assets/site.js" defer></script>
-    <link rel="stylesheet" href="assets/case-pages.css">
-    <script src="assets/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
-    <script src="assets/paper-motion.js" defer></script>
+    <!-- CACHE VERSION: "?v=..." on the CSS/JS links makes browsers download fresh
+         copies after an update. When you change any CSS or JS file, change this
+         date on every page (find and replace "?v=2026-10-06e"). -->
+    <link rel="stylesheet" href="assets/styles.css?v=2026-10-06e">
+    <script src="assets/site.js?v=2026-10-06e" defer></script>
+    <link rel="stylesheet" href="assets/case-pages.css?v=2026-10-06e">
+    <link rel="stylesheet" href="assets/case-study.css?v=2026-10-06e">
+    <script src="assets/case-study.js?v=2026-10-06e" defer></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -55,200 +57,234 @@
         <a href="contact">contact</a>
       </nav>
     </header>
-    <main id="main" class="cs-page cs-graphic">
-      <a class="cs-back" href="work">All selected work</a>
-      <header class="cs-heading">
-        <div>
-          <p class="cs-kicker">Graphic design / Speculative collection</p>
-          <h1>If Bauhaus Had AI</h1>
-          <p class="cs-status">Concept collection · AI-assisted product imagery</p>
+
+    <main id="main" class="cs-page cs-graphic csx">
+      <header class="csx-hero">
+        <a class="csx-back" href="work"><span class="csx-back-arrow" aria-hidden="true"></span>Back to selected work</a>
+        <p class="csx-tag">Graphic design / Speculative collection</p>
+        <h1>If Bauhaus Had AI</h1>
+        <div class="csx-pitch">
+          <p class="csx-subtitle">Geometry with a warmer side.</p>
+          <p>A botanical mat, table lamp, and dining set connected by circular forms. The collection explores Bauhaus clarity through a warmer material and color language.</p>
         </div>
-        <div>
-          <h2>Geometry with a warmer side.</h2>
-          <p class="cs-intro">A botanical mat, table lamp, and dining set connected by circular forms. The collection explores Bauhaus clarity through a warmer material and color language.</p>
-        </div>
+        <p class="csx-status">Concept collection, AI-assisted product imagery</p>
       </header>
-      <div class="cs-reveal">
-        <figure class="cs-visual cs-landscape">
-          <div class="cs-placeholder" role="img" aria-label="Hero image: the mat, lamp, and dining set together placeholder">
-            <span aria-hidden="true">[Hero image: the mat, lamp, and dining set together]</span>
-          </div>
-          <figcaption>Landscape · 16:9</figcaption>
-        </figure>
-      </div>
-      <nav class="cs-index" aria-label="Project sections">
-        <a href="#overview">Overview</a>
-        <a href="#process">Process</a>
-        <a href="#solution">Final design</a>
-        <a href="#reflection">Outcome & reflection</a>
-      </nav>
-      <div class="cs-overview" id="overview">
-        <aside class="cs-paper cs-glance" aria-labelledby="glance-title">
-          <h2 id="glance-title">At a glance</h2>
-          <dl>
-            <div>
-              <dt>My role</dt>
-              <dd>Concept development &amp; product visuals</dd>
-            </div>
-            <div>
-              <dt>Timeline</dt>
-              <dd>[placeholder: add project dates and duration]</dd>
-            </div>
-            <div>
-              <dt>Team</dt>
-              <dd>[placeholder: confirm solo or collaborative work and credits]</dd>
-            </div>
-            <div>
-              <dt>Tools</dt>
-              <dd>[placeholder: name design tools and the AI image tool used]</dd>
-            </div>
-          </dl>
-        </aside>
-        <div class="cs-context">
-          <section>
-            <p class="cs-kicker">Context</p>
-            <h2>The brief</h2>
-            <p>Explore the relationship between Bauhaus and AI through a sustainable-living concept. The brief raises a tension between streamlined form and the human character that efficiency can leave behind.</p>
-          </section>
-          <section>
-            <h2>The concept</h2>
-            <p>Use a repeated halo to connect structure, silhouette, and storytelling. Botanical colors and warm materials balance geometric precision. Sustainability is a design theme, not a verified product performance claim.</p>
-          </section>
-          <section class="cs-contribution">
-            <h3>My contribution</h3>
-            <p>The project includes concept development, product imagery, and a framed presentation. AI was used in the image-making process. [placeholder: clarify my authorship, image selection, and editing process]</p>
-          </section>
-        </div>
-      </div>
-      <section id="process" class="cs-section">
-        <header class="cs-section-heading">
-          <p class="cs-kicker">From question to direction</p>
-          <h2>The process</h2>
-          <p>Sketches, explorations, and the choices that hold the work together.</p>
-        </header>
-        <article class="cs-process-row cs-reveal">
-          <div class="cs-copy">
-            <p class="cs-kicker">Sketches</p>
-            <h3>Find a form that can travel.</h3>
-            <p>Initial sketches explored cylindrical and circular forms across a mat, lamp, and table set. Repetition offered a way to make different objects feel related.</p>
-          </div>
-          <figure class="cs-visual cs-landscape">
-            <div class="cs-placeholder" role="img" aria-label="Sketch image: early mat, lamp, and table studies placeholder">
-              <span aria-hidden="true">[Sketch image: early mat, lamp, and table studies]</span>
-            </div>
-            <figcaption>Landscape · 16:9</figcaption>
-          </figure>
-        </article>
-        <article class="cs-process-row cs-reveal">
-          <div class="cs-copy">
-            <p class="cs-kicker">Explorations</p>
-            <h3>Build from structure, not a style shortcut.</h3>
-            <p>The Wagenfeld lamp informed geometric clarity; Breuer’s B9 tubular-steel tables informed light structural loops. The halo became a shared element across the collection.</p>
-          </div>
-          <figure class="cs-visual cs-landscape">
-            <div class="cs-placeholder" role="img" aria-label="Exploration image: references and halo variations placeholder">
-              <span aria-hidden="true">[Exploration image: references and halo variations]</span>
-            </div>
-            <figcaption>Landscape · 16:9</figcaption>
-          </figure>
-        </article>
-        <article class="cs-process-row cs-reveal">
-          <div class="cs-copy">
-            <p class="cs-kicker">Typography &amp; color</p>
-            <h3>Let the palette carry warmth.</h3>
-            <p>Green, terracotta, brown, and cream support the botanical direction. Chrome-like steel, walnut, and woven fiber are proposed material cues in the concept imagery.</p>
-            <p class="cs-missing">[placeholder: identify the typography and explain its role in the presentation]</p>
-          </div>
-          <figure class="cs-visual cs-landscape">
-            <div class="cs-placeholder" role="img" aria-label="Study image: palette, material cues, and presentation typography placeholder">
-              <span aria-hidden="true">[Study image: palette, material cues, and presentation typography]</span>
-            </div>
-            <figcaption>Landscape · 16:9</figcaption>
-          </figure>
-        </article>
-        <article class="cs-process-row cs-reveal">
-          <div class="cs-copy">
-            <p class="cs-kicker">Refinement</p>
-            <h3>Check the family resemblance.</h3>
-            <p>The final presentation applies the halo to the mat’s composition, the lamp’s enclosing loop, and the dining set’s frames. AI-assisted imagery communicates the proposed objects rather than manufactured products.</p>
-            <p class="cs-missing">[placeholder: describe prompts, selection criteria, edits, and a specific refinement]</p>
-          </div>
-          <figure class="cs-visual cs-landscape">
-            <div class="cs-placeholder" role="img" aria-label="Comparison image: concept variations and selected product visuals placeholder">
-              <span aria-hidden="true">[Comparison image: concept variations and selected product visuals]</span>
-            </div>
-            <figcaption>Landscape · 16:9</figcaption>
-          </figure>
-        </article>
-      </section>
-      <section id="solution" class="cs-section">
-        <header class="cs-section-heading">
-          <p class="cs-kicker">The design direction</p>
-          <h2>Final design</h2>
-          <p>Three speculative objects share a circular language without becoming identical: a patterned mat, an orb light held in a loop, and a coordinated table-and-stool set.</p>
-        </header>
-        <div class="cs-gallery cs-reveal">
-          <figure class="cs-visual cs-portrait">
-            <div class="cs-placeholder" role="img" aria-label="Product image: Botanical Halo Mat placeholder">
-              <span aria-hidden="true">[Product image: Botanical Halo Mat]</span>
-            </div>
-            <figcaption>Portrait · 3:4</figcaption>
-          </figure>
-          <figure class="cs-visual cs-portrait">
-            <div class="cs-placeholder" role="img" aria-label="Product image: Halo Table Lamp placeholder">
-              <span aria-hidden="true">[Product image: Halo Table Lamp]</span>
-            </div>
-            <figcaption>Portrait · 3:4</figcaption>
-          </figure>
-          <figure class="cs-visual cs-landscape">
-            <div class="cs-placeholder" role="img" aria-label="Product image: Halo Dining Set placeholder">
-              <span aria-hidden="true">[Product image: Halo Dining Set]</span>
-            </div>
-            <figcaption>Landscape · 16:9</figcaption>
-          </figure>
-        </div>
-        <div class="cs-decisions">
-          <article>
-            <h3>Repeat a structural idea</h3>
-            <p>Let the halo affect shape and construction cues, not only decoration.</p>
-          </article>
-          <article>
-            <h3>Balance precision and warmth</h3>
-            <p>Use restrained botanical colors and natural-material cues alongside metal.</p>
-          </article>
-        </div>
-      </section>
-      <section id="reflection" class="cs-section cs-paper cs-reflection cs-reveal">
-        <p class="cs-kicker">What this work establishes</p>
-        <h2>Outcome & reflection</h2>
+
+      <dl class="csx-facts">
         <div>
-          <section>
-            <h3>What was delivered</h3>
-            <p>Delivered concept visuals and a framed collection presentation. Manufacturing feasibility, material sourcing, and environmental performance were not established.</p>
-          </section>
-          <section>
-            <h3>What comes next</h3>
-            <p>A shared constraint gave three different products a coherent identity. [placeholder: add personal learning and the next step for testing feasibility or refining the collection]</p>
-          </section>
+          <dt>My role</dt>
+          <dd>Concept development &amp; product visuals</dd>
         </div>
-      </section>
-      <details class="cs-source">
-        <summary>Project context & draft notes</summary>
-        <p>If Bauhaus Had AI project presentation / Artboard 7-100 PDF.</p>
-        <p>Bracketed prompts identify information still to confirm. Labeled visual spaces reserve the intended image proportions; original project assets remain saved.</p>
-      </details>
-      <nav class="cs-next" aria-label="More projects">
-        <a class="cs-back-work" href="work">
-          <img src="assets/scroll-arrow.svg" alt="" aria-hidden="true" width="22" height="32">
-          <span>Back to selected work</span>
-        </a>
-        <a class="cs-next-note" href="unitedairlines" style="--note-bg: #e4ebf1">
-          <span class="cs-tape" aria-hidden="true"></span>
-          <span class="cs-next-label">Next project</span>
-          <strong>United Airlines</strong>
-          <img class="cs-next-arrow" src="assets/scroll-arrow.svg" alt="" aria-hidden="true" width="22" height="32">
-        </a>
-      </nav>
+        <div>
+          <dt>Timeline</dt>
+          <dd class="csx-todo">[add project dates and duration]</dd>
+        </div>
+        <div>
+          <dt>Tools</dt>
+          <dd class="csx-todo">[add name design tools and the AI image tool used]</dd>
+        </div>
+      </dl>
+
+      <figure class="csx-cover">
+        <img src="assets/thumbs/bauhaus.webp" width="1200" height="798" alt="If Bauhaus Had AI title beside a green concentric-circle eye" fetchpriority="high" decoding="async">
+      </figure>
+
+      <div class="csx-body">
+        <nav class="csx-toc" aria-label="Case study sections">
+          <ol class="csx-toc-list">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#solution">Final design</a></li>
+            <li><a href="#reflection">Outcome &amp; reflection</a></li>
+          </ol>
+        </nav>
+
+        <div class="csx-content">
+          <section id="overview" class="csx-section" aria-labelledby="overview-title">
+            <h2 id="overview-title">Overview</h2>
+            <div class="csx-two">
+              <div>
+                <h3>The brief</h3>
+                <p>Explore the relationship between Bauhaus and AI through a sustainable-living concept. The brief raises a tension between streamlined form and the human character that efficiency can leave behind.</p>
+              </div>
+              <div>
+                <h3>The concept</h3>
+                <p>Use a repeated halo to connect structure, silhouette, and storytelling. Botanical colors and warm materials balance geometric precision. Sustainability is a design theme, not a verified product performance claim.</p>
+              </div>
+            </div>
+
+          </section>
+
+          <section id="process" class="csx-section" aria-labelledby="process-title">
+            <h2 id="process-title">Process</h2>
+            <p class="csx-lede">Sketches, explorations, and the choices that hold the work together.</p>
+            <ol class="csx-steps">
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">1</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Sketches</span>
+                      <h3>Find a form that can travel.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body">
+                    <div class="csx-step-copy">
+                      <p>Initial sketches explored cylindrical and circular forms across a mat, lamp, and table set. Repetition offered a way to make different objects feel related.</p>
+                    </div>
+                    <figure class="cs-visual cs-landscape">
+                      <div class="cs-placeholder" role="img" aria-label="Sketch image: early mat, lamp, and table studies placeholder">
+                        <span aria-hidden="true">[Sketch image: early mat, lamp, and table studies]</span>
+                      </div>
+                    </figure>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">2</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Explorations</span>
+                      <h3>Build from structure, not a style shortcut.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body">
+                    <div class="csx-step-copy">
+                      <p>The Wagenfeld lamp informed geometric clarity; Breuer’s B9 tubular-steel tables informed light structural loops. The halo became a shared element across the collection.</p>
+                    </div>
+                    <figure class="cs-visual cs-landscape">
+                      <div class="cs-placeholder" role="img" aria-label="Exploration image: references and halo variations placeholder">
+                        <span aria-hidden="true">[Exploration image: references and halo variations]</span>
+                      </div>
+                    </figure>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">3</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Typography &amp; color</span>
+                      <h3>Let the palette carry warmth.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body">
+                    <div class="csx-step-copy">
+                      <p>Green, terracotta, brown, and cream support the botanical direction. Chrome-like steel, walnut, and woven fiber are proposed material cues in the concept imagery.</p>
+                      <p class="csx-todo-note">[add identify the typography and explain its role in the presentation]</p>
+                    </div>
+                    <figure class="cs-visual cs-landscape">
+                      <div class="cs-placeholder" role="img" aria-label="Study image: palette, material cues, and presentation typography placeholder">
+                        <span aria-hidden="true">[Study image: palette, material cues, and presentation typography]</span>
+                      </div>
+                    </figure>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">4</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Refinement</span>
+                      <h3>Check the family resemblance.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body">
+                    <div class="csx-step-copy">
+                      <p>The final presentation applies the halo to the mat’s composition, the lamp’s enclosing loop, and the dining set’s frames. AI-assisted imagery communicates the proposed objects rather than manufactured products.</p>
+                      <p class="csx-todo-note">[add describe prompts, selection criteria, edits, and a specific refinement]</p>
+                    </div>
+                    <figure class="cs-visual cs-landscape">
+                      <div class="cs-placeholder" role="img" aria-label="Comparison image: concept variations and selected product visuals placeholder">
+                        <span aria-hidden="true">[Comparison image: concept variations and selected product visuals]</span>
+                      </div>
+                    </figure>
+                  </div>
+                </details>
+              </li>
+            </ol>
+          </section>
+
+          <section id="solution" class="csx-section" aria-labelledby="solution-title">
+            <h2 id="solution-title">Final design</h2>
+            <p class="csx-lede">Three speculative objects share a circular language without becoming identical: a patterned mat, an orb light held in a loop, and a coordinated table-and-stool set.</p>
+            <div class="csx-carousel" data-carousel>
+              <div class="csx-track csx-track--editorial" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Final design images">
+                    <figure class="cs-visual cs-portrait csx-slide">
+                      <div class="cs-placeholder" role="img" aria-label="Product image: Botanical Halo Mat placeholder">
+                        <span aria-hidden="true">[Product image: Botanical Halo Mat]</span>
+                      </div>
+                      <figcaption>Botanical Halo Mat</figcaption>
+                    </figure>
+                    <figure class="cs-visual cs-portrait csx-slide">
+                      <div class="cs-placeholder" role="img" aria-label="Product image: Halo Table Lamp placeholder">
+                        <span aria-hidden="true">[Product image: Halo Table Lamp]</span>
+                      </div>
+                      <figcaption>Halo Table Lamp</figcaption>
+                    </figure>
+                    <figure class="cs-visual cs-landscape csx-slide">
+                      <div class="cs-placeholder" role="img" aria-label="Product image: Halo Dining Set placeholder">
+                        <span aria-hidden="true">[Product image: Halo Dining Set]</span>
+                      </div>
+                      <figcaption>Halo Dining Set</figcaption>
+                    </figure>
+              </div>
+              <div class="csx-carousel-controls">
+                <button type="button" class="csx-arrow" data-dir="-1" aria-label="Previous image"><span aria-hidden="true"></span></button>
+                <div class="csx-dots">
+                  <button type="button" class="csx-dot" aria-label="Show image 1" aria-current="true"></button>
+                  <button type="button" class="csx-dot" aria-label="Show image 2"></button>
+                  <button type="button" class="csx-dot" aria-label="Show image 3"></button>
+                </div>
+                <button type="button" class="csx-arrow" data-dir="1" aria-label="Next image"><span aria-hidden="true"></span></button>
+                <p class="csx-sr" aria-live="polite" data-status>Image 1 of 3</p>
+              </div>
+            </div>
+            <div class="csx-two csx-decisions">
+              <div>
+                <h3>Repeat a structural idea</h3>
+                <p>Let the halo affect shape and construction cues, not only decoration.</p>
+              </div>
+              <div>
+                <h3>Balance precision and warmth</h3>
+                <p>Use restrained botanical colors and natural-material cues alongside metal.</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="reflection" class="csx-section" aria-labelledby="reflection-title">
+            <div class="cs-paper csx-note">
+              <h2 id="reflection-title">Outcome &amp; reflection</h2>
+              <div class="csx-two">
+                <div>
+                  <h3>What was delivered</h3>
+                  <p>Delivered concept visuals and a framed collection presentation. Manufacturing feasibility, material sourcing, and environmental performance were not established.</p>
+                </div>
+                <div>
+                  <h3>What comes next</h3>
+                  <p>A shared constraint gave three different products a coherent identity. [add personal learning and the next step for testing feasibility or refining the collection]</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <details class="cs-source">
+          <summary>Project context &amp; draft notes</summary>
+          <p>If Bauhaus Had AI project presentation / Artboard 7-100 PDF.</p>
+          <p>Bracketed prompts identify information still to confirm. Labeled visual spaces reserve the intended image proportions; original project assets remain saved.</p>
+          </details>
+
+
+        </div>
+      </div>
+
       <div class="cs-back-top-wrap">
         <a class="cs-back-top" href="#main">
           <img src="assets/scroll-arrow.svg" alt="" aria-hidden="true" width="22" height="32">
@@ -261,8 +297,7 @@
       <p>Always a little curious.</p>
     </footer>
     <div class="page-loader" hidden role="status" aria-live="polite">
-      <canvas width="96" height="96" aria-hidden="true">
-      </canvas>
+      <canvas width="96" height="96" aria-hidden="true"></canvas>
       <p>Drawing things together…</p>
     </div>
   </body>

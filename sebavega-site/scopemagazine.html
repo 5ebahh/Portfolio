@@ -26,12 +26,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600&family=Pixelify+Sans:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/rzu3vfi.css">
-    <link rel="stylesheet" href="assets/styles.css">
-    <script src="assets/site.js" defer></script>
-    <link rel="stylesheet" href="assets/case-pages.css">
-    <script src="assets/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
-    <script src="assets/paper-motion.js" defer></script>
+    <!-- CACHE VERSION: "?v=..." on the CSS/JS links makes browsers download fresh
+         copies after an update. When you change any CSS or JS file, change this
+         date on every page (find and replace "?v=2026-10-06e"). -->
+    <link rel="stylesheet" href="assets/styles.css?v=2026-10-06e">
+    <script src="assets/site.js?v=2026-10-06e" defer></script>
+    <link rel="stylesheet" href="assets/case-pages.css?v=2026-10-06e">
+    <link rel="stylesheet" href="assets/case-study.css?v=2026-10-06e">
+    <script src="assets/case-study.js?v=2026-10-06e" defer></script>
+    <link rel="stylesheet" href="assets/scope-flipbook.css?v=2026-10-06e">
+    <!-- StPageFlip 2.0.7 (MIT) from jsDelivr; if the CDN can't be reached,
+         scope-flipbook.js loads assets/page-flip.browser.js instead. -->
+    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js" defer></script>
+    <script src="assets/scope-flipbook.js?v=2026-10-06e" defer></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -55,201 +62,259 @@
         <a href="contact">contact</a>
       </nav>
     </header>
-    <main id="main" class="cs-page cs-graphic">
-      <a class="cs-back" href="work">All selected work</a>
-      <header class="cs-heading">
-        <div>
-          <p class="cs-kicker">Graphic design / Editorial</p>
-          <h1>Scope</h1>
-          <p class="cs-status">Independent publication concept · 48 pages</p>
+
+    <main id="main" class="cs-page cs-graphic csx">
+      <header class="csx-hero">
+        <a class="csx-back" href="work"><span class="csx-back-arrow" aria-hidden="true"></span>Back to selected work</a>
+        <p class="csx-tag">Graphic design / Editorial</p>
+        <h1>Scope</h1>
+        <div class="csx-pitch">
+          <p class="csx-subtitle">One magazine. Many ways into anime.</p>
+          <p>An editorial world for anime, manga, creators, industry, and collecting. A flexible publication system connects quick recommendations with longer stories.</p>
         </div>
-        <div>
-          <h2>One magazine. Many ways into anime.</h2>
-          <p class="cs-intro">An editorial world for anime, manga, creators, industry, and collecting. A flexible publication system connects quick recommendations with longer stories.</p>
-        </div>
+        <p class="csx-status">Independent publication concept, 48 pages</p>
       </header>
-      <div class="cs-reveal">
-        <figure class="cs-visual cs-landscape">
-          <div class="cs-placeholder" role="img" aria-label="Hero image: Scope cover and open magazine spread placeholder">
-            <span aria-hidden="true">[Hero image: Scope cover and open magazine spread]</span>
-          </div>
-          <figcaption>Landscape · 16:9</figcaption>
-        </figure>
-      </div>
-      <nav class="cs-index" aria-label="Project sections">
-        <a href="#overview">Overview</a>
-        <a href="#process">Process</a>
-        <a href="#solution">Final design</a>
-        <a href="#reflection">Outcome & reflection</a>
-      </nav>
-      <div class="cs-overview" id="overview">
-        <aside class="cs-paper cs-glance" aria-labelledby="glance-title">
-          <h2 id="glance-title">At a glance</h2>
-          <dl>
-            <div>
-              <dt>My role</dt>
-              <dd>Editor in chief &amp; editorial designer</dd>
-            </div>
-            <div>
-              <dt>Timeline</dt>
-              <dd>[placeholder: add project dates and duration]</dd>
-            </div>
-            <div>
-              <dt>Team</dt>
-              <dd>[placeholder: name collaborators and credit editorial or image contributions]</dd>
-            </div>
-            <div>
-              <dt>Tools</dt>
-              <dd>[placeholder: list layout and image-making tools]</dd>
-            </div>
-          </dl>
-        </aside>
-        <div class="cs-context">
-          <section>
-            <p class="cs-kicker">Context</p>
-            <h2>The brief</h2>
-            <p>Bring different editorial voices into one recognizable magazine. Recommendations, criticism, profiles, and interviews need distinct reading rhythms without feeling like unrelated publications.</p>
-          </section>
-          <section>
-            <h2>The concept</h2>
-            <p>Treat anime as a broad visual culture. Use a recognizable masthead, modular layouts, and recurring orange accents while allowing each story to establish its own atmosphere.</p>
-          </section>
-          <section class="cs-contribution">
-            <h3>My contribution</h3>
-            <p>I worked as editor in chief and editorial designer on the cover-to-cover publication system. [placeholder: clarify writing, editing, image sourcing, and production ownership]</p>
-          </section>
-        </div>
-      </div>
-      <section id="process" class="cs-section">
-        <header class="cs-section-heading">
-          <p class="cs-kicker">From question to direction</p>
-          <h2>The process</h2>
-          <p>Sketches, explorations, and the choices that hold the work together.</p>
-        </header>
-        <article class="cs-process-row cs-reveal">
-          <div class="cs-copy">
-            <p class="cs-kicker">Sketches</p>
-            <h3>Find the magazine’s point of view.</h3>
-            <p>The editor’s letter looks beyond the finished screen to manga, creators, and production. That premise connects the issue’s varied subjects.</p>
-            <p class="cs-missing">[placeholder: describe initial sketches and why the chosen direction worked]</p>
-          </div>
-          <figure class="cs-visual cs-landscape">
-            <div class="cs-placeholder" role="img" aria-label="Sketch image: early masthead and cover layouts placeholder">
-              <span aria-hidden="true">[Sketch image: early masthead and cover layouts]</span>
-            </div>
-            <figcaption>Landscape · 16:9</figcaption>
-          </figure>
-        </article>
-        <article class="cs-process-row cs-reveal">
-          <div class="cs-copy">
-            <p class="cs-kicker">Explorations</p>
-            <h3>Design for different reading speeds.</h3>
-            <p>Product-led departments use open space and concise details. Features use strong openings and multi-column stories. Profiles introduce their subjects through portraits and expressive display type.</p>
-          </div>
-          <figure class="cs-visual cs-landscape">
-            <div class="cs-placeholder" role="img" aria-label="Exploration image: department, feature, and profile layouts placeholder">
-              <span aria-hidden="true">[Exploration image: department, feature, and profile layouts]</span>
-            </div>
-            <figcaption>Landscape · 16:9</figcaption>
-          </figure>
-        </article>
-        <article class="cs-process-row cs-reveal">
-          <div class="cs-copy">
-            <p class="cs-kicker">Typography &amp; color</p>
-            <h3>Build hierarchy without flattening the stories.</h3>
-            <p>Bold display type introduces stories while columns organize longer text. White pages support editorial reading; dark pages create a cinematic shift. Orange recurs across titles, dividers, and callouts.</p>
-            <p class="cs-missing">[placeholder: name typefaces, text sizes, and the legibility decisions behind them]</p>
-          </div>
-          <figure class="cs-visual cs-landscape">
-            <div class="cs-placeholder" role="img" aria-label="Study image: type hierarchy and orange, black, and white palette placeholder">
-              <span aria-hidden="true">[Study image: type hierarchy and orange, black, and white palette]</span>
-            </div>
-            <figcaption>Landscape · 16:9</figcaption>
-          </figure>
-        </article>
-        <article class="cs-process-row cs-reveal">
-          <div class="cs-copy">
-            <p class="cs-kicker">Refinement</p>
-            <h3>Make the issue work as a sequence.</h3>
-            <p>The final publication moves from fast browsing to longer reading. Consistent signals help connect those shifts across the issue.</p>
-            <p class="cs-missing">[placeholder: add critique feedback and a specific layout revision]</p>
-          </div>
-          <figure class="cs-visual cs-landscape">
-            <div class="cs-placeholder" role="img" aria-label="Comparison image: early and final feature spread placeholder">
-              <span aria-hidden="true">[Comparison image: early and final feature spread]</span>
-            </div>
-            <figcaption>Landscape · 16:9</figcaption>
-          </figure>
-        </article>
-      </section>
-      <section id="solution" class="cs-section">
-        <header class="cs-section-heading">
-          <p class="cs-kicker">The design direction</p>
-          <h2>Final design</h2>
-          <p>The finished 48-page issue combines departments, reported features, creator profiles, and interviews in one visual system. Each story has room for its own imagery and pacing.</p>
-        </header>
-        <div class="cs-gallery cs-reveal">
-          <figure class="cs-visual cs-portrait">
-            <div class="cs-placeholder" role="img" aria-label="Editorial image: front cover placeholder">
-              <span aria-hidden="true">[Editorial image: front cover]</span>
-            </div>
-            <figcaption>Portrait · 3:4</figcaption>
-          </figure>
-          <figure class="cs-visual cs-spread">
-            <div class="cs-placeholder" role="img" aria-label="Editorial image: full feature spread placeholder">
-              <span aria-hidden="true">[Editorial image: full feature spread]</span>
-            </div>
-            <figcaption>Spread · 2:1</figcaption>
-          </figure>
-          <figure class="cs-visual cs-spread">
-            <div class="cs-placeholder" role="img" aria-label="Editorial image: interview spread placeholder">
-              <span aria-hidden="true">[Editorial image: interview spread]</span>
-            </div>
-            <figcaption>Spread · 2:1</figcaption>
-          </figure>
-        </div>
-        <div class="cs-decisions">
-          <article>
-            <h3>A recurring visual signal</h3>
-            <p>Orange ties otherwise distinct articles to the publication.</p>
-          </article>
-          <article>
-            <h3>Pacing by story type</h3>
-            <p>Short departments and dense features use different compositions.</p>
-          </article>
-        </div>
-      </section>
-      <section id="reflection" class="cs-section cs-paper cs-reflection cs-reveal">
-        <p class="cs-kicker">What this work establishes</p>
-        <h2>Outcome & reflection</h2>
+
+      <dl class="csx-facts">
         <div>
-          <section>
-            <h3>What was delivered</h3>
-            <p>Delivered a complete publication design. [placeholder: add verified critique feedback, print details, or reader evaluation]</p>
+          <dt>My role</dt>
+          <dd>Editor in chief &amp; editorial designer</dd>
+        </div>
+        <div>
+          <dt>Timeline</dt>
+          <dd class="csx-todo">[add project dates and duration]</dd>
+        </div>
+        <div>
+          <dt>Tools</dt>
+          <dd class="csx-todo">[add list layout and image-making tools]</dd>
+        </div>
+      </dl>
+
+      <figure class="csx-cover">
+        <img src="assets/thumbs/scope.webp" width="1200" height="800" alt="Spread of Scope magazine issues, with a Masashi Kishimoto cover on top" fetchpriority="high" decoding="async">
+      </figure>
+
+      <div class="csx-body">
+        <nav class="csx-toc" aria-label="Case study sections">
+          <ol class="csx-toc-list">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#solution">Final design</a></li>
+            <li><a href="#reflection">Outcome &amp; reflection</a></li>
+            <li><a href="#magazine">Read the magazine</a></li>
+          </ol>
+        </nav>
+
+        <div class="csx-content">
+          <section id="overview" class="csx-section" aria-labelledby="overview-title">
+            <h2 id="overview-title">Overview</h2>
+            <div class="csx-two">
+              <div>
+                <h3>The brief</h3>
+                <p>Bring different editorial voices into one recognizable magazine. Recommendations, criticism, profiles, and interviews need distinct reading rhythms without feeling like unrelated publications.</p>
+              </div>
+              <div>
+                <h3>The concept</h3>
+                <p>Treat anime as a broad visual culture. Use a recognizable masthead, modular layouts, and recurring orange accents while allowing each story to establish its own atmosphere.</p>
+              </div>
+            </div>
+
           </section>
-          <section>
-            <h3>What comes next</h3>
-            <p>[placeholder: describe the most useful editorial lesson and what I would revise in another issue]</p>
+
+          <section id="process" class="csx-section" aria-labelledby="process-title">
+            <h2 id="process-title">Process</h2>
+            <p class="csx-lede">Sketches, explorations, and the choices that hold the work together.</p>
+            <ol class="csx-steps">
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">1</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Sketches</span>
+                      <h3>Find the magazine’s point of view.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body">
+                    <div class="csx-step-copy">
+                      <p>The editor’s letter looks beyond the finished screen to manga, creators, and production. That premise connects the issue’s varied subjects.</p>
+                      <p class="csx-todo-note">[add describe initial sketches and why the chosen direction worked]</p>
+                    </div>
+                    <figure class="cs-visual cs-landscape">
+                      <div class="cs-placeholder" role="img" aria-label="Sketch image: early masthead and cover layouts placeholder">
+                        <span aria-hidden="true">[Sketch image: early masthead and cover layouts]</span>
+                      </div>
+                    </figure>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">2</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Explorations</span>
+                      <h3>Design for different reading speeds.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body">
+                    <div class="csx-step-copy">
+                      <p>Product-led departments use open space and concise details. Features use strong openings and multi-column stories. Profiles introduce their subjects through portraits and expressive display type.</p>
+                    </div>
+                    <figure class="cs-visual cs-landscape">
+                      <div class="cs-placeholder" role="img" aria-label="Exploration image: department, feature, and profile layouts placeholder">
+                        <span aria-hidden="true">[Exploration image: department, feature, and profile layouts]</span>
+                      </div>
+                    </figure>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">3</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Typography &amp; color</span>
+                      <h3>Build hierarchy without flattening the stories.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body">
+                    <div class="csx-step-copy">
+                      <p>Bold display type introduces stories while columns organize longer text. White pages support editorial reading; dark pages create a cinematic shift. Orange recurs across titles, dividers, and callouts.</p>
+                      <p class="csx-todo-note">[add name typefaces, text sizes, and the legibility decisions behind them]</p>
+                    </div>
+                    <figure class="cs-visual cs-landscape">
+                      <div class="cs-placeholder" role="img" aria-label="Study image: type hierarchy and orange, black, and white palette placeholder">
+                        <span aria-hidden="true">[Study image: type hierarchy and orange, black, and white palette]</span>
+                      </div>
+                    </figure>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">4</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Refinement</span>
+                      <h3>Make the issue work as a sequence.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body">
+                    <div class="csx-step-copy">
+                      <p>The final publication moves from fast browsing to longer reading. Consistent signals help connect those shifts across the issue.</p>
+                      <p class="csx-todo-note">[add critique feedback and a specific layout revision]</p>
+                    </div>
+                    <figure class="cs-visual cs-landscape">
+                      <div class="cs-placeholder" role="img" aria-label="Comparison image: early and final feature spread placeholder">
+                        <span aria-hidden="true">[Comparison image: early and final feature spread]</span>
+                      </div>
+                    </figure>
+                  </div>
+                </details>
+              </li>
+            </ol>
+          </section>
+
+          <section id="solution" class="csx-section" aria-labelledby="solution-title">
+            <h2 id="solution-title">Final design</h2>
+            <p class="csx-lede">The finished 48-page issue combines departments, reported features, creator profiles, and interviews in one visual system. Each story has room for its own imagery and pacing.</p>
+            <div class="csx-carousel" data-carousel>
+              <div class="csx-track csx-track--editorial" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Final design images">
+                    <figure class="cs-visual cs-portrait csx-slide">
+                      <div class="cs-placeholder" role="img" aria-label="Editorial image: front cover placeholder">
+                        <span aria-hidden="true">[Editorial image: front cover]</span>
+                      </div>
+                      <figcaption>Front cover</figcaption>
+                    </figure>
+                    <figure class="cs-visual cs-spread csx-slide">
+                      <div class="cs-placeholder" role="img" aria-label="Editorial image: full feature spread placeholder">
+                        <span aria-hidden="true">[Editorial image: full feature spread]</span>
+                      </div>
+                      <figcaption>Full feature spread</figcaption>
+                    </figure>
+                    <figure class="cs-visual cs-spread csx-slide">
+                      <div class="cs-placeholder" role="img" aria-label="Editorial image: interview spread placeholder">
+                        <span aria-hidden="true">[Editorial image: interview spread]</span>
+                      </div>
+                      <figcaption>Interview spread</figcaption>
+                    </figure>
+              </div>
+              <div class="csx-carousel-controls">
+                <button type="button" class="csx-arrow" data-dir="-1" aria-label="Previous image"><span aria-hidden="true"></span></button>
+                <div class="csx-dots">
+                  <button type="button" class="csx-dot" aria-label="Show image 1" aria-current="true"></button>
+                  <button type="button" class="csx-dot" aria-label="Show image 2"></button>
+                  <button type="button" class="csx-dot" aria-label="Show image 3"></button>
+                </div>
+                <button type="button" class="csx-arrow" data-dir="1" aria-label="Next image"><span aria-hidden="true"></span></button>
+                <p class="csx-sr" aria-live="polite" data-status>Image 1 of 3</p>
+              </div>
+            </div>
+            <div class="csx-two csx-decisions">
+              <div>
+                <h3>A recurring visual signal</h3>
+                <p>Orange ties otherwise distinct articles to the publication.</p>
+              </div>
+              <div>
+                <h3>Pacing by story type</h3>
+                <p>Short departments and dense features use different compositions.</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="reflection" class="csx-section" aria-labelledby="reflection-title">
+            <div class="cs-paper csx-note">
+              <h2 id="reflection-title">Outcome &amp; reflection</h2>
+              <div class="csx-two">
+                <div>
+                  <h3>What was delivered</h3>
+                  <p>Delivered a complete publication design. [add verified critique feedback, print details, or reader evaluation]</p>
+                </div>
+                <div>
+                  <h3>What comes next</h3>
+                  <p>[add describe the most useful editorial lesson and what I would revise in another issue]</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <details class="cs-source">
+          <summary>Project context &amp; draft notes</summary>
+          <p>Scope Magazine FINAL PDF and the existing project description.</p>
+          <p>Bracketed prompts identify information still to confirm. Labeled visual spaces reserve the intended image proportions; original project assets remain saved.</p>
+          </details>
+
+          <!-- FLIPBOOK (final section, listed last in the side rail).
+               Self-hosted: the 48 page images are in scope-pages/ and listed in
+               the JSON below (in reading order). No frame, toolbar or logo.
+               Behaviour: assets/scope-flipbook.js. Styles: assets/scope-flipbook.css. -->
+          <section id="magazine" class="csx-section sfb-section" aria-labelledby="magazine-title">
+            <h2 id="magazine-title">Read the magazine</h2>
+            <p class="csx-lede">Flip through the full 48-page issue. Drag a page corner, click a page, or use the arrow keys.</p>
+            <div class="sfb" data-flipbook data-title="Scope magazine" data-ratio="0.7727" data-fallback="assets/page-flip.browser.js?v=2026-10-06e" role="region" aria-label="Scope magazine, flipbook">
+              <div class="sfb-stage">
+                <img class="sfb-cover-still" src="assets/scope-pages/page-01.webp" width="1000" height="1294" alt="Scope magazine, front cover" loading="lazy" decoding="async">
+              </div>
+              <div class="sfb-controls">
+                <button type="button" class="sfb-btn sfb-prev" aria-label="Previous page"><span aria-hidden="true"></span></button>
+                <p class="sfb-count" aria-live="polite">Page 1 of 48</p>
+                <button type="button" class="sfb-btn sfb-next" aria-label="Next page"><span aria-hidden="true"></span></button>
+                <button type="button" class="sfb-full" aria-label="View full screen" title="View full screen">
+                  <svg class="sfb-icon-expand" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" shape-rendering="crispEdges"><path d="M1 1h5v2H3v3H1zM10 1h5v5h-2V3h-3zM1 10h2v3h3v2H1zM13 10h2v5h-5v-2h3z"/></svg>
+                  <svg class="sfb-icon-close" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" shape-rendering="crispEdges"><path d="M1 1h3v1h1v1h1v1h1v1h2V4h1V3h1V2h1V1h3v3h-1v1h-1v1h-1v1h-1v2h1v1h1v1h1v1h1v3h-3v-1h-1v-1h-1v-1h-1v-1H7v1H6v1H5v1H4v1H1v-3h1v-1h1v-1h1V9h1V7H4V6H3V5H2V4H1z"/></svg>
+                </button>
+              </div>
+              <p class="sfb-failed">The flipbook couldn’t load here. Try reloading the page.</p>
+              <script type="application/json" id="sfb-pages">["assets/scope-pages/page-01.webp", "assets/scope-pages/page-02.webp", "assets/scope-pages/page-03.webp", "assets/scope-pages/page-04.webp", "assets/scope-pages/page-05.webp", "assets/scope-pages/page-06.webp", "assets/scope-pages/page-07.webp", "assets/scope-pages/page-08.webp", "assets/scope-pages/page-09.webp", "assets/scope-pages/page-10.webp", "assets/scope-pages/page-11.webp", "assets/scope-pages/page-12.webp", "assets/scope-pages/page-13.webp", "assets/scope-pages/page-14.webp", "assets/scope-pages/page-15.webp", "assets/scope-pages/page-16.webp", "assets/scope-pages/page-17.webp", "assets/scope-pages/page-18.webp", "assets/scope-pages/page-19.webp", "assets/scope-pages/page-20.webp", "assets/scope-pages/page-21.webp", "assets/scope-pages/page-22.webp", "assets/scope-pages/page-23.webp", "assets/scope-pages/page-24.webp", "assets/scope-pages/page-25.webp", "assets/scope-pages/page-26.webp", "assets/scope-pages/page-27.webp", "assets/scope-pages/page-28.webp", "assets/scope-pages/page-29.webp", "assets/scope-pages/page-30.webp", "assets/scope-pages/page-31.webp", "assets/scope-pages/page-32.webp", "assets/scope-pages/page-33.webp", "assets/scope-pages/page-34.webp", "assets/scope-pages/page-35.webp", "assets/scope-pages/page-36.webp", "assets/scope-pages/page-37.webp", "assets/scope-pages/page-38.webp", "assets/scope-pages/page-39.webp", "assets/scope-pages/page-40.webp", "assets/scope-pages/page-41.webp", "assets/scope-pages/page-42.webp", "assets/scope-pages/page-43.webp", "assets/scope-pages/page-44.webp", "assets/scope-pages/page-45.webp", "assets/scope-pages/page-46.webp", "assets/scope-pages/page-47.webp", "assets/scope-pages/page-48.webp"]</script>
+            </div>
           </section>
         </div>
-      </section>
-      <details class="cs-source">
-        <summary>Project context & draft notes</summary>
-        <p>Scope Magazine FINAL PDF and the existing project description.</p>
-        <p>Bracketed prompts identify information still to confirm. Labeled visual spaces reserve the intended image proportions; original project assets remain saved.</p>
-      </details>
-      <nav class="cs-next" aria-label="More projects">
-        <a class="cs-back-work" href="work">
-          <img src="assets/scroll-arrow.svg" alt="" aria-hidden="true" width="22" height="32">
-          <span>Back to selected work</span>
-        </a>
-        <a class="cs-next-note" href="cinnamontoastpunk" style="--note-bg: #eee1d9">
-          <span class="cs-tape" aria-hidden="true"></span>
-          <span class="cs-next-label">Next project</span>
-          <strong>Cinnamon Toast Punk</strong>
-          <img class="cs-next-arrow" src="assets/scroll-arrow.svg" alt="" aria-hidden="true" width="22" height="32">
-        </a>
-      </nav>
+      </div>
+
       <div class="cs-back-top-wrap">
         <a class="cs-back-top" href="#main">
           <img src="assets/scroll-arrow.svg" alt="" aria-hidden="true" width="22" height="32">
@@ -262,8 +327,7 @@
       <p>Always a little curious.</p>
     </footer>
     <div class="page-loader" hidden role="status" aria-live="polite">
-      <canvas width="96" height="96" aria-hidden="true">
-      </canvas>
+      <canvas width="96" height="96" aria-hidden="true"></canvas>
       <p>Drawing things together…</p>
     </div>
   </body>
