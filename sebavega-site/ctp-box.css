@@ -1,0 +1,488 @@
+/* =====================================================================
+   CTP-BOX.CSS — Cinnamon Toast Punk (cinnamontoastpunk.html)
+   ctp-box.js sets data-mode on .ctp-turn:
+     (none)   no JavaScript: the sides as a list, no 3D stage
+     "list"   reduced motion: the 3D stage (drag only) above that list
+     "scrub"  the section pins and scrolling turns the box
+              data-size="wide" (700px+) 4 stops; "phone" 3 stops, shorter run
+              data-layout="side" caption beside the box; "stacked" (phones,
+              portrait tablets) caption under the box
+   ===================================================================== */
+
+/* ---- Overview: three goals ---- */
+.csx .csx-goals {
+  margin-top: 2em;
+}
+
+.csx .csx-goals ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: goal;
+  display: grid;
+  gap: 12px;
+}
+
+.csx .csx-goals li {
+  counter-increment: goal;
+  display: grid;
+  grid-template-columns: 2em minmax(0, 1fr);
+  gap: 12px;
+  max-width: var(--measure);
+}
+
+.csx .csx-goals li::before {
+  content: counter(goal);
+  display: grid;
+  place-items: center;
+  width: 1.75em;
+  height: 1.75em;
+  color: var(--blue);
+  font: 500 .95em/1 'Pixelify Sans', monospace;
+  box-shadow: inset 0 0 0 2px var(--blue);
+}
+
+/* ---- Sketches: the four rounds ----
+   Each round shows its cover above the text. The sketch and the two drafts
+   are loose sheets of paper (a slight tilt and a strip of tape); the final
+   cover sits in a clean white frame. Phones put the picture beside the
+   text so the section stays short. */
+.csx .ctp-rounds {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: round;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 28px;
+}
+
+.csx .ctp-rounds li {
+  counter-increment: round;
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  column-gap: 18px;
+  align-items: start;
+}
+
+.csx .ctp-rounds .ctp-sheet {
+  grid-row: 1 / span 2;
+}
+
+@container (min-width: 560px) {
+  .csx .ctp-rounds {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(36px, 4vw, 56px) clamp(28px, 4vw, 56px);
+  }
+
+  .csx .ctp-rounds li {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+  }
+
+  .csx .ctp-rounds .ctp-sheet {
+    grid-row: auto;
+    width: min(100%, 300px);
+    margin: 0 auto 22px;
+  }
+}
+
+.csx .ctp-rounds h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(1.15rem, 1rem + .4vw, 1.45rem);
+  margin-bottom: 6px;
+}
+
+.csx .ctp-rounds h3::before {
+  content: counter(round);
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 1.6em;
+  height: 1.6em;
+  font: 500 .75em/1 'Pixelify Sans', monospace;
+  box-shadow: inset 0 0 0 2px var(--blue);
+}
+
+.csx .ctp-rounds p {
+  margin: 0;
+}
+
+/* A sheet of paper: off-white, a soft shadow, a slight tilt, and tape. */
+.csx .ctp-sheet {
+  --tilt: -1.6deg;
+  position: relative;
+  margin: 0;
+  padding: 8px;
+  background: #fdfbf4;
+  box-shadow: 0 1px 2px #3c321e26, 0 10px 18px -10px #3c321e59;
+  transform: rotate(var(--tilt));
+  transition: transform .25s ease;
+}
+
+.csx .ctp-rounds li:nth-child(2) .ctp-sheet { --tilt: 1.3deg; }
+.csx .ctp-rounds li:nth-child(3) .ctp-sheet { --tilt: -.9deg; }
+
+.csx .ctp-sheet::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  width: 34%;
+  height: 20px;
+  background: #e8dcc0b3;
+  box-shadow: 0 1px 1px #3c321e1a;
+  transform: translateX(-50%) rotate(calc(var(--tilt) * -2));
+}
+
+.csx .ctp-sheet img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.csx .ctp-rounds li:hover .ctp-sheet {
+  transform: rotate(0deg);
+}
+
+/* The final cover: a solid white frame, square to the page, no tape. */
+.csx .ctp-sheet--final {
+  --tilt: 0deg;
+  padding: 14px;
+  background: #fff;
+  border: 1px solid #e3ddcc;
+  box-shadow: 0 12px 24px -14px #3c321e66;
+}
+
+.csx .ctp-sheet--final::before {
+  display: none;
+}
+
+@media (max-width: 699.98px) {
+  .csx .ctp-sheet { padding: 5px; }
+  .csx .ctp-sheet--final { padding: 8px; }
+  .csx .ctp-sheet::before { top: -7px; height: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .csx .ctp-sheet { transition: none; }
+}
+
+/* ---- The collectible: keychain image on the page background (it has a
+   transparent background, so no frame) ---- */
+.csx .ctp-keychains {
+  margin: 0 0 clamp(20px, 3vw, 36px);
+}
+
+.csx .ctp-keychains img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---- The box: shared pieces ---- */
+.csx .ctp-faces {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.csx .ctp-face-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 8px;
+  color: var(--blue);
+  font-size: .9em;
+}
+
+.csx .ctp-face-num {
+  display: grid;
+  place-items: center;
+  width: 1.9em;
+  height: 1.9em;
+  font: 500 .95em/1 'Pixelify Sans', monospace;
+  box-shadow: inset 0 0 0 2px var(--blue);
+}
+
+.csx .ctp-face h3 {
+  font-size: clamp(1.25rem, 1rem + .6vw, 1.7rem);
+  margin-bottom: 8px;
+}
+
+.csx .ctp-face p:last-child {
+  margin-bottom: 0;
+}
+
+/* "Typography", "Color"…: what the side's decision is about. */
+.csx .ctp-face-tag {
+  margin-left: 4px;
+  padding: 2px 8px;
+  color: #59645d;
+  font-size: .85em;
+  box-shadow: inset 0 0 0 1px var(--rule);
+}
+
+/* Pixel squares that jump to a stop (scrub mode, wide screens). */
+.csx .ctp-dots {
+  display: flex;
+  gap: 2px;
+  margin-top: 18px;
+}
+
+.csx .ctp-dots[hidden] {
+  display: none;
+}
+
+.csx .ctp-dot {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.csx .ctp-dot::before {
+  content: "";
+  width: 13px;
+  height: 13px;
+  box-shadow: inset 0 0 0 2px #b9b4a2;
+}
+
+.csx .ctp-dot[aria-current="true"]::before {
+  background: var(--blue);
+  box-shadow: inset 0 0 0 2px var(--blue);
+}
+
+.csx .ctp-dot:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: -6px;
+}
+
+
+/* ---- The 3D scene: no frame ----
+   The viewer sits straight on the page background: no box, border, card
+   or edge. Its size comes from the layout below; ctp-box.js sets the
+   camera distance so the box fills most of the scene's height. */
+.csx .ctp-box {
+  padding-bottom: clamp(24px, 3vw, 40px);
+}
+
+.csx .ctp-box .csx-lede {
+  margin-bottom: 8px;
+}
+
+.csx .ctp-box .cs-cereal-stage {
+  aspect-ratio: auto;
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+  background: none;
+  border: 0;
+  overflow: visible;
+}
+
+.csx .ctp-box model-viewer {
+  --progress-bar-height: 0px;   /* the viewer's loading bar drew a strip along the top edge */
+}
+
+.csx .ctp-box .cs-cereal-fallback {
+  inset: 6% 0;
+  height: 88%;
+}
+
+.csx .ctp-stage {
+  margin: 0;
+}
+
+.csx .ctp-hint {
+  margin: 14px 0 0;
+  color: #59645d;
+  font-size: .9rem;
+}
+
+
+/* ---- List (no JS, reduced motion) ---- */
+.csx .ctp-turn:not([data-mode]) .ctp-stage,
+.csx .ctp-hint.is-warning {
+  margin: 0 0 18px;
+  padding: 10px 14px;
+  color: #2f2f2f;
+  background: #f5ecd2;
+  box-shadow: inset 3px 0 0 var(--blue);
+}
+
+.csx .ctp-turn:not([data-mode]) .ctp-hint {
+  display: none;   /* without JavaScript the 3D box can't load */
+}
+
+.csx .ctp-turn[data-mode="list"] .ctp-stage {
+  height: min(72svh, 680px);
+  margin-bottom: 8px;
+}
+
+.csx .ctp-turn[data-mode="list"] .ctp-hint {
+  margin: 0 0 24px;
+}
+
+.csx .ctp-faces {
+  display: grid;
+  gap: 24px;
+}
+
+.csx .ctp-face {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 16px clamp(20px, 3vw, 36px);
+  align-items: start;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+}
+
+.csx .ctp-face-img {
+  display: block;
+  width: 100%;
+  height: 14.25rem;   /* front/back fill the box; the narrow sides sit centred */
+  object-fit: contain;
+}
+
+@media (max-width: 699.98px) {
+  .csx .ctp-face {
+    grid-template-columns: 6rem minmax(0, 1fr);
+  }
+
+  .csx .ctp-face-img {
+    height: 9rem;
+  }
+}
+
+
+/* ---- Scrub ----
+   The section is tall; the scene inside it sticks under the navbar (the
+   pin) while the page scrolls past, and the scroll position plays one
+   timeline that turns the box and fades the captions. When the section's
+   end reaches the bottom of the screen, the pin lets go.
+   The scene runs the full width of the page (--page-w and --bleed-left are
+   measured by ctp-box.js) with the box on the left and the caption in its
+   own column on the right, so the caption never covers the box. */
+.csx .ctp-turn[data-mode="scrub"] {
+  --ctp-scroll: 270svh;   /* how much scrolling the stops take */
+  height: calc(100svh - var(--header-h) + var(--ctp-scroll));
+}
+
+.csx .ctp-turn[data-mode="scrub"] .ctp-sticky {
+  --scene-left: var(--gutter);
+  position: sticky;
+  top: var(--header-h);
+  box-sizing: border-box;
+  width: var(--page-w, 100%);
+  height: calc(100svh - var(--header-h));
+  margin-left: calc(-1 * var(--bleed-left, 0px));
+  padding: 0 var(--gutter) 0 var(--scene-left);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 30%);
+  align-items: center;
+  column-gap: clamp(8px, 1.5vw, 24px);
+}
+
+/* Leave the section rail's strip free on screens that show it. */
+@media (min-width: 1024px) {
+  .csx .ctp-turn[data-mode="scrub"] .ctp-sticky {
+    --scene-left: calc(var(--rail-left) + var(--rail-w) + 16px);
+  }
+}
+
+.csx .ctp-turn[data-mode="scrub"] .ctp-stage {
+  height: 100%;
+}
+
+.csx .ctp-turn[data-mode="scrub"] .ctp-captions {
+  max-width: 36ch;
+}
+
+/* The captions share one spot. The timeline fades them (inline styles);
+   until it starts, only the first shows. */
+.csx .ctp-turn[data-mode="scrub"] .ctp-faces {
+  display: grid;
+  gap: 0;
+  transition: opacity .25s ease;
+}
+
+.csx .ctp-turn[data-mode="scrub"] .ctp-face {
+  grid-area: 1 / 1;
+  display: block;
+  padding: 0;
+  border: 0;
+}
+
+.csx .ctp-turn[data-mode="scrub"] .ctp-face:not(:first-child) .ctp-face-copy {
+  visibility: hidden;
+}
+
+.csx .ctp-turn[data-mode="scrub"] .ctp-face-img,
+.csx .ctp-turn[data-mode="scrub"] .ctp-face.is-skipped {
+  display: none;   /* the 3D box shows the side */
+}
+
+/* Box not on the caption's side (dragged away, easing back, still
+   loading, or turning on its own after the pin): caption hidden at once.
+   It only fades when coming back. */
+.csx .ctp-turn.is-off-face .ctp-faces {
+  opacity: 0;
+  transition: none;
+}
+
+.csx .ctp-turn[data-mode="scrub"] .ctp-dots {
+  margin-left: -15px;   /* line the first square up with the text */
+}
+
+/* Phones: three stops and a shorter run. */
+.csx .ctp-turn[data-mode="scrub"][data-size="phone"] {
+  --ctp-scroll: 160svh;
+}
+
+/* Phones and portrait tablets: box on top, caption underneath, so the box
+   can use the full width. */
+.csx .ctp-turn[data-mode="scrub"][data-layout="stacked"] .ctp-sticky {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-items: stretch;
+  row-gap: 8px;
+  padding: 0 var(--gutter) 16px;
+}
+
+.csx .ctp-turn[data-mode="scrub"][data-layout="stacked"] .ctp-captions {
+  max-width: none;
+  min-height: 11.5rem;   /* room for the longest caption, so the box doesn't jump */
+}
+
+.csx .ctp-turn[data-mode="scrub"][data-layout="stacked"] .ctp-face h3 {
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+
+.csx .ctp-turn[data-mode="scrub"][data-layout="stacked"] .ctp-face p {
+  font-size: .92rem;
+  line-height: 1.5;
+}
+
+.csx .ctp-turn[data-mode="scrub"][data-layout="stacked"] .ctp-face-name {
+  margin-bottom: 4px;
+}
+
+.csx .ctp-turn[data-mode="scrub"][data-size="phone"] .ctp-dots,
+.csx .ctp-turn[data-mode="scrub"][data-size="phone"] .ctp-hint {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .csx .ctp-faces {
+    transition: none !important;
+  }
+}
