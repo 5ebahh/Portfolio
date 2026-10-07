@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yelp — UX Case Study — Sebastian Vega</title>
+    <meta name="description" content="A local-discovery concept connecting search, useful business details, and community. The team developed the experience from research through mid-fidelity flows to final screens.">
+    <!-- Link previews (Open Graph / social cards): what sites like LinkedIn, iMessage,
+         Discord and forums show when this page is shared. Image is 1200 x 630 in assets/og/. -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sebastian Vega">
+    <meta property="og:title" content="Yelp — UX Case Study — Sebastian Vega">
+    <meta property="og:description" content="A local-discovery concept connecting search, useful business details, and community. The team developed the experience from research through mid-fidelity flows to final screens.">
+    <meta property="og:url" content="https://sebavega.com/yelp">
+    <meta property="og:image" content="https://sebavega.com/assets/og/yelp.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Yelp logo on a red background">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Favicon (browser tab icon): Mr. Blue the betta, in pixel art. -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600&family=Pixelify+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/rzu3vfi.css">
+    <!-- CACHE VERSION: "?v=..." on the CSS/JS links makes browsers download fresh
+         copies after an update. When you change any CSS or JS file, change this
+         date on every page (find and replace "?v=2026-10-06e"). -->
+    <link rel="stylesheet" href="assets/styles.css?v=2026-10-06e">
+    <script src="assets/site.js?v=2026-10-06e" defer></script>
+    <link rel="stylesheet" href="assets/case-pages.css?v=2026-10-06e">
+    <link rel="stylesheet" href="assets/case-study.css?v=2026-10-06e">
+    <script src="assets/case-study.js?v=2026-10-06e" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a href="./" aria-label="Sebastian Vega — home" class="brand">
+        <img src="assets/seba-logo.png" width="240" height="120" alt="SEBA">
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation menu">
+        <span class="hamburger" aria-hidden="true">
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+        </span>
+      </button>
+      <nav id="main-nav" aria-label="Main navigation">
+        <a href="work" aria-current="page">work</a>
+        <a href="gallery">gallery</a>
+        <a href="contact">contact</a>
+      </nav>
+    </header>
+
+    <main id="main" class="cs-page cs-ux csx">
+      <header class="csx-hero">
+        <a class="csx-back" href="work"><span class="csx-back-arrow" aria-hidden="true"></span>Back to selected work</a>
+        <p class="csx-tag">UX / Product design</p>
+        <h1>Yelp</h1>
+        <div class="csx-pitch">
+          <p class="csx-subtitle">A clearer path to your next place.</p>
+          <p>A local-discovery concept connecting search, useful business details, and community. The team developed the experience from research through mid-fidelity flows to final screens.</p>
+        </div>
+        <p class="csx-status">Independent team redesign, not an official Yelp product</p>
+      </header>
+
+      <dl class="csx-facts">
+        <div>
+          <dt>My role</dt>
+          <dd>Project lead</dd>
+        </div>
+        <div>
+          <dt>Team</dt>
+          <dd>Sebastian, Jordan, Sara, Riddhima &amp; Ryan</dd>
+        </div>
+        <div>
+          <dt>Timeline</dt>
+          <dd class="csx-todo">[add project dates and duration]</dd>
+        </div>
+        <div>
+          <dt>Tools</dt>
+          <dd class="csx-todo">[add list design, prototyping, and research tools]</dd>
+        </div>
+      </dl>
+
+      <figure class="csx-cover">
+        <img src="assets/thumbs/yelp.webp" width="1600" height="900" alt="Yelp logo on a red background patterned with local-business icons" fetchpriority="high" decoding="async">
+      </figure>
+
+      <div class="csx-body">
+        <nav class="csx-toc" aria-label="Case study sections">
+          <ol class="csx-toc-list">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#solution">Final design</a></li>
+            <li><a href="#reflection">Outcome &amp; reflection</a></li>
+            <li><a href="#prototype">Prototype</a></li>
+          </ol>
+        </nav>
+
+        <div class="csx-content">
+          <section id="overview" class="csx-section" aria-labelledby="overview-title">
+            <h2 id="overview-title">Overview</h2>
+            <div class="csx-two">
+              <div>
+                <h3>The problem</h3>
+                <p>Interview synthesis pointed to cluttered discovery, uncertainty about reviews, and a desire for recommendations from trusted people. Finding a business was only part of the decision; people also needed context for choosing it.</p>
+              </div>
+              <div>
+                <h3>My goal</h3>
+                <p>Connect discovery to community while giving search, maps, messages, and saved places a clear structure. A social layer should support the choice without competing with it.</p>
+              </div>
+            </div>
+            <div class="csx-callout">
+              <h3>My contribution</h3>
+              <p>I served as project lead. The research and mobile concept are team work. [add describe the activities and screens I personally owned]</p>
+            </div>
+          </section>
+
+          <section id="process" class="csx-section" aria-labelledby="process-title">
+            <h2 id="process-title">Process</h2>
+            <p class="csx-lede">The observations, decisions, and open questions behind the concept.</p>
+            <ol class="csx-steps">
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">1</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Research</span>
+                      <h3>Separate discovery from confidence.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body">
+                    <div class="csx-step-copy">
+                      <p>Affinity mapping, personas, and journey maps organized needs around finding relevant places, assessing reviews, and choosing with others. These are synthesized themes, not verbatim participant quotations.</p>
+                      <p class="csx-todo-note">[add participant count, recruitment method, and supporting interview evidence]</p>
+                    </div>
+                    <figure class="cs-visual cs-landscape">
+                      <div class="cs-placeholder" role="img" aria-label="Research image: affinity map and journey placeholder">
+                        <span aria-hidden="true">[Research image: affinity map and journey]</span>
+                      </div>
+                    </figure>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">2</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Mid-fidelity</span>
+                      <h3>Build around five clear destinations.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body">
+                    <div class="csx-step-copy">
+                      <p>Home, Explore, Create, Map, and Profile gave the main tasks distinct places. Search and filters lived in Explore; profile content grouped history, contributions, and settings.</p>
+                    </div>
+                    <figure class="cs-visual cs-landscape">
+                      <div class="cs-placeholder" role="img" aria-label="Process image: mid-fidelity navigation and discovery flow placeholder">
+                        <span aria-hidden="true">[Process image: mid-fidelity navigation and discovery flow]</span>
+                      </div>
+                    </figure>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">3</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Iteration</span>
+                      <h3>Keep decision-making details together.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body">
+                    <div class="csx-step-copy">
+                      <p>The final results bring ratings, price, and distance into the same business cards. Recent searches and suggestions provide a starting point, while collections give saved places a more visible home.</p>
+                    </div>
+                    <figure class="cs-visual cs-phone">
+                      <div class="cs-placeholder" role="img" aria-label="Phone screen: search results and decision details placeholder">
+                        <span aria-hidden="true">[Phone screen: search results and decision details]</span>
+                      </div>
+                    </figure>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">4</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Testing exploration</span>
+                      <h3>Compare ways to return from the map.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body">
+                    <div class="csx-step-copy">
+                      <p>The final deck explores five navigation variants, including persistent navigation and back or close controls. It does not document a winning variant or task-success results.</p>
+                      <p class="csx-todo-note">[add testing tasks, participants, findings, and which variant the evidence supported]</p>
+                    </div>
+                    <figure class="cs-visual cs-landscape">
+                      <div class="cs-placeholder" role="img" aria-label="Comparison image: five map navigation variants placeholder">
+                        <span aria-hidden="true">[Comparison image: five map navigation variants]</span>
+                      </div>
+                    </figure>
+                  </div>
+                </details>
+              </li>
+            </ol>
+          </section>
+
+          <section id="solution" class="csx-section" aria-labelledby="solution-title">
+            <h2 id="solution-title">Final design</h2>
+            <p class="csx-lede">The high-fidelity concept brings discovery, community, and personal content into a connected experience. Search results help people compare; messages and highlights add social context; saved collections support a return visit.</p>
+            <div class="csx-carousel" data-carousel>
+              <div class="csx-track" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Final design screens">
+                    <figure class="cs-visual cs-phone csx-slide">
+                      <div class="cs-placeholder" role="img" aria-label="Phone screen: business search and results placeholder">
+                        <span aria-hidden="true">[Phone screen: business search and results]</span>
+                      </div>
+                      <figcaption>Business search and results</figcaption>
+                    </figure>
+                    <figure class="cs-visual cs-phone csx-slide">
+                      <div class="cs-placeholder" role="img" aria-label="Phone screen: map and persistent navigation placeholder">
+                        <span aria-hidden="true">[Phone screen: map and persistent navigation]</span>
+                      </div>
+                      <figcaption>Map and persistent navigation</figcaption>
+                    </figure>
+                    <figure class="cs-visual cs-phone csx-slide">
+                      <div class="cs-placeholder" role="img" aria-label="Phone screen: saved places and collections placeholder">
+                        <span aria-hidden="true">[Phone screen: saved places and collections]</span>
+                      </div>
+                      <figcaption>Saved places and collections</figcaption>
+                    </figure>
+              </div>
+              <div class="csx-carousel-controls">
+                <button type="button" class="csx-arrow" data-dir="-1" aria-label="Previous screen"><span aria-hidden="true"></span></button>
+                <div class="csx-dots">
+                  <button type="button" class="csx-dot" aria-label="Show screen 1" aria-current="true"></button>
+                  <button type="button" class="csx-dot" aria-label="Show screen 2"></button>
+                  <button type="button" class="csx-dot" aria-label="Show screen 3"></button>
+                </div>
+                <button type="button" class="csx-arrow" data-dir="1" aria-label="Next screen"><span aria-hidden="true"></span></button>
+                <p class="csx-sr" aria-live="polite" data-status>Screen 1 of 3</p>
+              </div>
+            </div>
+            <div class="csx-two csx-decisions">
+              <div>
+                <h3>Make comparison easier to scan</h3>
+                <p>Keep rating, price, and distance near the business name.</p>
+              </div>
+              <div>
+                <h3>Give personal content a home</h3>
+                <p>Separate saved places and preferences from a long account list.</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="reflection" class="csx-section" aria-labelledby="reflection-title">
+            <div class="cs-paper csx-note">
+              <h2 id="reflection-title">Outcome &amp; reflection</h2>
+              <div class="csx-two">
+                <div>
+                  <h3>What was delivered</h3>
+                  <p>The team delivered research themes, personas, journey maps, revised navigation, mid-fidelity flows, and a high-fidelity concept. Faster discovery and increased review confidence remain unverified.</p>
+                </div>
+                <div>
+                  <h3>What comes next</h3>
+                  <p>Next, I would test whether people can compare suitable places and find messages or saved collections without help. Social context alone does not establish review credibility.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <details class="cs-source">
+          <summary>Project context &amp; draft notes</summary>
+          <p>Yelp 1 research deck, Check 2 mid-fidelity deck, and Yelp 3 final presentation.</p>
+          <p>Bracketed prompts identify information still to confirm. Labeled visual spaces reserve the intended image proportions; original project assets remain saved.</p>
+          </details>
+
+          <!-- EMBED (final section, listed last in the side rail).
+               FIGMA: Share → "Get embed code", copy only the link inside src="…",
+               and paste it over the placeholder in the iframe's src below. The
+               "Open full screen" link (phones) picks it up automatically. Until
+               then the page shows a labelled placeholder box and loads nothing. -->
+          <section id="prototype" class="csx-section csx-embed-section" aria-labelledby="prototype-title">
+            <h2 id="prototype-title">Prototype</h2>
+            <p class="csx-lede">Explore the high-fidelity mobile prototype at your own pace. Click or tap inside the phone to interact.</p>
+            <figure class="csx-embed" style="--rw: 9; --rh: 17">
+              <div class="csx-embed-frame">
+                <iframe src="[Figma embed URL: Yelp]" title="Interactive Figma prototype of the Yelp redesign" loading="lazy" allowfullscreen></iframe>
+              </div>
+              <figcaption>
+                <a class="csx-fullscreen" target="_blank" rel="noopener noreferrer">Open full screen</a>
+              </figcaption>
+            </figure>
+          </section>
+        </div>
+      </div>
+
+      <div class="cs-back-top-wrap">
+        <a class="cs-back-top" href="#main">
+          <img src="assets/scroll-arrow.svg" alt="" aria-hidden="true" width="22" height="32">
+          <span>Back to top</span>
+        </a>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <p>© Sebastian Vega 2026</p>
+      <p>Always a little curious.</p>
+    </footer>
+    <div class="page-loader" hidden role="status" aria-live="polite">
+      <canvas width="96" height="96" aria-hidden="true"></canvas>
+      <p>Drawing things together…</p>
+    </div>
+  </body>
+</html>
