@@ -1,0 +1,1697 @@
+/* =====================================================================
+   STYLES.CSS — shared styles, loaded on every page
+
+   Each page also loads its own file AFTER this one:
+     index.html            → hero.css + home-notes.css
+     work.html             → work.css
+     the 6 project pages   → case-pages.css
+
+   HOW THIS FILE IS ORGANISED
+     Part 1   Homepage hero: the pixel-paper background, icons, stationery
+     Part 2   Basics: colours, fonts, links, headings  (start here!)
+     Part 3   Navbar
+     Part 4   Footer
+     Part 5   Shared text styles (the Contact page uses contact.css)
+     Part 6   Page loader (the pixel pencil)
+     Part 7   Homepage hero: later adjustments
+     Part 8   Navbar dropdown and hero overflow
+     Part 9   Homepage headline
+     Part 10  Gallery page
+     Part 11  Homepage sections below the hero (about, experience,
+              favorites, back to top)
+
+   TIPS FOR MAKING CHANGES
+   - Colours and fonts used everywhere live in Part 2 (":root"), e.g.
+     --blue, --paper, --ink. Change them there and the whole site follows.
+   - In CSS, a rule further DOWN a file wins over an earlier one with the
+     same selector. The homepage hero was adjusted in several passes, so
+     if a change in Part 1 doesn't seem to work, search this file (and
+     hero.css) for the same selector — a later rule is probably winning.
+   - "@media (max-width: 767px) { ... }" means "only on screens 767px
+     wide or narrower" (phones). Change those blocks for mobile tweaks.
+   ===================================================================== */
+
+/* =====================================================================
+   PART 1 — HOMEPAGE HERO
+   The notebook-paper background, the headline, the three big pixel icons
+   and the draggable stationery. (hero.css adds more hero styles.)
+   ===================================================================== */
+#pixel-paper {
+  --pp-blue: #376399;
+  --pp-paper: #f6f3e9;
+  --pp-ink: #39434a;
+  color-scheme: light;
+  color: var(--pp-ink);
+  background-color: var(--pp-paper);
+  background-image: radial-gradient(#8075600b .7px, transparent .9px), linear-gradient(90deg, transparent 34px, #d8999840 34px, #d8999840 35px, transparent 35px), repeating-linear-gradient(0deg, transparent 0 31px, #91adc524 31px 32px);
+  background-size: 5px 7px, 100% 100%, 100% 32px;
+  font: 400 16px/1.5 'Gabarito', sans-serif;
+  position: relative;
+}
+
+#pixel-paper * {
+  box-sizing: border-box;
+}
+
+#pixel-paper button {
+  font: inherit;
+  color: inherit;
+}
+
+#pixel-paper button:focus-visible {
+  outline: 3px solid #bd6542;
+  outline-offset: 6px;
+}
+
+#pixel-paper button {
+  border: 0;
+  background: none;
+}
+
+#pixel-paper .pp-home {
+  padding: 0 6%;
+}
+
+#pixel-paper h1 > span {
+  color: var(--pp-blue);
+}
+
+#pixel-paper canvas {
+  image-rendering: pixelated;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#pixel-paper .pp-object {
+  transition: translate .16s steps(3);
+}
+
+#pixel-paper .pp-object:active {
+  translate: 0 -3px;
+}
+
+#pixel-paper .pp-folders {
+  width: 40%;
+  left: 2%;
+  top: 60px;
+}
+
+#pixel-paper .pp-camera {
+  width: 31%;
+  left: 44%;
+  top: 93px;
+}
+
+#pixel-paper .pp-note {
+  width: 19%;
+  right: 0;
+  top: 130px;
+}
+
+#pixel-paper .pp-folder-title {
+  position: absolute;
+  color: #685339;
+}
+
+#pixel-paper .pp-object-label {
+  display: block;
+  margin-top: 1px;
+}
+
+#pixel-paper .pp-note-text {
+  position: absolute;
+  color: #626031;
+}
+
+#pixel-paper .pp-note-text small {
+  display: block;
+  font: 400 12px/1.5 'Gabarito', sans-serif;
+}
+
+#pixel-paper .pp-pencil {
+  position: absolute;
+}
+
+#pixel-paper .pp-ruler {
+  position: absolute;
+}
+
+#pixel-paper .pp-under {
+  align-items: center;
+}
+
+#pixel-paper .pp-under button {
+  color: var(--pp-blue);
+}
+
+#pixel-paper h2 {
+  color: var(--pp-blue);
+  margin: 9px 0;
+}
+
+#pixel-paper h3 {
+  margin: 0 0 12px;
+  color: var(--pp-blue);
+}
+
+@media (max-width: 540px) {
+  #pixel-paper .pp-folders {
+    width: 79%;
+    max-width: 280px;
+    top: 70px;
+    left: 0;
+  }
+
+  #pixel-paper .pp-camera {
+    width: 66%;
+    max-width: 220px;
+    left: auto;
+    right: 0;
+    top: 348px;
+  }
+
+  #pixel-paper .pp-note {
+    width: 36%;
+    max-width: 118px;
+    top: 250px;
+    right: 0;
+  }
+
+  #pixel-paper .pp-under {
+    flex-wrap: wrap;
+  }
+
+  #pixel-paper h2 {
+    font-size: 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #pixel-paper * {
+    transition: none!important;
+    scroll-behavior: auto!important;
+  }
+}
+
+#pixel-paper .pp-folder-title {
+  font-family: 'Pixelify Sans', monospace;
+  font-weight: 500;
+  line-height: 1;
+}
+
+#pixel-paper .pp-note-text {
+  font-family: 'Pixelify Sans', monospace;
+  line-height: 1.1;
+}
+
+#pixel-paper .pp-note-text small {
+  font-family: 'Pixelify Sans', monospace;
+  font-size: 18px;
+  margin-top: 4px;
+}
+
+/* Pixel Paper design system: one reading face, one object-label face. */
+#pixel-paper {
+  --pp-reading: 'Gabarito', sans-serif;
+  --pp-object-font: 'Pixelify Sans', monospace;
+  --pp-muted: #666b68;
+  --pp-step: 8px;
+  font-family: var(--pp-reading);
+}
+
+#pixel-paper h1 {
+  font: 500 clamp(36px, 5.6vw, 52px)/1.12 var(--pp-reading);
+  letter-spacing: -1.5px;
+  margin: 16px 0;
+}
+
+#pixel-paper h2 {
+  font: 500 28px/1.2 var(--pp-reading);
+  letter-spacing: -.5px;
+}
+
+#pixel-paper h3 {
+  font: 500 22px/1.25 var(--pp-reading);
+}
+
+#pixel-paper .pp-intro {
+  text-align: center;
+}
+
+#pixel-paper .pp-intro p {
+  font: 400 18px/1.5 var(--pp-reading);
+}
+
+#pixel-paper .pp-overline {
+  font-size: 11px;
+  letter-spacing: 1.2px;
+}
+
+#pixel-paper .pp-scene-note {
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  transform: none;
+  font: 400 12px/1.5 var(--pp-reading);
+  color: var(--pp-muted);
+}
+
+#pixel-paper .pp-object {
+  left: auto;
+  right: auto;
+  top: auto;
+  max-width: none;
+  justify-items: center;
+  text-align: center;
+}
+
+#pixel-paper .pp-sprite {
+  display: block;
+  position: relative;
+  align-self: center;
+  width: 100%;
+}
+
+#pixel-paper .pp-folder-title {
+  /* Positions are % of the folder drawing (100 x 78 canvas pixels).
+     --folder-drop is set by home.js while the folder tips open on hover;
+     the label's centre moves half that many canvas pixels. */
+  left: 13%;
+  top: calc(52.5% + var(--folder-drop, 0) * .64%);
+  width: 69.6%;
+  text-align: center;
+  font: 500 24px/1 var(--pp-object-font);
+  letter-spacing: 0;
+}
+
+#pixel-paper .pp-note-text {
+  font: 400 22px/1.1 var(--pp-object-font);
+}
+
+#pixel-paper .pp-object-label {
+  font: 500 15px/1.5 var(--pp-reading);
+  text-align: center;
+  color: var(--pp-blue);
+}
+
+#pixel-paper .pp-pencil {
+  width: 144px;
+  left: calc(50% - 168px);
+  bottom: 22px;
+  transform: none;
+}
+
+#pixel-paper .pp-ruler {
+  width: 144px;
+  right: calc(50% - 168px);
+  top: auto;
+  bottom: 21px;
+  transform: none;
+}
+
+#pixel-paper .pp-under {
+  flex-direction: column;
+  text-align: center;
+  gap: 8px;
+}
+
+#pixel-paper .pp-under > span {
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+#pixel-paper .pp-under button {
+  font: 500 15px/1.5 var(--pp-reading);
+  min-height: 44px;
+  padding: 8px 12px;
+}
+
+@media (max-width: 540px) {
+  #pixel-paper h1 {
+    font-size: 36px;
+  }
+
+  #pixel-paper .pp-pencil {
+    width: 112px;
+    left: calc(50% - 120px);
+    bottom: 16px;
+  }
+
+  #pixel-paper .pp-ruler {
+    width: 112px;
+    right: calc(50% - 120px);
+    bottom: 15px;
+  }
+
+  #pixel-paper .pp-under > span {
+    font-size: 10px;
+  }
+
+  #pixel-paper .pp-under {
+    gap: 8px;
+  }
+}
+
+#pixel-paper .pp-home {
+  position: relative;
+}
+
+#pixel-paper .pp-object:hover .pp-sprite,
+#pixel-paper .pp-object:focus-visible .pp-sprite {
+  filter: drop-shadow(5px 7px 0 #b9b19b66);
+}
+
+#pixel-paper .pp-home > .pp-pencil {
+  bottom: auto;
+  transform: rotate(-65deg);
+  pointer-events: none;
+}
+
+#pixel-paper .pp-home > .pp-ruler {
+  bottom: auto;
+  transform: rotate(74deg);
+  pointer-events: none;
+}
+
+#pixel-paper .pp-paperclip {
+  position: absolute;
+  width: 28px;
+  height: auto;
+  top: 28px;
+  left: 8%;
+  transform: rotate(18deg);
+  pointer-events: none;
+}
+
+#pixel-paper .pp-sticker {
+  position: absolute;
+  height: auto;
+  bottom: 33px;
+  right: 5%;
+  transform: rotate(-12deg);
+  pointer-events: none;
+}
+
+#pixel-paper .pp-sticker {
+  width: 60px;
+}
+
+#pixel-paper .pp-scene {
+  padding-bottom: 40px;
+}
+
+@media (max-width: 540px) {
+  #pixel-paper .pp-home > .pp-pencil {
+    transform: rotate(68deg);
+  }
+
+  #pixel-paper .pp-home > .pp-ruler {
+    transform: rotate(-74deg);
+  }
+
+  #pixel-paper .pp-paperclip {
+    width: 20px;
+    left: 2%;
+    top: 29px;
+  }
+
+  #pixel-paper .pp-sticker {
+    width: 44px;
+    bottom: 13px;
+    right: 2%;
+  }
+
+  #pixel-paper .pp-scene {
+    padding-bottom: 40px;
+  }
+}
+
+/* Fluid home composition: the central objects scale with the available canvas. */
+#pixel-paper .pp-home {
+  display: flex;
+  flex-direction: column;
+}
+
+#pixel-paper .pp-intro {
+  padding-top: clamp(34px, 6vh, 72px);
+}
+
+#pixel-paper .pp-object {
+  grid-template-rows: clamp(190px, 25vw, 250px) auto;
+}
+
+#pixel-paper .pp-sprite {
+  max-width: clamp(216px, 29vw, 272px);
+}
+
+#pixel-paper .pp-camera .pp-sprite {
+  max-width: clamp(200px, 26vw, 248px);
+}
+
+#pixel-paper .pp-note .pp-sprite {
+  max-width: clamp(120px, 16vw, 152px);
+}
+
+#pixel-paper .pp-under {
+  width: 100%;
+  border-top: 1px solid #acb2b34a;
+}
+
+#pixel-paper .pp-under button {
+  font-size: 16px;
+}
+
+@media (max-width: 700px) {
+  #pixel-paper .pp-object {
+    grid-template-rows: clamp(150px, 29vw, 190px) auto;
+  }
+}
+
+@media (max-width: 540px) {
+  #pixel-paper .pp-intro {
+    padding-top: 34px;
+  }
+
+  #pixel-paper .pp-intro p br {
+    display: none;
+  }
+
+  #pixel-paper .pp-object {
+    grid-template-rows: auto auto;
+  }
+}
+
+/* =====================================================================
+   PART 2 — BASICS
+   Site-wide colours and fonts (the --names below), plus default styles
+   for the page, links, buttons and headings.
+   ===================================================================== */
+:root {
+  /* SITE COLOURS — change these to recolour the whole site */
+  --paper: #f6f3e9;
+  /* page background (off-white paper) */
+  --ink: #39434a;
+  /* main text colour */
+  --blue: #376399;
+  /* headings, links, accents */
+  --muted: #666b68;
+  /* softer secondary text */
+  --line: #c9cecb;
+  /* thin divider lines */
+  --manila: #e7cd94;
+  /* folder yellow */
+  /* Navbar background; the footer is calculated from it (8% darker)
+     so the two always stay in sync. */
+  --nav-bg: var(--paper);
+  --footer-bg: color-mix(in srgb, var(--nav-bg) 92%, #000);
+
+  /* PROJECT THUMBNAIL SHAPES
+     Thumbnails always fill their frame edge to edge without stretching:
+     anything outside the frame's shape is trimmed evenly from the edges.
+     Export thumbnails at the same shape to avoid any trimming.
+       --thumb-ratio       graphic design cards on the Work page (3:2)
+       --thumb-ratio-wide  United featured card, the UX cards and the
+                           homepage favorites (16:9, because the Cura
+                           thumbnail's design runs too close to its edges
+                           for 3:2). Change to 3 / 2 once Cura has a 3:2 export. */
+  --thumb-ratio: 3 / 2;
+  --thumb-ratio-wide: 16 / 9;
+  /* Navbar link colours */
+  --nav-link: #8a8f8c;
+  /* idle: light grey */
+  --nav-link-hover: #5f8ec7;
+  /* hover: light blue */
+  --nav-link-current: var(--blue);
+  /* the page you're on: blue */
+  /* Default text */
+  font-family: Gabarito, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  font-synthesis: none;
+  /* never fake bold/italic versions of a font */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-image: repeating-linear-gradient(0deg, transparent 0 31px, #91adc524 31px 32px);
+  /* Keep the footer at the bottom of the window, even on short pages:
+     the page is at least one screen tall, and the footer is pushed down. */
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-footer {
+  margin-top: auto;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--blue);
+  text-underline-offset: 5px;
+}
+
+button,
+a {
+  touch-action: manipulation;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #b27050;
+  outline-offset: 5px;
+}
+
+button {
+  color: inherit;
+}
+
+p {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  max-width: 65ch;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.12;
+  font-weight: 500;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  letter-spacing: -.035em;
+  color: var(--blue);
+  margin: 16px 0 24px;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  margin: 12px 0 24px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 12px 0;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  font-size: .875rem;
+  line-height: 1.5;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+ul {
+  padding-left: 1.3em;
+}
+
+li {
+  line-height: 1.6;
+}
+
+.skip {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 50;
+  background: var(--paper);
+  padding: 16px;
+}
+
+.skip:focus {
+  top: 10px;
+}
+
+/* =====================================================================
+   PART 3 — NAVBAR
+   The bar at the top of every page: SEBA logo, links, and the ☰ menu
+   button that replaces the links on phones.
+   ===================================================================== */
+.site-header {
+  width: 100%;
+  margin: auto;
+  min-height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 18px clamp(20px, 3vw, 56px);
+  gap: 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--nav-bg);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+/* SEBA logo: about 68px wide on phones, growing to 88px on large screens. */
+.brand img {
+  width: clamp(68px, 56px + 1.7vw, 88px);
+  height: auto;
+}
+
+.menu-toggle {
+  min-height: 44px;
+  background: transparent;
+}
+
+.menu-toggle span {
+  margin-left: 16px;
+}
+
+#main-nav {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+/* Navbar links: grey, light blue on hover, blue for the current page.
+   No underlines. The text grows a little on bigger screens
+   (about 17px on phones up to 20px on desktops). */
+#main-nav a {
+  padding: 12px 0;
+  color: var(--nav-link);
+  font-size: clamp(1.0625rem, 0.95rem + 0.35vw, 1.25rem);
+  text-decoration: none;
+  transition: color .15s ease;
+}
+
+#main-nav a:hover {
+  color: var(--nav-link-hover);
+}
+
+#main-nav a[aria-current] {
+  color: var(--nav-link-current);
+}
+
+body.js #main-nav:not(.is-open) {
+  display: none;
+}
+
+/* =====================================================================
+   PART 4 — FOOTER
+   ===================================================================== */
+
+/* Full-width footer: a solid band 8% darker than the navbar (see --footer-bg). */
+.site-footer {
+  width: 100%;
+  box-sizing: border-box;
+  background: #e2e0d6;
+  /* fallback for browsers without color-mix() */
+  background: var(--footer-bg);
+  border-top: 1px solid var(--line);
+  padding: clamp(28px, 3.5vw, 56px) clamp(20px, 5vw, 80px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px 24px;
+  font-size: .875rem;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: inherit;
+  line-height: 1.5;
+}
+
+.site-footer p:first-child {
+  color: var(--blue);
+}
+
+.page-main {
+  width: min(100% - 40px, 1120px);
+  margin: 0 auto;
+  padding: 40px 0 64px;
+  min-width: 0;
+}
+
+/* =====================================================================
+   PART 5 — SHARED TEXT STYLES
+   .eyebrow (small label above a heading) and .lead (larger intro text),
+   used on the gallery page. The Contact page has its own file: contact.css.
+   ===================================================================== */
+.eyebrow {
+  font-size: .8125rem;
+  letter-spacing: .08em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.lead {
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+}
+
+.page-main > section {
+  margin: 56px 0;
+}
+
+/* =====================================================================
+   PART 6 — PAGE LOADER
+   The pixel pencil that appears if a page takes a moment to load.
+   It is drawn by site.js.
+   ===================================================================== */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: var(--paper);
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+.page-loader[hidden] {
+  display: none;
+}
+
+.page-loader canvas {
+  width: 192px;
+  height: 192px;
+  image-rendering: pixelated;
+  margin: auto;
+}
+
+.page-loader p {
+  margin: 24px 20px;
+}
+
+/* =====================================================================
+   PART 7 — HOMEPAGE HERO: LATER ADJUSTMENTS
+   These rules come after Part 1 on purpose and override it.
+   ===================================================================== */
+
+/* The hero fills the browser window, up to 1440px wide. */
+#pixel-paper .pp-home {
+  max-width: 1440px;
+  margin: auto;
+  min-height: calc(100svh - 84px);
+  padding-inline: clamp(20px, 5vw, 72px);
+}
+
+#pixel-paper .pp-scene {
+  column-gap: clamp(16px, 4vw, 64px);
+}
+
+#pixel-paper .pp-under {
+  margin-top: auto;
+}
+
+#pixel-paper .pp-sprite {
+  container-type: inline-size;
+}
+
+/* Lettering size is a share of the drawing's width (cqw = 1% of .pp-art). */
+#pixel-paper .pp-folder-title {
+  font-size: 13.2cqw;
+}
+
+#pixel-paper .pp-note-text {
+  font-size: 22.5cqw;
+}
+
+/* Tablets and phones: the icons are smaller, so the lettering on them is
+   scaled down to leave breathing room inside the folder label and note. */
+@media (max-width: 1023px) {
+  #pixel-paper .pp-folder-title {
+    font-size: 10.8cqw;
+  }
+
+  #pixel-paper .pp-note-text {
+    font-size: 17.5cqw;
+  }
+}
+
+@media (min-width: 760px) {
+  body.js #main-nav:not(.is-open),
+  #main-nav {
+    display: flex;
+    width: auto;
+  }
+
+  .page-main {
+    padding-top: 56px;
+  }
+}
+
+@media (max-width: 540px) {
+  #pixel-paper .pp-home {
+    min-height: auto;
+  }
+}
+
+#pixel-paper .pp-intro p {
+  margin-inline: auto;
+}
+
+#pixel-paper h1 {
+  color: var(--pp-ink);
+}
+
+@media (min-width: 1000px) {
+  #pixel-paper .pp-scene {
+    column-gap: clamp(32px, 4vw, 64px);
+  }
+
+  #pixel-paper .pp-object {
+    grid-template-rows: clamp(280px, 24vw, 360px) auto;
+  }
+
+  #pixel-paper .pp-camera .pp-sprite {
+    max-width: 354px;
+  }
+
+  #pixel-paper .pp-note .pp-sprite {
+    max-width: 210px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto!important;
+    transition: none!important;
+  }
+}
+
+/* Spacious responsive composition and movable pixel objects. */
+#main-nav {
+  gap: clamp(30px, 2.7vw, 52px);
+}
+
+#main-nav a {
+  position: relative;
+}
+
+#pixel-paper .pp-intro .pp-overline {
+  display: block;
+}
+
+#pixel-paper .pp-scene {
+  margin-top: clamp(44px, 6vh, 76px);
+  padding-top: clamp(56px, 5vw, 80px);
+}
+
+#pixel-paper .pp-home > .pp-paperclip {
+  top: 52px;
+  left: 12%;
+}
+
+#pixel-paper .pp-home > .pp-pencil {
+  top: 330px;
+  left: 1%;
+}
+
+#pixel-paper .pp-home > .pp-ruler {
+  top: 180px;
+  right: 1%;
+}
+
+#pixel-paper .pp-home > .pp-sticker {
+  right: 10%;
+}
+
+#pixel-paper .pp-object:hover {
+  translate: none;
+}
+
+@media (max-width: 540px) {
+  #pixel-paper .pp-home > .pp-paperclip {
+    top: 28px;
+    left: 5%;
+  }
+
+  #pixel-paper .pp-home > .pp-pencil {
+    top: 350px;
+    left: auto;
+    right: 1%;
+  }
+
+  #pixel-paper .pp-home > .pp-ruler {
+    top: auto;
+    bottom: 300px;
+    left: 1%;
+    right: auto;
+  }
+
+  #pixel-paper .pp-home > .pp-sticker {
+    right: 8%;
+  }
+
+  #pixel-paper .pp-intro .pp-overline {
+    max-width: 28em;
+    margin-inline: auto;
+  }
+}
+
+/* Lift the art independently of each object's dragged position. */
+#pixel-paper .pp-object .pp-sprite {
+  transform: translateY(0);
+  filter: drop-shadow(0 0 0 transparent);
+  transition: transform .18s steps(3), filter .18s steps(3);
+}
+
+#pixel-paper .pp-object:hover .pp-sprite,
+#pixel-paper .pp-object:focus-visible .pp-sprite,
+#pixel-paper .pp-object.is-dragging .pp-sprite {
+  transform: translateY(-8px);
+  filter: drop-shadow(6px 9px 0 #8f877466);
+}
+
+#pixel-paper .pp-folders .pp-sprite {
+  width: 86%;
+  max-width: 234px;
+}
+
+#pixel-paper .pp-home > canvas.is-dragging {
+  cursor: grabbing;
+  z-index: 5;
+}
+
+#pixel-paper .pp-eraser,
+#pixel-paper .pp-sd-card {
+  position: absolute;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+#pixel-paper .pp-eraser {
+  width: 72px;
+  left: 8%;
+  bottom: 150px;
+  transform: rotate(14deg);
+}
+
+#pixel-paper .pp-sd-card {
+  width: 66px;
+  right: 17%;
+  top: 46px;
+  transform: rotate(-16deg);
+}
+
+#pixel-paper .pp-home > .pp-sticker {
+  bottom: 110px;
+}
+
+#pixel-paper .pp-under {
+  padding-bottom: 74px;
+  padding-top: clamp(40px, 8vh, 100px);
+}
+
+@media (min-width: 1000px) {
+  #pixel-paper .pp-folders .pp-sprite {
+    width: 86%;
+    max-width: 304px;
+  }
+}
+
+@media (max-width: 540px) {
+  #pixel-paper .pp-folders .pp-sprite {
+    width: min(67vw, 241px);
+    max-width: 186px;
+  }
+
+  #pixel-paper .pp-home > .pp-sticker {
+    bottom: 96px;
+  }
+
+  #pixel-paper .pp-eraser {
+    width: 48px;
+    left: 4%;
+    bottom: 180px;
+  }
+
+  #pixel-paper .pp-sd-card {
+    width: 44px;
+    right: 4%;
+    top: 280px;
+  }
+
+  #pixel-paper .pp-under {
+    margin-top: 24px;
+    padding-bottom: 62px;
+  }
+}
+
+/* Requested stationery scale adjustments. */
+#pixel-paper .pp-home > .pp-pencil {
+  width: 115.2px;
+}
+
+#pixel-paper .pp-home > .pp-ruler {
+  width: 156.8px;
+}
+
+@media (max-width: 540px) {
+  #pixel-paper .pp-home > .pp-pencil {
+    width: 86.4px;
+  }
+
+  #pixel-paper .pp-home > .pp-ruler {
+    width: 112px;
+  }
+}
+
+/* Decorative objects rest flat and cast a shadow only while lifted. */
+
+/* Small screens: reserve clear spaces for stationery between content groups. */
+@media (max-width: 760px) {
+  #pixel-paper .pp-intro {
+    padding-top: 105px;
+  }
+
+  #pixel-paper .pp-scene {
+    padding-top: 120px;
+    margin-top: 40px;
+  }
+
+  #pixel-paper .pp-object {
+    grid-template-rows: auto auto;
+  }
+
+  #pixel-paper .pp-folders .pp-sprite {
+    width: 186px;
+    max-width: 186px;
+  }
+
+  #pixel-paper .pp-camera .pp-sprite {
+    max-width: 200px;
+  }
+
+  #pixel-paper .pp-note .pp-sprite {
+    max-width: 120px;
+  }
+
+  #pixel-paper .pp-home > .pp-paperclip {
+    width: 24px;
+    top: 28px;
+    left: 12%;
+  }
+
+  #pixel-paper .pp-home > .pp-sd-card {
+    width: 44px;
+    top: 25px;
+    right: 14%;
+  }
+
+  #pixel-paper .pp-home > .pp-pencil {
+    width: 86.4px;
+    left: 8%;
+    right: auto;
+    bottom: auto;
+    transform: rotate(-24deg);
+  }
+
+  #pixel-paper .pp-home > .pp-ruler {
+    width: 112px;
+    left: auto;
+    right: 7%;
+    bottom: auto;
+    transform: rotate(22deg);
+  }
+
+  #pixel-paper .pp-home > .pp-eraser {
+    width: 48px;
+    left: 10%;
+    bottom: auto;
+    transform: rotate(-18deg);
+  }
+
+  #pixel-paper .pp-home > .pp-sticker {
+    width: 44px;
+    right: 12%;
+    bottom: 100px;
+  }
+
+  #pixel-paper .pp-under {
+    margin-top: 55px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+/* =====================================================================
+   PART 8 — NAVBAR DROPDOWN AND HERO OVERFLOW
+   How the phone menu drops down, and letting stationery be dragged
+   right up to the edges of the screen.
+   ===================================================================== */
+
+/* Navigation dropdown and viewport-wide decorative dragging. */
+#pixel-paper {
+  overflow: visible;
+}
+
+#pixel-paper .pp-object {
+  cursor: pointer;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu-toggle {
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: 0;
+  display: grid;
+  place-items: center;
+}
+
+.menu-toggle .hamburger {
+  display: grid;
+  gap: 5px;
+  width: 24px;
+  margin: 0;
+}
+
+.hamburger i {
+  display: block;
+  height: 2px;
+  width: 24px;
+  background: var(--blue);
+  transition: transform .16s ease, opacity .16s ease;
+}
+
+.menu-toggle[aria-expanded=true] i:first-child {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded=true] i:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded=true] i:last-child {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 759px) {
+  body.js #main-nav {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 20px;
+    width: min(220px, calc(100vw - 40px));
+    padding: 12px 20px;
+    flex-direction: column;
+    gap: 4px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    box-shadow: 4px 5px 0 #b9b19b44;
+  }
+
+  #main-nav a {
+    min-height: 44px;
+  }
+}
+
+@media (min-width: 760px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* =====================================================================
+   PART 9 — HOMEPAGE HEADLINE
+   "Hey, I'm Sebastian!" in Salted, with the hand-drawn underline.
+   ===================================================================== */
+
+/* Homepage typography: Salted activates once its licensed webfont is loaded. */
+#pixel-paper .pp-intro h1 {
+  font-family: salted, Gabarito, sans-serif;
+  font-style: normal;
+}
+
+#pixel-paper .pp-intro p {
+  max-width: none;
+  text-wrap: wrap;
+}
+
+/* A bold introduction with an imperfect ink underline. */
+#pixel-paper .pp-intro h1 {
+  margin-bottom: 30px;
+}
+
+#pixel-paper .pp-intro h1 > span {
+  display: inline-block;
+  position: relative;
+  isolation: isolate;
+  white-space: nowrap;
+}
+
+#pixel-paper .pp-intro h1 > span::after {
+  content: "";
+  position: absolute;
+  left: -2%;
+  right: -2%;
+  bottom: -.05em;
+  height: .1em;
+  background: var(--pp-blue);
+  clip-path: polygon(0 40%, 18% 28%, 36% 45%, 59% 20%, 80% 34%, 100% 0, 99% 48%, 79% 78%, 58% 65%, 36% 100%, 17% 70%, 0 85%);
+  transform: rotate(-1.5deg);
+  pointer-events: none;
+}
+
+/* Give the descriptor a readable, responsive scale and room below the name. */
+#pixel-paper .pp-intro .pp-overline {
+  margin-bottom: 26px;
+}
+
+/* =====================================================================
+   PART 10 — GALLERY PAGE
+   The temporary "Coming soon." photography page.
+   ===================================================================== */
+
+/* Photography temporary landing page */
+.gallery-coming-soon {
+  min-height: calc(100vh - 190px);
+  display: grid;
+  align-content: center;
+  justify-items: start;
+}
+
+.gallery-coming-soon h1 {
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  margin: .1em 0;
+}
+
+.gallery-coming-soon .lead a {
+  color: var(--blue);
+  text-underline-offset: 6px;
+}
+
+/* =====================================================================
+   PART 11 — HOMEPAGE SECTIONS BELOW THE HERO
+   The sticky notes (about, experience), "Three of my favorites" cards
+   and the Back to top button. home-notes.css adds the sticky-note look.
+   ===================================================================== */
+
+/* Homepage paper journey: about, experience, and three favorite case studies. */
+html {
+  scroll-behavior: smooth;
+}
+
+#pixel-paper .pp-under a {
+  color: var(--pp-blue);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 8px;
+}
+
+#pixel-paper .paper-journey {
+  padding: 32px clamp(20px, 6vw, 100px) clamp(40px, 4.5vw, 64px);
+}
+
+#pixel-paper .paper-chapter {
+  display: grid;
+  align-items: center;
+  padding: 60px 0;
+  scroll-margin-top: 110px;
+}
+
+#pixel-paper .paper-sheet {
+  width: min(100%, 1080px);
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 72px);
+  background: #fffdf6;
+  position: relative;
+}
+
+#pixel-paper .paper-tape {
+  position: absolute;
+  border-left: 2px dashed #fff7;
+  border-right: 2px dashed #fff7;
+}
+
+#pixel-paper .paper-kicker {
+  font-size: 13px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--pp-blue);
+  margin: 0 0 22px;
+}
+
+#pixel-paper .paper-sheet h2,
+#pixel-paper .paper-favorites-heading h2 {
+  font-family: salted, Gabarito, sans-serif;
+  font-size: clamp(38px, 5vw, 70px);
+  line-height: 1.12;
+  font-weight: 400;
+  color: var(--pp-blue);
+  margin: 0 0 30px;
+}
+
+#pixel-paper .paper-sheet p {
+  line-height: 1.65;
+}
+
+#pixel-paper .paper-sheet .paper-lead {
+  line-height: 1.45;
+}
+
+#pixel-paper .paper-about-layout {
+  display: grid;
+  align-items: center;
+}
+
+#pixel-paper .paper-favorites-heading {
+  text-align: center;
+  padding: 100px 0 0;
+  scroll-margin-top: 100px;
+}
+
+#pixel-paper .paper-favorites-heading h2 {
+  margin-bottom: 18px;
+}
+
+#pixel-paper .paper-project-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: start;
+}
+
+#pixel-paper .paper-project-heading h2 {
+  font-size: clamp(34px, 4.4vw, 62px);
+}
+
+/* Favorites thumbnail frame: the image fills it completely (see --thumb-ratio-wide). */
+#pixel-paper .paper-project-image {
+  display: block;
+  background: #e9eef1;
+  border: 1px solid #39434a15;
+  overflow: hidden;
+}
+
+#pixel-paper .paper-project-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: var(--thumb-ratio-wide);
+  object-fit: cover;
+}
+
+#pixel-paper .paper-project-image:hover img {
+  transform: scale(1.025);
+}
+
+#pixel-paper .paper-project-1 {
+  transform: rotate(-.7deg);
+}
+
+#pixel-paper .paper-project-1 .paper-project-image {
+  background: #e6ecdf;
+}
+
+#pixel-paper .paper-project-2 {
+  transform: rotate(.7deg);
+}
+
+#pixel-paper .paper-project-2 .paper-project-image {
+  background: #eee1d5;
+}
+
+#pixel-paper .paper-project-caption {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: center;
+  margin-top: 28px;
+}
+
+#pixel-paper .paper-project-caption h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+#pixel-paper .paper-project-caption p {
+  margin-bottom: 0;
+  max-width: 60ch;
+}
+
+@media (max-width: 700px) {
+  #pixel-paper .paper-chapter {
+    padding: 40px 0;
+  }
+
+  #pixel-paper .paper-sheet {
+    transform: none;
+    padding: 28px 22px;
+  }
+
+  #pixel-paper .paper-about-layout,
+  #pixel-paper .paper-project-caption {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  #pixel-paper .paper-project-image img {
+    transition: none;
+  }
+}
+
+/* Compact favorites: three paper cards, with movement on the paper itself. */
+#pixel-paper .paper-favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 48px auto 0;
+}
+
+/* Each card spans three shared rows (heading, image, caption) via subgrid, so all
+   cards match the tallest one and their images line up even when a title wraps. */
+#pixel-paper .paper-favorites-grid .paper-project-chapter {
+  min-height: 0;
+  min-width: 0;
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+}
+
+#pixel-paper .paper-favorites-grid .paper-project {
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+}
+
+#pixel-paper .paper-favorites-grid .paper-project:focus-within {
+  transform: translateY(-8px) rotate(0);
+  box-shadow: 5px 9px 0 #e3dece, 12px 20px 30px #413d2525;
+}
+
+@media (hover: hover) {
+  #pixel-paper .paper-favorites-grid .paper-project:hover {
+    transform: translateY(-8px) rotate(0);
+    box-shadow: 5px 9px 0 #e3dece, 12px 20px 30px #413d2525;
+  }
+}
+
+/* The title link stretches over the whole card, so the entire paper is clickable. */
+#pixel-paper .paper-card-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+#pixel-paper .paper-card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+#pixel-paper .paper-card-link:focus-visible {
+  outline: none;
+}
+
+#pixel-paper .paper-favorites-grid .paper-project:has(.paper-card-link:focus-visible) {
+  outline: 3px solid var(--pp-blue);
+  outline-offset: 6px;
+}
+
+/* Pushpin holding each favorites polaroid (pixel SVG in index.html, 14 x 19
+   pixels drawn at 3x). It's tilted around the needle tip, which lands on the
+   top of the photo. It sits above the clickable overlay but lets clicks
+   pass through. */
+#pixel-paper .paper-favorites-grid .paper-pin {
+  position: absolute;
+  top: -40px;
+  left: calc(50% - 19.5px);
+  z-index: 2;
+  width: 42px;
+  height: 57px;
+  transform: rotate(18deg);
+  transform-origin: 19.5px 54px;   /* the needle tip */
+  pointer-events: none;
+}
+
+#pixel-paper .paper-favorites-grid .paper-pin svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#pixel-paper .paper-favorites-grid .paper-kicker {
+  font-size: 10px;
+  margin-bottom: 12px;
+}
+
+#pixel-paper .paper-favorites-grid .paper-project-heading {
+  gap: 10px;
+}
+
+#pixel-paper .paper-favorites-grid h2 {
+  font-size: clamp(26px, 2.5vw, 36px);
+  margin-bottom: 18px;
+}
+
+#pixel-paper .paper-favorites-grid .paper-project-image img {
+  transform: none;
+  transition: none;
+}
+
+#pixel-paper .paper-favorites-grid .paper-project-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+#pixel-paper .paper-favorites-grid .paper-project-caption h3 {
+  font-size: 20px;
+}
+
+#pixel-paper .paper-favorites-grid .paper-project-caption p {
+  font-size: 15px;
+}
+
+@media (max-width: 760px) {
+  #pixel-paper .paper-favorites-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Restored scroll cue only; existing hero content retains its layout. */
+#pixel-paper .pp-under .pp-restored-cue {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 72px;
+  min-height: 44px;
+  border: 0;
+  color: var(--blue);
+  text-align: center;
+  text-decoration: none;
+  z-index: 5;
+  font: 400 20px/1.2 salted, Gabarito, sans-serif;
+}
+
+#pixel-paper .pp-restored-cue img {
+  display: block;
+}
+
+#pixel-paper .pp-under .pp-restored-cue {
+  padding: 0;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+/* Keep anchor destinations visible beneath the persistent navigation. */
+html {
+  scroll-padding-top: 110px;
+}
+
+/* Photography placeholder heading. */
+.gallery-coming-soon h1 {
+  font-family: salted, Gabarito, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Homepage "Back to top" link: the scroll-cue arrow flipped upward, returning to the hero (#main). */
+#pixel-paper .paper-back-top-wrap {
+  display: flex;
+  justify-content: center;
+  /* Space above only; the journey's bottom padding sets the gap to the footer. */
+  padding-top: clamp(56px, 7vw, 112px);
+}
+
+#pixel-paper .paper-back-top {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 6px 12px;
+  color: var(--pp-blue);
+  font: 400 clamp(20px, 1.6vw, 26px)/1.2 salted, Gabarito, sans-serif;
+  text-decoration: none;
+  text-underline-offset: .2em;
+}
+
+#pixel-paper .paper-back-top img {
+  width: clamp(22px, 1.5vw, 30px);
+  height: auto;
+  image-rendering: pixelated;
+  transform: rotate(180deg);
+  transition: transform .18s steps(3);
+}
+
+#pixel-paper .paper-back-top:hover span,
+#pixel-paper .paper-back-top:focus-visible span {
+  text-decoration: underline;
+}
+
+#pixel-paper .paper-back-top:hover img,
+#pixel-paper .paper-back-top:focus-visible img {
+  transform: rotate(180deg) translateY(6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #pixel-paper .paper-back-top img {
+    transition: none;
+  }
+}

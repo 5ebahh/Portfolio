@@ -1,0 +1,828 @@
+/* =====================================================================
+   CASE-STUDY.CSS — the six project pages
+   A redesigned case-study layout. Loaded after styles.css and
+   case-pages.css; everything here is scoped to main.csx, so nothing on
+   the real project pages changes.
+
+   1  Tokens and page width
+   2  Hero, quick facts and cover image
+   3  The story column (centred) and the section rail (left edge)
+   4  Sections: overview, process steps, final design, reflection, prototype
+   5  Below 1024px: no rail, steps collapsed
+   6  Phones (below 700px): carousel, tighter spacing, smaller images
+   7  Reduced motion
+   ===================================================================== */
+
+/* =====================================================================
+   1 — TOKENS AND PAGE WIDTH
+   --header-h is kept up to date by case-study.js.
+   ===================================================================== */
+:root {
+  --header-h: 84px;        /* height of the site's sticky navbar */
+  --rule: #d9d0b8;
+  --card: #fffdf5;
+  --muted: #59645d;
+  --gutter: clamp(20px, 4vw, 48px);
+  --measure: 66ch;         /* comfortable reading width for paragraphs */
+
+  /* The story column: centred on the page, a little wider and larger on
+     big screens. The rail on the left needs --rail-w plus some breathing
+     room on BOTH sides so the column stays dead centre. */
+  --rail-left: clamp(16px, 1.6vw, 32px);
+  --rail-w: clamp(176px, 14vw, 240px);
+  --story-max: clamp(760px, 52vw, 920px);
+}
+
+/* Jumping to a section lands its heading just below the navbar. */
+html {
+  scroll-padding-top: calc(var(--header-h) + 28px);
+}
+
+.cs-page.csx {
+  width: min(100% - 2 * var(--gutter), 1280px);
+  padding-top: clamp(24px, 3.5vw, 56px);
+}
+
+.csx p {
+  max-width: var(--measure);
+}
+
+.csx .csx-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* =====================================================================
+   2 — HERO, QUICK FACTS AND COVER IMAGE
+   ===================================================================== */
+.csx .csx-hero {
+  display: block;
+}
+
+/* Small, quiet way back to the work page, above the title. */
+.csx .csx-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;   /* still an easy tap target */
+  margin: -10px 0 clamp(8px, 1.5vw, 16px);
+  color: var(--muted);
+  font-size: .9rem;
+  text-decoration: none;
+}
+
+.csx .csx-back-arrow {
+  width: 7px;
+  height: 11px;
+  background: currentColor;
+  clip-path: polygon(0 43.75%, 20% 43.75%, 20% 31.25%, 40% 31.25%, 40% 18.75%, 60% 18.75%, 60% 6.25%, 80% 6.25%, 80% 0, 100% 0, 100% 100%, 80% 100%, 80% 93.75%, 60% 93.75%, 60% 81.25%, 40% 81.25%, 40% 68.75%, 20% 68.75%, 20% 56.25%, 0 56.25%);
+  transition: transform .15s ease;
+}
+
+.csx .csx-back:hover,
+.csx .csx-back:focus-visible {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.csx .csx-back:hover .csx-back-arrow {
+  transform: translateX(-3px);
+}
+
+.csx .csx-tag {
+  margin: 0;
+  color: var(--blue);
+  font-size: .9rem;
+}
+
+/* The title is the focal point; the pitch sits under it, clearly smaller. */
+.csx .csx-hero h1 {
+  margin: 6px 0 clamp(10px, 1.4vw, 18px);
+}
+
+.csx .csx-pitch {
+  max-width: 62ch;
+}
+
+.csx .csx-subtitle {
+  margin: 0 0 8px;
+  color: var(--ink, #2f2f2f);
+  font-size: clamp(1.15rem, 1rem + .55vw, 1.5rem);
+  line-height: 1.35;
+}
+
+.csx .csx-pitch p:not(.csx-subtitle) {
+  margin: 0;
+  color: #4a545a;
+  font-size: clamp(.98rem, .92rem + .2vw, 1.1rem);
+  line-height: 1.6;
+}
+
+.csx .csx-status {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.csx .csx-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px clamp(20px, 3vw, 48px);
+  margin: clamp(28px, 4vw, 48px) 0 clamp(20px, 3vw, 32px);
+  padding-block: 18px;
+  border-block: 1px solid var(--rule);
+}
+
+/* Solo projects list three facts (no Team), so use three columns. */
+@media (min-width: 1024px) {
+  .csx .csx-facts:has(> div:nth-child(3):last-child) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.csx .csx-facts > div + div {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.csx .csx-facts dt {
+  margin-bottom: 4px;
+  font-size: .85rem;
+}
+
+.csx .csx-facts dd {
+  font-size: .95rem;
+}
+
+.csx .csx-todo,
+.csx .csx-todo-note {
+  color: #6f6a55;
+}
+
+.csx .csx-todo-note {
+  font-size: .9em;
+  border-left: 2px solid #b8ad90;
+  padding-left: 14px;
+}
+
+.csx .csx-cover {
+  margin: 0;
+}
+
+.csx .csx-cover img {
+  display: block;
+  width: 100%;
+  height: auto;   /* keeps each project's own image shape (width/height in the HTML) */
+  border: 1px solid #c6c8c6;
+}
+
+/* =====================================================================
+   3 — THE STORY COLUMN AND THE SECTION RAIL
+   The story is one centred column. From 1024px up the section rail is
+   pinned to the left edge of the screen, vertically centred, and only
+   shows while you're reading the story (case-study.js adds .is-shown),
+   so it never sits over the hero or the end of the page.
+   ===================================================================== */
+.csx .csx-body {
+  margin-top: clamp(48px, 6vw, 96px);
+}
+
+.csx .csx-content {
+  container-type: inline-size;   /* sections adapt to the column's width */
+  width: min(100%, var(--story-max));
+  margin-inline: auto;
+}
+
+/* Big screens: reading text grows a touch with the screen. */
+@media (min-width: 1024px) {
+  .csx .csx-content {
+    /* Leave the rail's width (plus a gap) clear on BOTH sides of the
+       column, so it stays dead centre and never touches the rail. */
+    width: min(100%, var(--story-max), 100vw - 2 * (var(--rail-left) + var(--rail-w) + 40px));
+    font-size: clamp(1rem, .8rem + .3vw, 1.18rem);
+  }
+}
+
+.csx .csx-toc {
+  display: none;   /* phones and tablets: no rail */
+}
+
+@media (min-width: 1024px) {
+  .csx .csx-toc {
+    display: block;
+    position: fixed;
+    left: var(--rail-left);
+    top: calc(var(--header-h) + (100vh - var(--header-h)) / 2);
+    z-index: 50;
+    width: var(--rail-w);
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s steps(3), visibility 0s .2s;
+  }
+
+  .csx .csx-toc.is-shown {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .2s steps(3), visibility 0s;
+  }
+}
+
+.csx .csx-toc-list {
+  --progress: 0;   /* 0 → 1, set by case-study.js */
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* The connecting line, and its blue "read so far" fill. */
+.csx .csx-toc-list::before,
+.csx .csx-toc-list::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 30px;
+  width: 3px;
+  height: calc(100% - 60px);
+  background: var(--rule);
+}
+
+.csx .csx-toc-list::after {
+  background: var(--blue);
+  transform-origin: top;
+  transform: scaleY(var(--progress));
+  transition: transform .2s steps(4);
+}
+
+.csx .csx-toc-list a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 60px;
+  color: #5f6b72;
+  font: 400 clamp(1rem, .75rem + .4vw, 1.25rem)/1.2 'Pixelify Sans', monospace;
+  text-decoration: none;
+  text-transform: capitalize;   /* "The Box In 3D", "Outcome & Reflection" */
+}
+
+/* Pixel checkpoint square */
+.csx .csx-toc-list a::before {
+  content: "";
+  flex: none;
+  position: relative;
+  z-index: 1;
+  width: 19px;
+  height: 19px;
+  background: var(--paper, #f6f3e9);
+  box-shadow: inset 0 0 0 3px #b9b4a2;
+}
+
+.csx .csx-toc-list a.is-passed::before {
+  box-shadow: inset 0 0 0 3px var(--blue);
+}
+
+.csx .csx-toc-list a[aria-current="true"] {
+  color: var(--blue);
+}
+
+.csx .csx-toc-list a[aria-current="true"]::before {
+  background: var(--blue);
+  box-shadow: inset 0 0 0 3px var(--blue), 4px 4px 0 #37639940;
+}
+
+.csx .csx-toc-list a:hover {
+  color: var(--blue);
+}
+
+.csx .csx-toc-list a:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
+
+/* =====================================================================
+   4 — SECTIONS
+   Sizes use em so they grow with the column's text size on big screens.
+   ===================================================================== */
+.csx .csx-content p {
+  font-size: 1em;
+}
+
+.csx .csx-section {
+  margin: 0;
+  padding-bottom: clamp(56px, 6vw, 104px);
+}
+
+.csx .csx-section h2 {
+  font-size: clamp(2rem, 1.4rem + 1.6vw, 3.4rem);
+  margin-bottom: 14px;
+}
+
+.csx .csx-section h3 {
+  font-size: clamp(1.35rem, 1.05rem + .8vw, 2.05rem);
+  margin-bottom: 10px;
+}
+
+.csx .csx-lede {
+  margin-bottom: 1.75em;
+  color: #4a545a;
+}
+
+/* Two short blocks side by side when the column is wide enough. */
+.csx .csx-two {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px clamp(28px, 4vw, 64px);
+}
+
+@container (min-width: 560px) {
+  .csx .csx-two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.csx .csx-two p {
+  margin-bottom: 0;
+}
+
+.csx .csx-callout {
+  margin-top: 2em;
+  padding: 4px 0 4px 22px;
+  border-left: 3px solid var(--blue);
+}
+
+.csx .csx-callout p {
+  margin: 0;
+}
+
+/* ---- Process steps (expandable panels) ---- */
+.csx .csx-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--rule);
+}
+
+.csx .csx-steps > li {
+  border-bottom: 1px solid var(--rule);
+}
+
+.csx .csx-step > summary {
+  display: grid;
+  grid-template-columns: 2.5em minmax(0, 1fr) 24px;
+  align-items: center;
+  gap: 1.1em;
+  padding: 22px 0;
+  color: inherit;
+  list-style: none;
+  cursor: pointer;
+}
+
+.csx .csx-step > summary::-webkit-details-marker {
+  display: none;
+}
+
+.csx .csx-step > summary:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 4px;
+}
+
+.csx .csx-num {
+  display: grid;
+  place-items: center;
+  width: 2.5em;
+  height: 2.5em;
+  color: var(--blue);
+  font: 500 1.2em/1 'Pixelify Sans', monospace;
+  box-shadow: inset 0 0 0 2px var(--blue);
+}
+
+.csx .csx-step-kind {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--blue);
+  font-size: .85em;
+}
+
+.csx .csx-step-head h3 {
+  margin: 0;
+}
+
+.csx .csx-plus {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  justify-self: end;
+}
+
+.csx .csx-plus::before,
+.csx .csx-plus::after {
+  content: "";
+  position: absolute;
+  inset: 7px 0;
+  background: var(--blue);
+}
+
+.csx .csx-plus::after {
+  inset: 0 7px;
+}
+
+.csx .csx-step[open] .csx-plus::after {
+  display: none;
+}
+
+/* Text and picture: side by side in a wide column, stacked otherwise. */
+.csx .csx-step-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  padding: 0 0 32px;
+}
+
+@container (min-width: 700px) {
+  .csx .csx-step-body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: clamp(24px, 3vw, 48px);
+    align-items: start;
+    padding-left: 3.6em;   /* lines the text up with the step title */
+  }
+}
+
+.csx .csx-step-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.csx .csx-step-body .cs-phone {
+  justify-self: center;
+  width: min(100%, 240px);
+}
+
+/* ---- Final design screens ---- */
+.csx .csx-track {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 44px);
+  align-items: start;
+}
+
+.csx .csx-slide {
+  width: 100%;
+  max-width: 300px;
+  justify-self: center;
+}
+
+/* Editorial galleries (a cover plus wide spreads): cover on the left,
+   spreads stacked beside it. */
+.csx .csx-track--editorial {
+  grid-template-columns: minmax(0, .72fr) minmax(0, 1.6fr);
+  align-items: start;
+}
+
+.csx .csx-track--editorial .csx-slide {
+  max-width: none;
+}
+
+.csx .csx-track--editorial .cs-portrait {
+  grid-row: span 2;
+}
+
+.csx .csx-slide figcaption {
+  font-size: .85em;
+  color: var(--muted);
+  text-align: center;
+}
+
+.csx .csx-carousel-controls {
+  display: none;   /* only on phones */
+}
+
+.csx .csx-decisions {
+  margin-top: 40px;
+}
+
+/* ---- Reflection note ---- */
+.csx .csx-note {
+  background: #f5ecd2;
+}
+
+/* ---- Embeds: Figma prototype, Heyzine magazine ----
+   Each embed keeps its own shape (--rw / --rh, set in the HTML; phones can
+   use --rw-phone / --rh-phone) and shrinks so it always fits on screen below
+   the navbar. Iframes load lazily. Until a real link is pasted in,
+   case-study.js shows a labelled placeholder box instead. */
+.csx .csx-embed {
+  --w: var(--rw, 16);
+  --h: var(--rh, 9);
+  margin: 0;
+}
+
+.csx .csx-embed-frame {
+  --fit-h: calc(100svh - var(--header-h) - 150px);
+  position: relative;
+  width: min(100%, var(--fit-h) * var(--w) / var(--h));
+  aspect-ratio: var(--w) / var(--h);
+  margin-inline: auto;
+  background: #e4e5e2;
+  border: 1px solid #c6c8c6;
+}
+
+.csx .csx-embed-frame iframe {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.csx .csx-embed-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  color: #49534e;
+  font-size: .95em;
+  text-align: center;
+}
+
+/* "Open full screen" link: phones only */
+.csx .csx-embed figcaption {
+  display: none;
+  padding-top: 12px;
+  text-align: center;
+}
+
+.csx .csx-fullscreen {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--blue);
+}
+
+.csx .cs-source {
+  margin: 0 0 clamp(40px, 5vw, 72px);
+}
+
+/* =====================================================================
+   5 — BELOW 1024px
+   ===================================================================== */
+@media (max-width: 1023.98px) {
+  .csx .csx-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .csx .csx-body {
+    margin-top: 40px;
+  }
+}
+
+/* =====================================================================
+   6 — PHONES (below 700px)
+   Tighter spacing and smaller images. The final screens become a swipe
+   carousel: the current screen is centred with its neighbours peeking in
+   at both sides. Swipe, drag with a mouse, use the arrows or tap a dot.
+   ===================================================================== */
+@media (max-width: 699.98px) {
+  .cs-page.csx {
+    padding-top: 18px;
+  }
+
+  .csx .csx-hero h1 {
+    font-size: clamp(2.4rem, 11vw, 3.2rem);
+  }
+
+  .csx .csx-facts {
+    gap: 14px 20px;
+    margin: 22px 0 18px;
+    padding-block: 14px;
+  }
+
+  .csx .csx-facts dd {
+    font-size: .9rem;
+  }
+
+  .csx .csx-section {
+    padding-bottom: 44px;
+  }
+
+  .csx .csx-section h2 {
+    font-size: 2rem;
+  }
+
+  .csx .csx-section h3 {
+    font-size: 1.3rem;
+  }
+
+  .csx .csx-callout {
+    margin-top: 22px;
+    padding-left: 16px;
+  }
+
+  .csx .csx-lede {
+    margin-bottom: 18px;
+  }
+
+  .csx .csx-step > summary {
+    grid-template-columns: 32px minmax(0, 1fr) 16px;
+    gap: 14px;
+    padding: 16px 0;
+  }
+
+  .csx .csx-num {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .csx .csx-step-body {
+    gap: 16px;
+    padding-bottom: 22px;
+  }
+
+  .csx .csx-step-body .cs-phone {
+    width: min(60%, 200px);
+  }
+
+  .csx .cs-placeholder {
+    padding: 12px;
+  }
+
+  .csx .cs-placeholder span {
+    font-size: .9rem;
+  }
+
+  /* ---- Carousel ---- */
+  .csx .csx-carousel {
+    --slide-w: min(58vw, 230px);
+  }
+
+  .csx .csx-track {
+    display: flex;
+    gap: 18px;
+    /* run to the screen edges, and pad so the first and last screens can centre */
+    margin-inline: calc(-1 * var(--gutter));
+    /* % is measured against the column, but the track is a gutter wider on
+       each side, so add the gutter back to land screens in the true middle */
+    padding: 6px calc(50% + var(--gutter) - var(--slide-w) / 2) 10px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    align-items: center;   /* mixed shapes (cover + spreads) line up on their middles */
+    cursor: grab;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .csx .csx-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* While dragging with a mouse, snapping waits until you let go. */
+  .csx .csx-track.is-dragging {
+    scroll-snap-type: none;
+    cursor: grabbing;
+  }
+
+  .csx .csx-track:focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: -3px;
+  }
+
+  /* Wide spreads get wider slides on phones. */
+  .csx .csx-slide.cs-spread {
+    --slide-w: min(84vw, 520px);
+  }
+
+  .csx .csx-slide {
+    flex: 0 0 var(--slide-w);
+    max-width: none;
+    scroll-snap-align: center;
+    opacity: .55;
+    transform: scale(.94);
+    transition: opacity .15s steps(2), transform .15s steps(2);
+  }
+
+  .csx .csx-slide.is-active {
+    opacity: 1;
+    transform: none;
+  }
+
+  .csx .csx-slide img,
+  .csx .csx-slide .cs-placeholder {
+    pointer-events: none;   /* so images don't get dragged out of the page */
+  }
+
+  .csx .csx-carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .csx .csx-dots {
+    display: flex;
+  }
+
+  .csx .csx-dot,
+  .csx .csx-arrow {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+  }
+
+  /* Pixel squares: filled for the screen you're on */
+  .csx .csx-dot::before {
+    content: "";
+    width: 11px;
+    height: 11px;
+    box-shadow: inset 0 0 0 2px #b9b4a2;
+  }
+
+  .csx .csx-dot[aria-current="true"]::before {
+    background: var(--blue);
+    box-shadow: inset 0 0 0 2px var(--blue);
+  }
+
+  /* Pixel arrows */
+  .csx .csx-arrow span {
+    width: 10px;
+    height: 16px;
+    background: var(--blue);
+    clip-path: polygon(0 43.75%, 20% 43.75%, 20% 31.25%, 40% 31.25%, 40% 18.75%, 60% 18.75%, 60% 6.25%, 80% 6.25%, 80% 0, 100% 0, 100% 100%, 80% 100%, 80% 93.75%, 60% 93.75%, 60% 81.25%, 40% 81.25%, 40% 68.75%, 20% 68.75%, 20% 56.25%, 0 56.25%);
+  }
+
+  .csx .csx-arrow[data-dir="1"] span {
+    transform: scaleX(-1);
+  }
+
+  .csx .csx-arrow:disabled {
+    cursor: default;
+  }
+
+  .csx .csx-arrow:disabled span {
+    background: #c9c4b2;
+  }
+
+  .csx .csx-dot:focus-visible,
+  .csx .csx-arrow:focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: -6px;
+  }
+
+  .csx .csx-decisions {
+    margin-top: 26px;
+  }
+
+  .csx .csx-note {
+    padding: 22px 20px;
+  }
+
+  .csx .csx-embed {
+    --w: var(--rw-phone, var(--rw, 16));
+    --h: var(--rh-phone, var(--rh, 9));
+  }
+
+  .csx .csx-embed-frame {
+    --fit-h: calc(100svh - var(--header-h) - 110px);
+  }
+
+  .csx .csx-embed figcaption {
+    display: block;
+  }
+
+  .csx .csx-embed.is-placeholder figcaption {
+    display: none;
+  }
+
+  .csx .cs-back-top-wrap {
+    padding-top: 40px;
+  }
+}
+
+/* =====================================================================
+   7 — REDUCED MOTION
+   ===================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .csx .csx-toc,
+  .csx .csx-toc.is-shown,
+  .csx .csx-toc-list::after,
+  .csx .csx-slide {
+    transition: none;
+  }
+}
