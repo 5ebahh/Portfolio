@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cura — UX Case Study — Sebastian Vega</title>
+    <meta name="description" content="A clinical-trial app concept that helps people of color find trials they may qualify for and understand what joining would involve.">
+    <!-- Link previews (Open Graph / social cards): what sites like LinkedIn, iMessage,
+         Discord and forums show when this page is shared. Image is 1200 x 630 in assets/og/. -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sebastian Vega">
+    <meta property="og:title" content="Cura — UX Case Study — Sebastian Vega">
+    <meta property="og:description" content="A clinical-trial app concept that helps people of color find trials they may qualify for and understand what joining would involve.">
+    <meta property="og:url" content="https://sebavega.com/cura">
+    <meta property="og:image" content="https://sebavega.com/assets/og/cura.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Cura title beside three phones showing the clinical-trial app">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Favicon (browser tab icon): Mr. Blue the betta, in pixel art. -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600&family=Pixelify+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/rzu3vfi.css">
+    <!-- CACHE VERSION: "?v=..." on the CSS/JS links makes browsers download fresh
+         copies after an update. When you change any CSS or JS file, change this
+         date on every page (find and replace "?v=2026-10-09b"). -->
+    <link rel="stylesheet" href="assets/styles.css?v=2026-10-09b">
+    <script src="assets/site.js?v=2026-10-09b" defer></script>
+    <link rel="stylesheet" href="assets/case-pages.css?v=2026-10-09b">
+    <link rel="stylesheet" href="assets/case-study.css?v=2026-10-09b">
+    <script src="assets/case-study.js?v=2026-10-09b" defer></script>
+    <link rel="stylesheet" href="assets/ba-scroll.css?v=2026-10-09b">
+    <script src="assets/ba-scroll.js?v=2026-10-09b" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a href="./" aria-label="Sebastian Vega — home" class="brand">
+        <img src="assets/seba-logo.png" width="240" height="120" alt="SEBA">
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation menu">
+        <span class="hamburger" aria-hidden="true">
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+        </span>
+      </button>
+      <nav id="main-nav" aria-label="Main navigation">
+        <a href="work" aria-current="page">work</a>
+        <a href="gallery">gallery</a>
+        <a href="contact">contact</a>
+      </nav>
+    </header>
+
+    <main id="main" class="cs-page cs-ux csx">
+      <!-- 1. HERO: back link, title, then the pitch as a smaller subtitle. -->
+      <header class="csx-hero">
+        <a class="csx-back" href="work"><span class="csx-back-arrow" aria-hidden="true"></span>Back to selected work</a>
+        <p class="csx-tag">UX Research / Product Design</p>
+        <h1>Cura</h1>
+        <div class="csx-pitch">
+          <p class="csx-subtitle">Making clinical trials accessible for everyone.</p>
+          <p>A clinical-trial app concept that helps people of color find trials they may qualify for and understand what joining would involve.<span class="csx-pitch-line"> Made with a four-person team for DTX 499.</span></p>
+        </div>
+        <p class="csx-status">Academic concept, not a real clinical service</p>
+      </header>
+
+      <!-- Quick facts in one row (two-by-two on phones). -->
+      <dl class="csx-facts">
+        <div>
+          <dt>My Role</dt>
+          <dd>Product Designer &amp; Researcher</dd>
+        </div>
+        <div>
+          <dt>Team</dt>
+          <dd>Sebastian, Misha, Shivam &amp; Laura</dd>
+        </div>
+        <div>
+          <dt>Timeline</dt>
+          <dd>January – May 2026</dd>
+        </div>
+        <div>
+          <dt>Tools</dt>
+          <dd class="csx-tool"><img class="csx-tool-icon" src="assets/icons/figma.png" width="512" height="512" alt="">Figma</dd>
+        </div>
+      </dl>
+
+      <figure class="csx-cover">
+        <img src="assets/thumbs/cura.webp" width="1600" height="900" alt="Cura app screens: home, search and profile" fetchpriority="high" decoding="async">
+      </figure>
+
+      <!-- 2. BODY: the story, centred on the page. From 1024px up, the section
+           checkpoints are a rail pinned to the left edge of the screen. -->
+      <div class="csx-body">
+        <nav class="csx-toc" aria-label="Case study sections">
+          <ol class="csx-toc-list">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#solution">Final Design</a></li>
+            <li><a href="#changes">The App, Screen by Screen</a></li>
+            <li><a href="#reflection">Outcome &amp; Reflection</a></li>
+          </ol>
+        </nav>
+
+        <div class="csx-content">
+
+          <!-- OVERVIEW: always fully visible. -->
+          <section id="overview" class="csx-section" aria-labelledby="overview-title">
+            <h2 id="overview-title">Overview</h2>
+            <div class="csx-two">
+              <div>
+                <h3>The Problem</h3>
+                <p>People of color are underrepresented in clinical trials because of mistrust, cost, medical jargon and a lack of information. Trials aren’t designed with every community in mind, so misinformation spreads and participation stays low.</p>
+              </div>
+              <div>
+                <h3>The Redesign</h3>
+                <p>Cura, a trial match and readiness app. It matches people to relevant trials in plain language, explains what joining would involve with 60-second videos and articles, and lets them save everything to come back to, or share with family, before deciding.</p>
+              </div>
+            </div>
+            <div class="csx-callout">
+              <h3>My Role</h3>
+              <p>Shivam and I were the product designers: we built the app’s structure, screens and prototype in Figma, and also worked on the research, including the affinity diagram I made from our findings. Misha and Laura focused on the research and created the brand guidelines and design system the app is built on.</p>
+            </div>
+          </section>
+
+          <!-- PROCESS: open on desktop; collapsed to their headlines on phones. -->
+          <section id="process" class="csx-section" aria-labelledby="process-title">
+            <h2 id="process-title">Process</h2>
+            <p class="csx-lede csx-lede--one">From research on who gets left out of trials to an app concept, then a small pilot test.</p>
+            <ol class="csx-steps">
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">1</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Research</span>
+                      <h3>Start With Who Gets Left Out.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body csx-step-body--wide">
+                    <div class="csx-step-copy">
+                      <p>Our secondary research looked at trust, representation, geography, cost and how people are recruited. Three numbers shaped the project:</p>
+                    </div>
+                    <ul class="csx-stats csx-wide-figure" aria-label="Research findings">
+                      <li class="csx-stat"><p class="csx-stat-num">67%</p><p class="csx-stat-text">of FDA-reported medical device injuries or deaths involved women, because devices are often designed around male bodies.</p></li>
+                      <li class="csx-stat"><p class="csx-stat-num">40.8M</p><p class="csx-stat-text">adults in the U.S. (12.5%) live in clinical trial “deserts,” far from the hospitals that run trials.</p></li>
+                      <li class="csx-stat"><p class="csx-stat-num">39% vs 5.7%</p><p class="csx-stat-text">enrollment when community advisory members help recruit, compared with recruitment without them.</p></li>
+                    </ul>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">2</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Synthesis</span>
+                      <h3>Four Groups, Three Insights.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body csx-step-body--wide">
+                    <div class="csx-step-copy">
+                      <p>I sorted every finding into an affinity diagram with four groups: minority patients, non-minority patients, hospitals and staff, and external groups like community leaders and AI tools. Three insights came out of it.</p>
+                    </div>
+                    <div class="csx-wide-figure csx-pxnotes-wrap">
+                      <ol class="csx-pxnotes" aria-label="Affinity diagram insights">
+                        <li class="csx-pxnote is-pink is-key">
+                          <p class="csx-pxnote-from">Patients &amp; communities</p>
+                          <p class="csx-pxnote-group">Trust</p>
+                          <span class="csx-pxnote-key">Key insight</span>
+                          <p class="csx-pxnote-text">Mistrust runs deep, from the Tuskegee study to pain being dismissed. People trust other people, not portals: community peers raise enrollment from 5.7% to 39%.</p>
+                        </li>
+                        <li class="csx-pxnote is-blue is-key">
+                          <p class="csx-pxnote-from">Barriers</p>
+                          <p class="csx-pxnote-group">Access</p>
+                          <span class="csx-pxnote-key">Key insight</span>
+                          <p class="csx-pxnote-text">Cost, distance and language decide who can join. Travel costs and lost wages, trial deserts and language barriers keep eligible people out.</p>
+                        </li>
+                        <li class="csx-pxnote is-green is-key">
+                          <p class="csx-pxnote-from">Hospitals / Staff</p>
+                          <p class="csx-pxnote-group">Family</p>
+                          <span class="csx-pxnote-key">Key insight</span>
+                          <p class="csx-pxnote-text">Health decisions are made with family, but recruitment ignores that. People need plain-language information they can share before deciding.</p>
+                        </li>
+                        <li class="csx-pxnote is-yellow">
+                          <p class="csx-pxnote-group">Bias in care</p>
+                          <p class="csx-pxnote-text">Devices and tests are built around male, lighter-skinned bodies: pulse oximeters misread darker skin.</p>
+                        </li>
+                        <li class="csx-pxnote is-salmon">
+                          <p class="csx-pxnote-group">Staff</p>
+                          <p class="csx-pxnote-text">Dedicated trial staff recruit best, but often lack training to reach minority communities.</p>
+                        </li>
+                        <li class="csx-pxnote is-slate">
+                          <p class="csx-pxnote-group">Technology</p>
+                          <p class="csx-pxnote-text">AI cut recruitment time by 42% and found 35% more underrepresented eligible patients.</p>
+                        </li>
+                      </ol>
+                    </div>
+                    <div class="csx-objective">
+                      <p class="csx-objective-label">Overall Objective</p>
+                      <p class="csx-objective-text">How might we reduce <strong>cultural friction</strong> and <strong>socio-economic barriers</strong> so the clinical trial process is <strong>safe</strong>, <strong>easy to understand</strong> and <strong>welcoming</strong>, to increase engagement from people of color?</p>
+                    </div>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">3</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Exploration</span>
+                      <h3>Compare Four Ideas, Pick One.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body csx-step-body--wide">
+                    <div class="csx-step-copy">
+                      <p>We explored ideas for patients, families and doctors before choosing the one that could reach the most people without needing more staff.</p>
+                    </div>
+                    <ol class="csx-concepts csx-wide-figure" aria-label="Concept options">
+                      <li class="csx-concept"><h4>Physician Training App</h4><p>Simulations and real patient stories to build doctors’ empathy and trust with patients.</p></li>
+                      <li class="csx-concept"><h4>Family Consent Workshop</h4><p>Community-led sessions that explain trials to whole families, with peer facilitators.</p></li>
+                      <li class="csx-concept"><h4>60-Second Explainers</h4><p>Short, multilingual videos that cut the jargon and anxiety around trials.</p></li>
+                      <li class="csx-concept is-chosen"><span class="csx-concept-badge">Chosen</span><h4>Trial Match &amp; Readiness App</h4><p>Matches people to trials in plain language, with family sharing and explainers built in.</p></li>
+                    </ol>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">4</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Design</span>
+                      <h3>Four Tabs, Plain Language.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body csx-step-body--wide">
+                    <div class="csx-step-copy">
+                      <p>We built the app’s structure from scratch around four tabs. Home shows upcoming trials, 60-second videos and a map of what’s nearby. Search filters across videos, trials and articles. Library keeps everything you’ve saved, and Profile holds your trials and personal information.</p>
+                    </div>
+                    <figure class="csx-ia csx-ia--four" aria-labelledby="ia-cap">
+                    <div class="csx-ia-tree is-after"><p class="csx-ia-label">Navigation</p><ol class="csx-ia-tabs"><li class="csx-ia-tab"><span>Home</span><ul><li>Trials</li><li>60s videos</li><li>Map</li></ul></li><li class="csx-ia-tab"><span>Search</span><ul><li>Filter</li><li>Videos</li><li>Trials</li><li>Articles</li></ul></li><li class="csx-ia-tab is-hl"><span>Library</span><ul><li>Saved</li><li>Videos</li><li>Trials</li><li>Articles</li></ul></li><li class="csx-ia-tab"><span>Profile</span><ul><li>Past trials</li><li>Completed videos</li><li>Personal info</li></ul></li></ol></div>
+                    <figcaption id="ia-cap">Four tabs. Library gives people room to save information and decide later.</figcaption>
+                    </figure>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">5</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Testing</span>
+                      <h3>Test the Video and the App.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body csx-step-body--wide">
+                    <div class="csx-step-copy">
+                      <p>We ran a small pilot with three students on campus, so the results aren’t representative of real trial participants. We tested how they responded to a short explainer video and how easily they could find information in the app.</p>
+                    </div>
+                    <ul class="csx-stats csx-wide-figure" aria-label="Pilot results">
+                      <li class="csx-stat"><p class="csx-stat-num">2 of 3</p><p class="csx-stat-text">were more willing to take part in a trial after watching the 60-second video.</p></li>
+                      <li class="csx-stat"><p class="csx-stat-num">2 of 3</p><p class="csx-stat-text">found the screens easy to navigate.</p></li>
+                      <li class="csx-stat"><p class="csx-stat-num">Once a month</p><p class="csx-stat-text">is how often two of them check a healthcare portal, so the app can’t rely on daily use.</p></li>
+                    </ul>
+                  </div>
+                </details>
+              </li>
+            </ol>
+          </section>
+
+          <!-- FINAL DESIGN: swipeable on phones. -->
+          <section id="solution" class="csx-section" aria-labelledby="solution-title">
+            <h2 id="solution-title">Final Design</h2>
+            <p class="csx-lede csx-lede--one">The finished app: a home for upcoming trials, search across trials and learning, and a profile to track it all.</p>
+            <div class="csx-carousel" data-carousel>
+              <div class="csx-track" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Final design screens">
+                <figure class="cs-visual cs-phone csx-slide">
+                  <span class="csx-device"><img src="assets/cura/home.webp" width="450" height="975" alt="Home: a greeting, updates on active trials and upcoming trials." loading="lazy" decoding="async"></span>
+                  <figcaption>Home: upcoming trials and updates</figcaption>
+                </figure>
+                <figure class="cs-visual cs-phone csx-slide">
+                  <span class="csx-device"><img src="assets/cura/search.webp" width="450" height="975" alt="Search: discover clinical knowledge, filtered by trials, videos and articles." loading="lazy" decoding="async"></span>
+                  <figcaption>Search: trials, videos and articles</figcaption>
+                </figure>
+                <figure class="cs-visual cs-phone csx-slide">
+                  <span class="csx-device"><img src="assets/cura/profile.webp" width="450" height="975" alt="Profile: active and completed trials and personal information." loading="lazy" decoding="async"></span>
+                  <figcaption>Profile: your trials in one place</figcaption>
+                </figure>
+              </div>
+              <div class="csx-carousel-controls">
+                <button type="button" class="csx-arrow" data-dir="-1" aria-label="Previous screen"><span aria-hidden="true"></span></button>
+                <div class="csx-dots">
+                  <button type="button" class="csx-dot" aria-label="Show screen 1" aria-current="true"></button>
+                  <button type="button" class="csx-dot" aria-label="Show screen 2"></button>
+                  <button type="button" class="csx-dot" aria-label="Show screen 3"></button>
+                </div>
+                <button type="button" class="csx-arrow" data-dir="1" aria-label="Next screen"><span aria-hidden="true"></span></button>
+                <p class="csx-sr" aria-live="polite" data-status>Screen 1 of 3</p>
+              </div>
+            </div>
+            <div class="csx-two csx-decisions">
+              <div>
+                <h3>Learning Comes First</h3>
+                <p>60-second explainers and articles sit next to trials, so learning is a valid first step.</p>
+              </div>
+              <div>
+                <h3>Room to Decide</h3>
+                <p>Save trials and articles to the Library, share them with family and come back when ready.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- THE APP, SCREEN BY SCREEN
+               With motion: the section pins and scrolling steps through each
+               part of the app. Reduced motion / no JavaScript: a list.
+               Behaviour: assets/ba-scroll.js. Styles: assets/ba-scroll.css. -->
+          <section id="changes" class="csx-section ba-section" aria-labelledby="changes-title">
+            <h2 id="changes-title">The App, Screen by Screen</h2>
+            <p class="csx-lede">A walk through each part of the app.</p>
+            <div class="ba" data-ba>
+              <div class="ba-sticky">
+                <ol class="ba-tabs" aria-label="Jump to a part of the app" hidden></ol>
+                <ol class="ba-steps">
+                <li class="ba-step" data-label="Home">
+                  <div class="ba-shots">
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/cura/home.webp" width="450" height="975" alt="Home: a greeting, trial updates and upcoming trials." loading="lazy" decoding="async"></span>
+                      <figcaption>Upcoming Trials</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/cura/home-explainers.webp" width="450" height="975" alt="Home further down: 60-second explainer videos and a map of what’s nearby." loading="lazy" decoding="async"></span>
+                      <figcaption>Explainers &amp; Map</figcaption>
+                    </figure>
+                  </div>
+                  <div class="ba-copy">
+                    <p class="ba-name">Home</p>
+                    <p class="ba-after">Start the day with updates on active trials, upcoming trials, 60-second explainers and what’s nearby.</p>
+                  </div>
+                </li>
+                <li class="ba-step" data-label="Search">
+                  <div class="ba-shots">
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/cura/search.webp" width="450" height="975" alt="Search with filters for all, trials, videos and articles." loading="lazy" decoding="async"></span>
+                      <figcaption>Search</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/cura/search-article.webp" width="450" height="975" alt="Search results: a journal article and clinical trials." loading="lazy" decoding="async"></span>
+                      <figcaption>Results</figcaption>
+                    </figure>
+                  </div>
+                  <div class="ba-copy">
+                    <p class="ba-name">Search</p>
+                    <p class="ba-after">Search conditions, treatments or keywords, then filter across trials, videos and peer-reviewed articles.</p>
+                  </div>
+                </li>
+                <li class="ba-step" data-label="Library">
+                  <div class="ba-shots">
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/cura/library.webp" width="450" height="975" alt="Library: saved trials, videos and articles in tabs." loading="lazy" decoding="async"></span>
+                      <figcaption>Saved Trials</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/cura/library-saved.webp" width="450" height="975" alt="More saved trials with share and bookmark buttons." loading="lazy" decoding="async"></span>
+                      <figcaption>Share</figcaption>
+                    </figure>
+                  </div>
+                  <div class="ba-copy">
+                    <p class="ba-name">Library</p>
+                    <p class="ba-after">Everything you save in one place, ready to share with family or come back to later.</p>
+                  </div>
+                </li>
+                <li class="ba-step" data-label="Profile">
+                  <div class="ba-shots">
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/cura/profile.webp" width="450" height="975" alt="Profile: name, location, active and completed trials and personal information." loading="lazy" decoding="async"></span>
+                      <figcaption>Profile</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/cura/profile-active.webp" width="450" height="975" alt="Active trials with protocol progress." loading="lazy" decoding="async"></span>
+                      <figcaption>Active Trials</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/cura/profile-past.webp" width="450" height="975" alt="Completed and past trials." loading="lazy" decoding="async"></span>
+                      <figcaption>Past Trials</figcaption>
+                    </figure>
+                  </div>
+                  <div class="ba-copy">
+                    <p class="ba-name">Profile</p>
+                    <p class="ba-after">Track active, completed and past trials, with your participant ID and personal information.</p>
+                  </div>
+                </li>
+                </ol>
+              </div>
+            </div>
+          </section>
+
+          <section id="reflection" class="csx-section" aria-labelledby="reflection-title">
+            <div class="cs-paper csx-note">
+              <h2 id="reflection-title">Outcome &amp; Reflection</h2>
+              <div class="csx-two">
+                <div>
+                  <h3>What Was Delivered</h3>
+                  <p>A research synthesis, four concept directions, the Trial Match and Readiness app prototype in Figma, and a small pilot test of the explainer video and the app, presented May 5, 2026.</p>
+                </div>
+                <div>
+                  <h3>What Comes Next</h3>
+                  <p>Test with real members of underrepresented communities instead of friends on campus, refine navigation, language and onboarding with a larger group, and get feedback from campus health advisors and public health professors.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <p>© Sebastian Vega 2026</p>
+      <p>Always a little curious.</p>
+    </footer>
+    <div class="page-loader" hidden role="status" aria-live="polite">
+      <canvas width="96" height="96" aria-hidden="true"></canvas>
+      <p>Drawing things together…</p>
+    </div>
+  </body>
+</html>

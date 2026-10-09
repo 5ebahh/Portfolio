@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yelp — UX Case Study — Sebastian Vega</title>
+    <meta name="description" content="A concept redesign of Yelp’s mobile app, made with a five-person team at Design Innovation Illinois. I led the team as design lead, from research to the final screens.">
+    <!-- Link previews (Open Graph / social cards): what sites like LinkedIn, iMessage,
+         Discord and forums show when this page is shared. Image is 1200 x 630 in assets/og/. -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sebastian Vega">
+    <meta property="og:title" content="Yelp — UX Case Study — Sebastian Vega">
+    <meta property="og:description" content="A concept redesign of Yelp’s mobile app, made with a five-person team at Design Innovation Illinois. I led the team as design lead, from research to the final screens.">
+    <meta property="og:url" content="https://sebavega.com/yelp">
+    <meta property="og:image" content="https://sebavega.com/assets/og/yelp.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Yelp logo on a red background">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Favicon (browser tab icon): Mr. Blue the betta, in pixel art. -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600&family=Pixelify+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/rzu3vfi.css">
+    <!-- CACHE VERSION: "?v=..." on the CSS/JS links makes browsers download fresh
+         copies after an update. When you change any CSS or JS file, change this
+         date on every page (find and replace "?v=2026-10-09b"). -->
+    <link rel="stylesheet" href="assets/styles.css?v=2026-10-09b">
+    <script src="assets/site.js?v=2026-10-09b" defer></script>
+    <link rel="stylesheet" href="assets/case-pages.css?v=2026-10-09b">
+    <link rel="stylesheet" href="assets/case-study.css?v=2026-10-09b">
+    <script src="assets/case-study.js?v=2026-10-09b" defer></script>
+    <link rel="stylesheet" href="assets/ba-scroll.css?v=2026-10-09b">
+    <script src="assets/ba-scroll.js?v=2026-10-09b" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a href="./" aria-label="Sebastian Vega — home" class="brand">
+        <img src="assets/seba-logo.png" width="240" height="120" alt="SEBA">
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation menu">
+        <span class="hamburger" aria-hidden="true">
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+        </span>
+      </button>
+      <nav id="main-nav" aria-label="Main navigation">
+        <a href="work" aria-current="page">work</a>
+        <a href="gallery">gallery</a>
+        <a href="contact">contact</a>
+      </nav>
+    </header>
+
+    <main id="main" class="cs-page cs-ux csx">
+      <!-- 1. HERO: back link, title, then the pitch as a smaller subtitle. -->
+      <header class="csx-hero">
+        <a class="csx-back" href="work"><span class="csx-back-arrow" aria-hidden="true"></span>Back to selected work</a>
+        <p class="csx-tag">UX / Product Design</p>
+        <h1>Yelp</h1>
+        <div class="csx-pitch">
+          <p class="csx-subtitle">Make Yelp a place worth coming back to.</p>
+          <p>A concept redesign of Yelp’s mobile app, made with a five-person team at Design Innovation Illinois.<span class="csx-pitch-line"> I led the team as design lead, from research to the final screens.</span></p>
+        </div>
+        <p class="csx-status">Student concept, not affiliated with Yelp</p>
+      </header>
+
+      <!-- Quick facts in one row (two-by-two on phones). -->
+      <dl class="csx-facts">
+        <div>
+          <dt>My Role</dt>
+          <dd>Design Lead</dd>
+        </div>
+        <div>
+          <dt>Team</dt>
+          <dd>Sebastian, Ryan, Jordan, Sara &amp; Riddhima</dd>
+        </div>
+        <div>
+          <dt>Timeline</dt>
+          <dd>January – May 2026</dd>
+        </div>
+        <div>
+          <dt>Tools</dt>
+          <dd class="csx-tool"><img class="csx-tool-icon" src="assets/icons/figma.png" width="512" height="512" alt="">Figma</dd>
+        </div>
+      </dl>
+
+      <figure class="csx-cover">
+        <img src="assets/thumbs/yelp.webp" width="1600" height="900" alt="Yelp redesign concept screens" fetchpriority="high" decoding="async">
+      </figure>
+
+      <!-- 2. BODY: the story, centred on the page. From 1024px up, the section
+           checkpoints are a rail pinned to the left edge of the screen. -->
+      <div class="csx-body">
+        <nav class="csx-toc" aria-label="Case study sections">
+          <ol class="csx-toc-list">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#solution">Final Design</a></li>
+            <li><a href="#changes">Before &amp; After</a></li>
+            <li><a href="#reflection">Outcome &amp; Reflection</a></li>
+          </ol>
+        </nav>
+
+        <div class="csx-content">
+
+          <!-- OVERVIEW: always fully visible. -->
+          <section id="overview" class="csx-section" aria-labelledby="overview-title">
+            <h2 id="overview-title">Overview</h2>
+            <div class="csx-two">
+              <div>
+                <h3>The Problem</h3>
+                <p>Yelp’s monthly app users fell from 33 million to 29 million between 2022 and 2024. Finding a place takes too much scrolling, people doubt whether reviews are real, and there’s no community to keep them coming back.</p>
+              </div>
+              <div>
+                <h3>The Redesign</h3>
+                <p>Five tabs, each with one job: Home, Explore, Create, Map and Profile. Friends and trusted reviewers come first, search and filters get faster, and the map becomes a place to discover, not just a list of pins.</p>
+              </div>
+            </div>
+            <div class="csx-callout">
+              <h3>My Role</h3>
+              <p>I was design lead for a five-person team. I set our three checkpoints, split the app into sections across the team and kept the screens consistent from research to the final prototype. I designed the Home tab myself: the feed, highlights, messages and the AI assistant.</p>
+            </div>
+          </section>
+
+          <!-- PROCESS: open on desktop; collapsed to their headlines on phones. -->
+          <section id="process" class="csx-section" aria-labelledby="process-title">
+            <h2 id="process-title">Process</h2>
+            <p class="csx-lede csx-lede--one">From research to a new structure, wireframes, an A/B test and final screens.</p>
+            <ol class="csx-steps">
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">1</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Research</span>
+                      <h3>Find Why People Leave.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body csx-step-body--wide">
+                    <div class="csx-step-copy">
+                      <p>We mapped pain points in the current app: ads and sponsored posts, a bland interface, settings and support hidden away, no personalized recommendations, and no way to tell if a reviewer actually visited.</p>
+                      <p>Then we scored five apps people use to find places, and interviewed people with questions in seven groups: search and discovery, social features, UI and navigation, reviews, customer support, maps, and customization.</p>
+                    </div>
+                    <figure class="csx-comp csx-wide-figure">
+                      <div class="csx-comp-box">
+                        <table>
+                          <caption class="csx-sr">Five apps people use to find places, scored out of 5.</caption>
+                          <thead><tr><th scope="col"><span class="csx-sr">Feature</span></th><th scope="col"><span>Google</span></th><th scope="col"><span>Beli</span></th><th scope="col"><span>TripAdvisor</span></th><th scope="col"><span>TikTok</span></th><th scope="col"><span>Trustpilot</span></th></tr></thead>
+                          <tbody>
+                              <tr><th scope="row">UI &amp; navigation</th><td class="is-g"><span class="csx-meter" style="--v:5" aria-hidden="true"></span><span class="csx-comp-num">5</span></td><td class="is-g"><span class="csx-meter" style="--v:4" aria-hidden="true"></span><span class="csx-comp-num">4</span></td><td class="is-g"><span class="csx-meter" style="--v:4" aria-hidden="true"></span><span class="csx-comp-num">4</span></td><td class="is-g"><span class="csx-meter" style="--v:4" aria-hidden="true"></span><span class="csx-comp-num">4</span></td><td class="is-g"><span class="csx-meter" style="--v:4" aria-hidden="true"></span><span class="csx-comp-num">4</span></td></tr>
+                              <tr><th scope="row">Visual design &amp; branding</th><td class="is-g"><span class="csx-meter" style="--v:5" aria-hidden="true"></span><span class="csx-comp-num">5</span></td><td class="is-g"><span class="csx-meter" style="--v:4" aria-hidden="true"></span><span class="csx-comp-num">4</span></td><td class="is-g"><span class="csx-meter" style="--v:5" aria-hidden="true"></span><span class="csx-comp-num">5</span></td><td class="is-g"><span class="csx-meter" style="--v:4.5" aria-hidden="true"></span><span class="csx-comp-num">4.5</span></td><td class="is-g"><span class="csx-meter" style="--v:4" aria-hidden="true"></span><span class="csx-comp-num">4</span></td></tr>
+                              <tr><th scope="row">Key features</th><td class="is-g"><span class="csx-meter" style="--v:4.6" aria-hidden="true"></span><span class="csx-comp-num">4.6</span></td><td class="is-y"><span class="csx-meter" style="--v:3" aria-hidden="true"></span><span class="csx-comp-num">3</span></td><td class="is-g"><span class="csx-meter" style="--v:4" aria-hidden="true"></span><span class="csx-comp-num">4</span></td><td class="is-y"><span class="csx-meter" style="--v:3.5" aria-hidden="true"></span><span class="csx-comp-num">3.5</span></td><td class="is-y"><span class="csx-meter" style="--v:3.5" aria-hidden="true"></span><span class="csx-comp-num">3.5</span></td></tr>
+                              <tr><th scope="row">Reviews &amp; feedback</th><td class="is-g"><span class="csx-meter" style="--v:4.25" aria-hidden="true"></span><span class="csx-comp-num">4.25</span></td><td class="is-y"><span class="csx-meter" style="--v:3.5" aria-hidden="true"></span><span class="csx-comp-num">3.5</span></td><td class="is-g"><span class="csx-meter" style="--v:4" aria-hidden="true"></span><span class="csx-comp-num">4</span></td><td class="is-g"><span class="csx-meter" style="--v:5" aria-hidden="true"></span><span class="csx-comp-num">5</span></td><td class="is-g"><span class="csx-meter" style="--v:4" aria-hidden="true"></span><span class="csx-comp-num">4</span></td></tr>
+                              <tr><th scope="row">Customer support</th><td class="is-g"><span class="csx-meter" style="--v:5" aria-hidden="true"></span><span class="csx-comp-num">5</span></td><td class="is-g"><span class="csx-meter" style="--v:4.5" aria-hidden="true"></span><span class="csx-comp-num">4.5</span></td><td class="is-y"><span class="csx-meter" style="--v:3" aria-hidden="true"></span><span class="csx-comp-num">3</span></td><td class="is-g"><span class="csx-meter" style="--v:5" aria-hidden="true"></span><span class="csx-comp-num">5</span></td><td class="is-y"><span class="csx-meter" style="--v:3" aria-hidden="true"></span><span class="csx-comp-num">3</span></td></tr>
+                              <tr><th scope="row">Personalization</th><td class="is-g"><span class="csx-meter" style="--v:4" aria-hidden="true"></span><span class="csx-comp-num">4</span></td><td class="is-g"><span class="csx-meter" style="--v:4.5" aria-hidden="true"></span><span class="csx-comp-num">4.5</span></td><td class="is-y"><span class="csx-meter" style="--v:3" aria-hidden="true"></span><span class="csx-comp-num">3</span></td><td class="is-g"><span class="csx-meter" style="--v:4.5" aria-hidden="true"></span><span class="csx-comp-num">4.5</span></td><td class="is-r"><span class="csx-meter" style="--v:2" aria-hidden="true"></span><span class="csx-comp-num">2</span></td></tr>
+                              <tr class="csx-comp-total"><th scope="row">Overall</th><td class="is-g"><span class="csx-meter" style="--v:4.65" aria-hidden="true"></span><span class="csx-comp-num">4.65</span></td><td class="is-y"><span class="csx-meter" style="--v:3.92" aria-hidden="true"></span><span class="csx-comp-num">3.92</span></td><td class="is-y"><span class="csx-meter" style="--v:3.83" aria-hidden="true"></span><span class="csx-comp-num">3.83</span></td><td class="is-g"><span class="csx-meter" style="--v:4.42" aria-hidden="true"></span><span class="csx-comp-num">4.42</span></td><td class="is-y"><span class="csx-meter" style="--v:3.42" aria-hidden="true"></span><span class="csx-comp-num">3.42</span></td></tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <figcaption>Five apps people use to find places, scored out of 5. <span class="csx-comp-key"><span class="is-g">Green</span> is strong (4 to 5), <span class="is-y">yellow</span> is okay (3 to 3.9), <span class="is-r">red</span> is weak (below 3).</span></figcaption>
+                    </figure>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">2</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Synthesis</span>
+                      <h3>Three Insights, One Objective.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body csx-step-body--wide">
+                    <div class="csx-step-copy">
+                      <p>We wrote down what people told us, then affinity-mapped it to find what kept coming up. Three insights became the base of the redesign.</p>
+                    </div>
+                    <div class="csx-wide-figure csx-pxnotes-wrap">
+                      <ol class="csx-pxnotes" aria-label="Interview takeaways">
+                        <li class="csx-pxnote is-yellow is-key">
+                          <p class="csx-pxnote-from">UI &amp; Navigation</p>
+                          <p class="csx-pxnote-group">Navigation</p>
+                          <span class="csx-pxnote-key">Key insight</span>
+                          <p class="csx-pxnote-text">People want to find and filter relevant places fast, not sift through cluttered layouts and irrelevant results.</p>
+                        </li>
+                        <li class="csx-pxnote is-blue is-key">
+                          <p class="csx-pxnote-from">Social Features</p>
+                          <p class="csx-pxnote-group">Social</p>
+                          <span class="csx-pxnote-key">Key insight</span>
+                          <p class="csx-pxnote-text">People want recommendations from friends and trusted communities, not anonymous strangers with no context.</p>
+                        </li>
+                        <li class="csx-pxnote is-pink is-key">
+                          <p class="csx-pxnote-from">Reviews / Feedback</p>
+                          <p class="csx-pxnote-group">Reviews</p>
+                          <span class="csx-pxnote-key">Key insight</span>
+                          <p class="csx-pxnote-text">People want to trust that ratings are genuine and recent, instead of second-guessing reviews that may be fake or outdated.</p>
+                        </li>
+                        <li class="csx-pxnote is-green">
+                          <p class="csx-pxnote-group">Ads</p>
+                          <p class="csx-pxnote-text">Sponsored listings look like real results and clutter the page.</p>
+                        </li>
+                        <li class="csx-pxnote is-salmon">
+                          <p class="csx-pxnote-group">Details</p>
+                          <p class="csx-pxnote-text">Long reviews skip what matters: wait time, price, portions and allergy info.</p>
+                        </li>
+                        <li class="csx-pxnote is-slate">
+                          <p class="csx-pxnote-group">Business owners</p>
+                          <p class="csx-pxnote-text">Owners can’t see how reviews get filtered, or how best to respond.</p>
+                        </li>
+                      </ol>
+                    </div>
+                    <div class="csx-step-copy csx-step-copy--center">
+                      <p>Four personas, a high-school athlete who travels for games, a college student who picks the spot for his friends, a retiree new to town and a local business owner, each got a journey map that kept the insights tied to real situations.</p>
+                    </div>
+                    <div class="csx-objective">
+                      <p class="csx-objective-label">Overall Objective</p>
+                      <p class="csx-objective-text">How might we streamline the Yelp experience so that <strong>discovery</strong>, <strong>trust</strong> and <strong>community</strong> make it feel like <strong>a place worth coming back to</strong>?</p>
+                    </div>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">3</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Direction</span>
+                      <h3>Five Tabs, Each With One Job.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body csx-step-body--wide">
+                    <div class="csx-step-copy">
+                      <p>The current app splits tasks across Search, Projects, Assistant, Collections and Me, and keeps contributions, community and settings in one long list. The new structure gives each task a predictable home, adds a tab for creating, and turns the map into its own destination.</p>
+                    </div>
+                    <figure class="csx-ia" aria-labelledby="ia-cap">
+                    <div class="csx-ia-tree is-before"><p class="csx-ia-label">Before</p><ol class="csx-ia-tabs"><li class="csx-ia-tab"><span>Search</span><ul><li>Quick search options</li><li>Search bar</li><li>Recommended</li><li>Recent local reviews</li></ul></li><li class="csx-ia-tab"><span>Projects</span><ul><li>Categories</li><li>Start project</li><li>Recommended</li></ul></li><li class="csx-ia-tab"><span>Assistant</span><ul><li>AI chat</li></ul></li><li class="csx-ia-tab"><span>Collections</span><ul><li>Featured</li><li>My collections</li><li>Following</li></ul></li><li class="csx-ia-tab"><span>Me</span><ul><li>Notifications / share</li><li>Add review / photo</li><li>Recently viewed</li><li>Contributions</li><li>Community</li><li>Activity</li><li>Account</li></ul></li></ol></div>
+                    <div class="csx-ia-tree is-after"><p class="csx-ia-label">After<span class="csx-ia-key"><span class="csx-ia-swatch" aria-hidden="true"></span>New tab</span></p><ol class="csx-ia-tabs"><li class="csx-ia-tab"><span>Home</span><ul><li>Stories</li><li>Reviews</li><li>Messages</li><li>Trending spots</li><li>AI assistant</li></ul></li><li class="csx-ia-tab"><span>Explore</span><ul><li>Search spots</li><li>Filters</li><li>Location review</li><li>Compare</li></ul></li><li class="csx-ia-tab is-hl"><span>Create</span><ul><li>Review</li><li>Story</li><li>Thread</li></ul></li><li class="csx-ia-tab is-hl"><span>Map</span><ul><li>Discover</li><li>Map layers</li><li>Search</li><li>Filters</li></ul></li><li class="csx-ia-tab"><span>Profile</span><ul><li>Profile header</li><li>My contributions</li><li>My settings</li><li>My history</li><li>Support</li><li>Account settings</li></ul></li></ol></div>
+                    <figcaption id="ia-cap">Before: Five Tabs With Overlapping Jobs. After: Five Tabs, With New Create and Map Tabs.</figcaption>
+                    </figure>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">4</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Wireframes</span>
+                      <h3>Draft Every Tab in Mid-Fidelity.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body csx-step-body--wide">
+                    <div class="csx-step-copy">
+                      <p>For our second checkpoint, each of us wireframed our tab in grayscale before adding any color: a home feed of highlights and reviews, the AI assistant, a map you can open anytime, and a profile with history and contributions grouped.</p>
+                    </div>
+                    <figure class="csx-quad csx-wide-figure">
+                      <div class="csx-quad-row">
+                        <figure class="cs-visual">
+                          <span class="csx-device"><img src="assets/yelp/mf-home.webp" width="450" height="975" alt="Mid-fi home: community highlights and highlighted reviews." loading="lazy" decoding="async"></span>
+                          <figcaption>Home</figcaption>
+                        </figure>
+                        <figure class="cs-visual">
+                          <span class="csx-device"><img src="assets/yelp/mf-ai.webp" width="450" height="975" alt="Mid-fi AI assistant: How can I assist, with three prompt buttons." loading="lazy" decoding="async"></span>
+                          <figcaption>AI Chat</figcaption>
+                        </figure>
+                        <figure class="cs-visual">
+                          <span class="csx-device"><img src="assets/yelp/mf-map.webp" width="450" height="975" alt="Mid-fi map: a full-screen map with layers and search at the bottom." loading="lazy" decoding="async"></span>
+                          <figcaption>Map</figcaption>
+                        </figure>
+                        <figure class="cs-visual">
+                          <span class="csx-device"><img src="assets/yelp/mf-profile.webp" width="450" height="975" alt="Mid-fi profile: stats, quick actions, history and contributions." loading="lazy" decoding="async"></span>
+                          <figcaption>Profile</figcaption>
+                        </figure>
+                      </div>
+                      <figcaption>Mid-fidelity wireframes from our second checkpoint.</figcaption>
+                    </figure>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">5</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">A/B Testing</span>
+                      <h3>Test How People Leave the Map.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body csx-step-body--wide">
+                    <div class="csx-step-copy">
+                      <p>Once the map became its own tab, getting back out of it had to feel natural. We compared five versions: keeping the navbar, an X button, a back button, and two with search at the bottom.</p>
+                      <p>We carried the version that keeps the navbar into the final design.</p>
+                    </div>
+                    <figure class="csx-variants csx-wide-figure">
+                      <ol class="csx-variants-row">
+                        <li class="csx-variant is-chosen">
+                          <span class="csx-device"><img src="assets/yelp/ab-1.webp" width="450" height="975" alt="Map with the five-tab navbar at the bottom and a floating assistant button." loading="lazy" decoding="async"></span>
+                          <p class="csx-variant-name">Navbar Present<span class="csx-concept-badge">Chosen</span></p>
+                          <p class="csx-variant-text">The five tabs stay at the bottom, so every part of the app is one tap away.</p>
+                        </li>
+                        <li class="csx-variant">
+                          <span class="csx-device"><img src="assets/yelp/ab-2.webp" width="450" height="975" alt="Full-screen map with an X button beside the search bar and the assistant in a bottom sheet." loading="lazy" decoding="async"></span>
+                          <p class="csx-variant-name">X Button</p>
+                          <p class="csx-variant-text">The tabs hide for a full-screen map, and an X in the corner closes it.</p>
+                        </li>
+                        <li class="csx-variant">
+                          <span class="csx-device"><img src="assets/yelp/ab-3.webp" width="450" height="975" alt="Full-screen map with a Home back button beside the search bar." loading="lazy" decoding="async"></span>
+                          <p class="csx-variant-name">Back Button</p>
+                          <p class="csx-variant-text">The same full-screen map, with a labeled Home button to leave.</p>
+                        </li>
+                        <li class="csx-variant">
+                          <span class="csx-device"><img src="assets/yelp/ab-4.webp" width="450" height="975" alt="Map with search moved into the bottom sheet and a Home back button at the top." loading="lazy" decoding="async"></span>
+                          <p class="csx-variant-name">Bottom Search 1</p>
+                          <p class="csx-variant-text">Search moves down into the bottom sheet, within reach of your thumb.</p>
+                        </li>
+                        <li class="csx-variant">
+                          <span class="csx-device"><img src="assets/yelp/ab-5.webp" width="450" height="975" alt="Map with bottom search, a small back arrow and a slimmer sheet." loading="lazy" decoding="async"></span>
+                          <p class="csx-variant-name">Bottom Search 2</p>
+                          <p class="csx-variant-text">Bottom search again, with a smaller back arrow and a slimmer sheet.</p>
+                        </li>
+                      </ol>
+                      <figcaption>Five ways back from the map. We kept the navbar.</figcaption>
+                    </figure>
+                  </div>
+                </details>
+              </li>
+            </ol>
+          </section>
+
+          <!-- FINAL DESIGN: swipeable on phones. -->
+          <section id="solution" class="csx-section" aria-labelledby="solution-title">
+            <h2 id="solution-title">Final Design</h2>
+            <p class="csx-lede csx-lede--one">The finished app: a social home feed, a business page built for deciding and a map to explore.</p>
+            <div class="csx-carousel" data-carousel>
+              <div class="csx-track" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Final design screens">
+                <figure class="cs-visual cs-phone csx-slide">
+                  <span class="csx-device"><img src="assets/yelp/home-after.webp" width="450" height="975" alt="The new home: highlights from people you follow, featured reviews and previously visited places." loading="lazy" decoding="async"></span>
+                  <figcaption>Home: highlights and reviews from people you follow</figcaption>
+                </figure>
+                <figure class="cs-visual cs-phone csx-slide">
+                  <span class="csx-device"><img src="assets/yelp/business-after.webp" width="450" height="975" alt="A business page for Boba Blorb: photo, rating, price, distance, actions, featured dishes and reviews." loading="lazy" decoding="async"></span>
+                  <figcaption>Business page: everything to decide in one place</figcaption>
+                </figure>
+                <figure class="cs-visual cs-phone csx-slide">
+                  <span class="csx-device"><img src="assets/yelp/map-heat.webp" width="450" height="975" alt="The map with the hot spots layer showing where places are popular." loading="lazy" decoding="async"></span>
+                  <figcaption>Map: switch on layers like hot spots</figcaption>
+                </figure>
+              </div>
+              <div class="csx-carousel-controls">
+                <button type="button" class="csx-arrow" data-dir="-1" aria-label="Previous screen"><span aria-hidden="true"></span></button>
+                <div class="csx-dots">
+                  <button type="button" class="csx-dot" aria-label="Show screen 1" aria-current="true"></button>
+                  <button type="button" class="csx-dot" aria-label="Show screen 2"></button>
+                  <button type="button" class="csx-dot" aria-label="Show screen 3"></button>
+                </div>
+                <button type="button" class="csx-arrow" data-dir="1" aria-label="Next screen"><span aria-hidden="true"></span></button>
+                <p class="csx-sr" aria-live="polite" data-status>Screen 1 of 3</p>
+              </div>
+            </div>
+            <div class="csx-two csx-decisions">
+              <div>
+                <h3>Put People Before Ads</h3>
+                <p>Home leads with highlights from friends and featured reviews, not sponsored posts.</p>
+              </div>
+              <div>
+                <h3>Keep Deciding Details Together</h3>
+                <p>Rating, price, distance and featured dishes sit together on every result and business page.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- BEFORE &AMP; AFTER
+               With motion: the section pins and scrolling steps through each
+               part of the app. Reduced motion / no JavaScript: a list.
+               Behaviour: assets/ba-scroll.js. Styles: assets/ba-scroll.css. -->
+          <section id="changes" class="csx-section ba-section" aria-labelledby="changes-title">
+            <h2 id="changes-title">Before &amp; After</h2>
+            <p class="csx-lede">How each part of the app changed, across the whole team’s redesign.</p>
+            <div class="ba" data-ba>
+              <div class="ba-sticky">
+                <ol class="ba-tabs" aria-label="Jump to a part of the app" hidden></ol>
+                <ol class="ba-steps">
+                <li class="ba-step" data-label="Home">
+                  <div class="ba-shots">
+                    <figure class="ba-shot is-before">
+                      <span class="csx-device"><img src="assets/yelp/home-before.webp" width="450" height="975" alt="The current home screen: category icons, then large sponsored posts and ads." loading="lazy" decoding="async"></span>
+                      <figcaption>Current</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/yelp/home-after.webp" width="450" height="975" alt="The new home: highlights, featured reviews and previously visited places." loading="lazy" decoding="async"></span>
+                      <figcaption>Updated Home</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/yelp/home-highlights.webp" width="450" height="975" alt="A full-screen highlight: a friend’s photo of a meal with like, comment and share." loading="lazy" decoding="async"></span>
+                      <figcaption>Highlights</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/yelp/home-chat.webp" width="450" height="975" alt="Messages: pinned and recent chats with friends about places to try." loading="lazy" decoding="async"></span>
+                      <figcaption>Messages</figcaption>
+                    </figure>
+                  </div>
+                  <div class="ba-copy">
+                    <p class="ba-name">Home <span class="ba-tag">My Design</span></p>
+                    <p class="ba-before"><strong>Before:</strong> Ads and sponsored posts fill the feed, with little real value.</p>
+                    <p class="ba-after"><strong>After:</strong> Highlights and featured reviews from people you follow, and messages with friends about where to go next.</p>
+                  </div>
+                </li>
+                <li class="ba-step" data-label="AI Assistant">
+                  <div class="ba-shots">
+                    <figure class="ba-shot is-before">
+                      <span class="csx-device"><img src="assets/yelp/ai-before.webp" width="450" height="975" alt="The current Yelp Assistant: a plain chat for one business, with a text box and keyboard." loading="lazy" decoding="async"></span>
+                      <figcaption>Current</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/yelp/ai-start.webp" width="450" height="975" alt="The new Yelp Assistant: How can I assist, with Trending Spots and Date Night Spot prompts." loading="lazy" decoding="async"></span>
+                      <figcaption>Start</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/yelp/ai-prompt.webp" width="450" height="975" alt="Typing a question: Best Mexican food in the area?" loading="lazy" decoding="async"></span>
+                      <figcaption>Ask</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/yelp/home-ai.webp" width="450" height="975" alt="Yelp Assistant answering with nearby Mexican spots, each with a rating and a short summary." loading="lazy" decoding="async"></span>
+                      <figcaption>Answer</figcaption>
+                    </figure>
+                  </div>
+                  <div class="ba-copy">
+                    <p class="ba-name">AI Assistant <span class="ba-tag">My Design</span></p>
+                    <p class="ba-before"><strong>Before:</strong> A plain chat that only answers questions about one business.</p>
+                    <p class="ba-after"><strong>After:</strong> An assistant for the whole app, with quick prompts like Trending Spots and Date Night, that answers with real places, ratings and short summaries.</p>
+                  </div>
+                </li>
+                <li class="ba-step" data-label="Explore">
+                  <div class="ba-shots">
+                    <figure class="ba-shot is-before">
+                      <span class="csx-device"><img src="assets/yelp/search-before.webp" width="450" height="975" alt="The current search: a typed query with a long list of suggestions." loading="lazy" decoding="async"></span>
+                      <figcaption>Current</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/yelp/search-after.webp" width="450" height="975" alt="The new search: recent searches and popular suggestions." loading="lazy" decoding="async"></span>
+                      <figcaption>Updated Search</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/yelp/search-filters.webp" width="450" height="975" alt="Filters for price, rating, distance and open now." loading="lazy" decoding="async"></span>
+                      <figcaption>Filters</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/yelp/search-results.webp" width="450" height="975" alt="Results for boba with rating, price and distance on every card." loading="lazy" decoding="async"></span>
+                      <figcaption>Results</figcaption>
+                    </figure>
+                  </div>
+                  <div class="ba-copy">
+                    <p class="ba-name">Explore</p>
+                    <p class="ba-credit">Designed by Jordan</p>
+                    <p class="ba-before"><strong>Before:</strong> Searching means typing and scrolling a long list of suggestions.</p>
+                    <p class="ba-after"><strong>After:</strong> Recent and popular searches, quick filters for price, rating, distance and open now, and results that show the deciding details.</p>
+                  </div>
+                </li>
+                <li class="ba-step" data-label="Business Page">
+                  <div class="ba-shots">
+                    <figure class="ba-shot is-before">
+                      <span class="csx-device"><img src="assets/yelp/business-before.webp" width="450" height="975" alt="The current business page: photo header, offers, order buttons and tabs." loading="lazy" decoding="async"></span>
+                      <figcaption>Current</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/yelp/business-after.webp" width="450" height="975" alt="The new business page: photo, rating, price, distance, actions, featured dishes and reviews." loading="lazy" decoding="async"></span>
+                      <figcaption>Updated Page</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/yelp/business-menu.webp" width="450" height="975" alt="A menu with tabs for milk teas, fruit teas, specialties and snacks." loading="lazy" decoding="async"></span>
+                      <figcaption>Menu</figcaption>
+                    </figure>
+                  </div>
+                  <div class="ba-copy">
+                    <p class="ba-name">Business Page</p>
+                    <p class="ba-credit">Designed by Jordan</p>
+                    <p class="ba-before"><strong>Before:</strong> Offers, ordering and tabs crowd the page before the reviews.</p>
+                    <p class="ba-after"><strong>After:</strong> Rating, price and distance up top, then featured dishes, a full menu and customer reviews.</p>
+                  </div>
+                </li>
+                <li class="ba-step" data-label="Create">
+                  <div class="ba-shots">
+                    <figure class="ba-shot is-before">
+                      <span class="csx-device"><img src="assets/yelp/create-before.webp" width="450" height="975" alt="The current review screen: a star rating and an empty text box." loading="lazy" decoding="async"></span>
+                      <figcaption>Current</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/yelp/create-camera.webp" width="450" height="975" alt="The new create flow: a full-screen camera to snap a photo, with Review and Photos modes." loading="lazy" decoding="async"></span>
+                      <figcaption>Updated Create</figcaption>
+                    </figure>
+                  </div>
+                  <div class="ba-copy">
+                    <p class="ba-name">Create</p>
+                    <p class="ba-credit">Designed by Ryan</p>
+                    <p class="ba-before"><strong>Before:</strong> Writing a review starts with a blank form.</p>
+                    <p class="ba-after"><strong>After:</strong> Start with the camera: snap a photo of the place, then turn it into a review or add it to your photos.</p>
+                  </div>
+                </li>
+                <li class="ba-step" data-label="Map">
+                  <div class="ba-shots">
+                    <figure class="ba-shot is-before">
+                      <span class="csx-device"><img src="assets/yelp/map-before.webp" width="450" height="975" alt="The current map: pins and a single result card, reached only after a search." loading="lazy" decoding="async"></span>
+                      <figcaption>Current</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/yelp/map-heat.webp" width="450" height="975" alt="The new map with the hot spots layer." loading="lazy" decoding="async"></span>
+                      <figcaption>Hot Spots</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/yelp/map-friends.webp" width="450" height="975" alt="The map with places friends recently visited and favorited." loading="lazy" decoding="async"></span>
+                      <figcaption>Friends</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/yelp/map-saved.webp" width="450" height="975" alt="The map showing saved locations." loading="lazy" decoding="async"></span>
+                      <figcaption>Saved</figcaption>
+                    </figure>
+                  </div>
+                  <div class="ba-copy">
+                    <p class="ba-name">Map</p>
+                    <p class="ba-credit">Designed by Sara</p>
+                    <p class="ba-before"><strong>Before:</strong> The map only opens after a search, with pins and little else.</p>
+                    <p class="ba-after"><strong>After:</strong> A map tab you can open anytime, with layers for hot spots, places your friends visited and your saved spots.</p>
+                  </div>
+                </li>
+                <li class="ba-step" data-label="Profile">
+                  <div class="ba-shots">
+                    <figure class="ba-shot is-before">
+                      <span class="csx-device"><img src="assets/yelp/profile-before.webp" width="450" height="975" alt="The current profile: stats, then prompts and a long list of sections." loading="lazy" decoding="async"></span>
+                      <figcaption>Current</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/yelp/profile-after.webp" width="450" height="975" alt="The new profile: followers, quick actions, history and contributions." loading="lazy" decoding="async"></span>
+                      <figcaption>Updated Profile</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/yelp/profile-qr.webp" width="450" height="975" alt="Share Profile with a QR code, link and download." loading="lazy" decoding="async"></span>
+                      <figcaption>Share Profile</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/yelp/profile-saved.webp" width="450" height="975" alt="A saved collection, Best NYC Eats, with places and photos." loading="lazy" decoding="async"></span>
+                      <figcaption>Collections</figcaption>
+                    </figure>
+                  </div>
+                  <div class="ba-copy">
+                    <p class="ba-name">Profile</p>
+                    <p class="ba-credit">Designed by Riddhima</p>
+                    <p class="ba-before"><strong>Before:</strong> Contributions, community and settings sit in one long list.</p>
+                    <p class="ba-after"><strong>After:</strong> History, contributions and settings grouped, a QR code to share your profile, and collections of saved places.</p>
+                  </div>
+                </li>
+                </ol>
+              </div>
+            </div>
+          </section>
+
+          <section id="reflection" class="csx-section" aria-labelledby="reflection-title">
+            <div class="cs-paper csx-note">
+              <h2 id="reflection-title">Outcome &amp; Reflection</h2>
+              <div class="csx-two">
+                <div>
+                  <h3>What Was Delivered</h3>
+                  <p>Research with five competitor scores, interviews, four personas and journey maps; a new five-tab structure; mid-fidelity wireframes; an A/B test of the map; and high-fidelity prototype flows for every tab, presented across three checkpoints.</p>
+                </div>
+                <div>
+                  <h3>What Comes Next</h3>
+                  <p>Test the final flows with Yelp users and measure what the redesign is for: how fast people find a place, and whether highlights from friends make reviews easier to trust.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <p>© Sebastian Vega 2026</p>
+      <p>Always a little curious.</p>
+    </footer>
+    <div class="page-loader" hidden role="status" aria-live="polite">
+      <canvas width="96" height="96" aria-hidden="true"></canvas>
+      <p>Drawing things together…</p>
+    </div>
+  </body>
+</html>

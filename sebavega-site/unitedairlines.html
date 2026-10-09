@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>United Airlines — UX Case Study — Sebastian Vega</title>
+    <meta name="description" content="A concept redesign of United’s mobile app, made with a six-person team at Design Innovation Illinois. I led the team from research to final presentation and designed the new rewards section.">
+    <!-- Link previews (Open Graph / social cards): what sites like LinkedIn, iMessage,
+         Discord and forums show when this page is shared. Image is 1200 x 630 in assets/og/. -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sebastian Vega">
+    <meta property="og:title" content="United Airlines — UX Case Study — Sebastian Vega">
+    <meta property="og:description" content="A concept redesign of United’s mobile app, made with a six-person team at Design Innovation Illinois. I led the team from research to final presentation and designed the new rewards section.">
+    <meta property="og:url" content="https://sebavega.com/unitedairlines">
+    <meta property="og:image" content="https://sebavega.com/assets/og/united.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="United Airlines logo beside three phones showing the redesigned rewards, home and boarding-pass screens">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Favicon (browser tab icon): Mr. Blue the betta, in pixel art. -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600&family=Pixelify+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/rzu3vfi.css">
+    <!-- CACHE VERSION: "?v=..." on the CSS/JS links makes browsers download fresh
+         copies after an update. When you change any CSS or JS file, change this
+         date on every page (find and replace "?v=2026-10-09b"). -->
+    <link rel="stylesheet" href="assets/styles.css?v=2026-10-09b">
+    <script src="assets/site.js?v=2026-10-09b" defer></script>
+    <link rel="stylesheet" href="assets/case-pages.css?v=2026-10-09b">
+    <link rel="stylesheet" href="assets/case-study.css?v=2026-10-09b">
+    <script src="assets/case-study.js?v=2026-10-09b" defer></script>
+    <link rel="stylesheet" href="assets/ba-scroll.css?v=2026-10-09b">
+    <script src="assets/ba-scroll.js?v=2026-10-09b" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a href="./" aria-label="Sebastian Vega — home" class="brand">
+        <img src="assets/seba-logo.png" width="240" height="120" alt="SEBA">
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation menu">
+        <span class="hamburger" aria-hidden="true">
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+        </span>
+      </button>
+      <nav id="main-nav" aria-label="Main navigation">
+        <a href="work" aria-current="page">work</a>
+        <a href="gallery">gallery</a>
+        <a href="contact">contact</a>
+      </nav>
+    </header>
+
+    <main id="main" class="cs-page cs-ux csx">
+      <!-- 1. HERO: back link, title, then the pitch as a smaller subtitle. -->
+      <header class="csx-hero">
+        <a class="csx-back" href="work"><span class="csx-back-arrow" aria-hidden="true"></span>Back to selected work</a>
+        <p class="csx-tag">UX / Product Design</p>
+        <h1>United Airlines</h1>
+        <div class="csx-pitch">
+          <p class="csx-subtitle">Give travelers a reason to come back.</p>
+          <p>A concept redesign of United’s mobile app, made with a six-person team at Design Innovation Illinois.<span class="csx-pitch-line"> I led the team from research to final presentation and designed the new rewards section.</span></p>
+        </div>
+        <p class="csx-status">Student concept, not affiliated with United Airlines</p>
+      </header>
+
+      <!-- Quick facts in one row (two-by-two on phones) instead of a side card. -->
+      <dl class="csx-facts">
+        <div>
+          <dt>My Role</dt>
+          <dd>Design Lead &amp; Rewards Designer</dd>
+        </div>
+        <div>
+          <dt>Team</dt>
+          <dd>Sebastian, Ryan, Madison, Sara, Kristine &amp; Angelina</dd>
+        </div>
+        <div>
+          <dt>Timeline</dt>
+          <dd>September – December 2025</dd>
+        </div>
+        <div>
+          <dt>Tools</dt>
+          <!-- Seba's pixel Figma icon (assets/icons/figma.png) -->
+          <dd class="csx-tool"><img class="csx-tool-icon" src="assets/icons/figma.png" width="512" height="512" alt="">Figma</dd>
+        </div>
+      </dl>
+
+      <figure class="csx-cover">
+        <img src="assets/thumbs/united-featured.webp" width="1600" height="1014" alt="United Airlines logo beside three phones showing the redesigned rewards, home and boarding-pass screens" fetchpriority="high" decoding="async">
+      </figure>
+
+      <!-- 2. BODY: the story, centred on the page.
+           From 1024px up, the section checkpoints are a rail pinned to the
+           left edge of the screen while you read the body. Smaller screens
+           don't show it. -->
+      <div class="csx-body">
+        <nav class="csx-toc" aria-label="Case study sections">
+          <ol class="csx-toc-list">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#solution">Final Design</a></li>
+            <li><a href="#changes">Before &amp; After</a></li>
+            <li><a href="#reflection">Outcome &amp; Reflection</a></li>
+          </ol>
+        </nav>
+
+        <div class="csx-content">
+
+          <!-- OVERVIEW: always fully visible. -->
+          <section id="overview" class="csx-section" aria-labelledby="overview-title">
+            <h2 id="overview-title">Overview</h2>
+            <div class="csx-two">
+              <div>
+                <h3>The Problem</h3>
+                <p>United’s app makes booking slow, buries what travelers need under promotions and extra buttons, and runs a rewards program most people never use. People book, board and close the app, so few come back between trips.</p>
+              </div>
+              <div>
+                <h3>The Redesign</h3>
+                <p>A new five-tab structure that gives every task a predictable home, and a rewards section that shows what points can do, designed to give travelers a reason to open the app between trips.</p>
+              </div>
+            </div>
+            <div class="csx-callout">
+              <h3>My Role</h3>
+              <p>I led the six-person team from research to final presentation, set our milestone checkpoints and assigned roles, and designed the rewards section myself. Home, booking, trips, boarding and profile were designed by teammates, and I reviewed every screen for consistency.</p>
+            </div>
+          </section>
+
+          <!-- PROCESS: open on desktop; collapsed to their headlines on phones. -->
+          <section id="process" class="csx-section" aria-labelledby="process-title">
+            <h2 id="process-title">Process</h2>
+            <p class="csx-lede">From research to a new structure for the whole app, then my rewards redesign.</p>
+            <ol class="csx-steps">
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">1</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Research</span>
+                      <h3>Find Where the App Loses People.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body">
+                    <div class="csx-step-copy">
+                      <p>We scored United against six other airline apps on the tasks people actually do. United got 2 out of 5 for booking and for personalization, tied for the lowest marks in both.</p>
+                      <p>Then we interviewed 15+ travelers, with questions in six groups: general use, booking, interface, loyalty, customization and notifications.</p>
+                    </div>
+                    <figure class="csx-comp csx-wide-figure">
+                      <div class="csx-comp-box">
+                        <table>
+                          <caption class="csx-sr">Seven airline apps compared. Scores are out of 5.</caption>
+                          <thead><tr><th scope="col"><span class="csx-sr">Feature</span></th><th scope="col" class="is-us"><span>United</span></th><th scope="col"><span>American</span></th><th scope="col"><span>JetBlue</span></th><th scope="col"><span>Frontier</span></th><th scope="col"><span>Southwest</span></th><th scope="col"><span>Spirit</span></th><th scope="col"><span>Viva</span></th></tr></thead>
+                          <tbody>
+                            <tr class="csx-comp-group"><th scope="rowgroup" colspan="8">Scored out of 5</th></tr>
+                            <tr><th scope="row">Flight search &amp; booking</th><td class="is-us is-r"><span class="csx-meter" style="--v:2" aria-hidden="true"></span><span class="csx-comp-num">2</span></td><td class="is-y"><span class="csx-meter" style="--v:3" aria-hidden="true"></span><span class="csx-comp-num">3</span></td><td class="is-y"><span class="csx-meter" style="--v:3" aria-hidden="true"></span><span class="csx-comp-num">3</span></td><td class="is-r"><span class="csx-meter" style="--v:2" aria-hidden="true"></span><span class="csx-comp-num">2</span></td><td class="is-g"><span class="csx-meter" style="--v:5" aria-hidden="true"></span><span class="csx-comp-num">5</span></td><td class="is-g"><span class="csx-meter" style="--v:4" aria-hidden="true"></span><span class="csx-comp-num">4</span></td><td class="is-g"><span class="csx-meter" style="--v:5" aria-hidden="true"></span><span class="csx-comp-num">5</span></td></tr>
+                            <tr><th scope="row">Check-in &amp; boarding</th><td class="is-us is-g"><span class="csx-meter" style="--v:4" aria-hidden="true"></span><span class="csx-comp-num">4</span></td><td class="is-y"><span class="csx-meter" style="--v:3" aria-hidden="true"></span><span class="csx-comp-num">3</span></td><td class="is-g"><span class="csx-meter" style="--v:4" aria-hidden="true"></span><span class="csx-comp-num">4</span></td><td class="is-g"><span class="csx-meter" style="--v:4" aria-hidden="true"></span><span class="csx-comp-num">4</span></td><td class="is-g"><span class="csx-meter" style="--v:4" aria-hidden="true"></span><span class="csx-comp-num">4</span></td><td class="is-g"><span class="csx-meter" style="--v:4" aria-hidden="true"></span><span class="csx-comp-num">4</span></td><td class="is-g"><span class="csx-meter" style="--v:5" aria-hidden="true"></span><span class="csx-comp-num">5</span></td></tr>
+                            <tr><th scope="row">Trip management</th><td class="is-us is-y"><span class="csx-meter" style="--v:3" aria-hidden="true"></span><span class="csx-comp-num">3</span></td><td class="is-y"><span class="csx-meter" style="--v:3" aria-hidden="true"></span><span class="csx-comp-num">3</span></td><td class="is-y"><span class="csx-meter" style="--v:3" aria-hidden="true"></span><span class="csx-comp-num">3</span></td><td class="is-g"><span class="csx-meter" style="--v:5" aria-hidden="true"></span><span class="csx-comp-num">5</span></td><td class="is-g"><span class="csx-meter" style="--v:4" aria-hidden="true"></span><span class="csx-comp-num">4</span></td><td class="is-y"><span class="csx-meter" style="--v:3" aria-hidden="true"></span><span class="csx-comp-num">3</span></td><td class="is-g"><span class="csx-meter" style="--v:4" aria-hidden="true"></span><span class="csx-comp-num">4</span></td></tr>
+                            <tr><th scope="row">Personalization</th><td class="is-us is-r"><span class="csx-meter" style="--v:2" aria-hidden="true"></span><span class="csx-comp-num">2</span></td><td class="is-y"><span class="csx-meter" style="--v:3" aria-hidden="true"></span><span class="csx-comp-num">3</span></td><td class="is-r"><span class="csx-meter" style="--v:2" aria-hidden="true"></span><span class="csx-comp-num">2</span></td><td class="is-g"><span class="csx-meter" style="--v:4" aria-hidden="true"></span><span class="csx-comp-num">4</span></td><td class="is-y"><span class="csx-meter" style="--v:3" aria-hidden="true"></span><span class="csx-comp-num">3</span></td><td class="is-y"><span class="csx-meter" style="--v:3" aria-hidden="true"></span><span class="csx-comp-num">3</span></td><td class="is-g"><span class="csx-meter" style="--v:4" aria-hidden="true"></span><span class="csx-comp-num">4</span></td></tr>
+                            <tr class="csx-comp-group"><th scope="rowgroup" colspan="8">Rated</th></tr>
+                            <tr><th scope="row">Brand &amp; design consistency</th><td class="is-us is-y"><span class="csx-comp-word">Somewhat</span><span class="csx-comp-sym" aria-hidden="true">~</span></td><td class="is-g"><span class="csx-comp-word">Yes</span><span class="csx-comp-sym" aria-hidden="true">✓</span></td><td class="is-g"><span class="csx-comp-word">Yes</span><span class="csx-comp-sym" aria-hidden="true">✓</span></td><td class="is-g"><span class="csx-comp-word">Yes</span><span class="csx-comp-sym" aria-hidden="true">✓</span></td><td class="is-y"><span class="csx-comp-word">Somewhat</span><span class="csx-comp-sym" aria-hidden="true">~</span></td><td class="is-g"><span class="csx-comp-word">Yes</span><span class="csx-comp-sym" aria-hidden="true">✓</span></td><td class="is-g"><span class="csx-comp-word">Yes</span><span class="csx-comp-sym" aria-hidden="true">✓</span></td></tr>
+                            <tr><th scope="row">Navigation</th><td class="is-us is-g"><span class="csx-comp-word">Good</span><span class="csx-comp-sym" aria-hidden="true">✓</span></td><td class="is-r"><span class="csx-comp-word">Bad</span><span class="csx-comp-sym" aria-hidden="true">✕</span></td><td class="is-y"><span class="csx-comp-word">Okay</span><span class="csx-comp-sym" aria-hidden="true">~</span></td><td class="is-g"><span class="csx-comp-word">Good</span><span class="csx-comp-sym" aria-hidden="true">✓</span></td><td class="is-y"><span class="csx-comp-word">Okay</span><span class="csx-comp-sym" aria-hidden="true">~</span></td><td class="is-g"><span class="csx-comp-word">Good</span><span class="csx-comp-sym" aria-hidden="true">✓</span></td><td class="is-g"><span class="csx-comp-word">Good</span><span class="csx-comp-sym" aria-hidden="true">✓</span></td></tr>
+                            <tr><th scope="row">Customer support access</th><td class="is-us is-y"><span class="csx-comp-word">Okay</span><span class="csx-comp-sym" aria-hidden="true">~</span></td><td class="is-g"><span class="csx-comp-word">Easy</span><span class="csx-comp-sym" aria-hidden="true">✓</span></td><td class="is-g"><span class="csx-comp-word">Easy</span><span class="csx-comp-sym" aria-hidden="true">✓</span></td><td class="is-g"><span class="csx-comp-word">Easy</span><span class="csx-comp-sym" aria-hidden="true">✓</span></td><td class="is-y"><span class="csx-comp-word">Okay</span><span class="csx-comp-sym" aria-hidden="true">~</span></td><td class="is-r"><span class="csx-comp-word">Bad</span><span class="csx-comp-sym" aria-hidden="true">✕</span></td><td class="is-g"><span class="csx-comp-word">Easy</span><span class="csx-comp-sym" aria-hidden="true">✓</span></td></tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <figcaption>Seven airline apps compared, United first. <span class="csx-comp-key"><span class="is-g">Green</span> is strong (4 to 5, or good), <span class="is-y">yellow</span> is okay (3), <span class="is-r">red</span> is weak (2 or below, or bad).</span><span class="csx-comp-symnote"> The word ratings show as ✓, ~ and ✕.</span></figcaption>
+                    </figure>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">2</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Synthesis</span>
+                      <h3>Six Takeaways, One Objective.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body csx-step-body--wide">
+                    <div class="csx-step-copy">
+                      <p>We wrote every interview answer on a sticky note and grouped them by question category. Six takeaways stood out, and three became the key insights the redesign is built on.</p>
+                    </div>
+                    <div class="csx-wide-figure csx-pxnotes-wrap">
+                      <ol class="csx-pxnotes" aria-label="Interview takeaways">
+                        <li class="csx-pxnote is-yellow is-key">
+                          <p class="csx-pxnote-from">Booking</p>
+                          <p class="csx-pxnote-group">Convenience</p>
+                          <span class="csx-pxnote-key">Key insight</span>
+                          <p class="csx-pxnote-text">People search on Google or Expedia, then book there. The app has to show the best-value flights to win the booking.</p>
+                        </li>
+                        <li class="csx-pxnote is-blue is-key">
+                          <p class="csx-pxnote-from">Interface</p>
+                          <p class="csx-pxnote-group">Navigation</p>
+                          <span class="csx-pxnote-key">Key insight</span>
+                          <p class="csx-pxnote-text">Time in the app is short, so key info has to stand out. Some want everything in the app, others want it minimal: find the middle.</p>
+                        </li>
+                        <li class="csx-pxnote is-pink is-key">
+                          <p class="csx-pxnote-from">Loyalty</p>
+                          <p class="csx-pxnote-group">Rewards</p>
+                          <span class="csx-pxnote-key">Key insight</span>
+                          <p class="csx-pxnote-text">Many never had enough points to redeem, or cared more about price. Points need more uses: hotels, lounges, upgrades and perks.</p>
+                        </li>
+                        <li class="csx-pxnote is-green">
+                          <p class="csx-pxnote-group">General use</p>
+                          
+                          <p class="csx-pxnote-text">Flight details and boarding passes must be one tap away. After the trip, people delete the app.</p>
+                        </li>
+                        <li class="csx-pxnote is-salmon">
+                          <p class="csx-pxnote-group">Notifications</p>
+                          
+                          <p class="csx-pxnote-text">Day-of-travel alerts matter most: delays, gate changes and a reminder the day before. Knowing when and where calms travel nerves.</p>
+                        </li>
+                        <li class="csx-pxnote is-slate">
+                          <p class="csx-pxnote-group">Customization</p>
+                          
+                          <p class="csx-pxnote-text">Personalization was a nice-to-have. Notifications were the one thing people wanted to tailor.</p>
+                        </li>
+                      </ol>
+                    </div>
+                    <div class="csx-step-copy">
+                      <p>Three personas, a frequent flyer, a touring musician and a spontaneous traveler loyal to no airline, kept each insight tied to a real trip.</p>
+                    </div>
+                    <div class="csx-objective">
+                      <p class="csx-objective-label">Overall Objective</p>
+                      <p class="csx-objective-text">How might we improve <strong>convenience in booking</strong>, <strong>simplify navigation</strong> and <strong>make rewards worth using</strong>, so travelers keep <strong>coming back to United</strong> instead of a competitor’s app?</p>
+                    </div>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">3</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Direction</span>
+                      <h3>Give Rewards a Home of Its Own.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body csx-step-body--wide">
+                    <div class="csx-step-copy">
+                      <p>In the old structure, the loyalty program was the last item on the home screen and points sat inside My Account. The new architecture has five tabs, so every task has a predictable place and rewards finally have room to explain themselves.</p>
+                    </div>
+                    <figure class="csx-ia" aria-labelledby="ia-cap">
+                    <div class="csx-ia-tree is-before"><p class="csx-ia-label">Before</p><ol class="csx-ia-tabs"><li class="csx-ia-tab"><span>Home</span><ul><li>Check In</li><li>Deals</li><li>Baggage Info</li><li>Upcoming Flight</li><li>Book Flight</li><li class="is-hl">Loyalty Program</li></ul></li><li class="csx-ia-tab"><span>Book Flight</span><ul><li>Recent</li><li>One-way / round trip / multiple</li><li>Departure &amp; return</li><li>Flight info</li><li>Review</li></ul></li><li class="csx-ia-tab"><span>Trips</span><ul><li>Notifications</li><li>FAQs</li></ul></li><li class="csx-ia-tab"><span>Flight Status</span><ul><li>Recent</li><li>By city</li><li>By flight number</li></ul></li><li class="csx-ia-tab"><span>My Account</span><ul><li>Sign In</li><li class="is-hl">Status / Points</li><li>Settings</li><li>Help</li></ul></li></ol></div>
+                    <div class="csx-ia-tree is-after"><p class="csx-ia-label">After<span class="csx-ia-key"><span class="csx-ia-swatch" aria-hidden="true"></span>New tab</span></p><ol class="csx-ia-tabs"><li class="csx-ia-tab"><span>Home</span><ul><li>Check In</li><li>Add trip</li><li>On-flight</li><li>Suggested for you</li><li>Explore friends</li></ul></li><li class="csx-ia-tab"><span>Bookings</span><ul><li>One-way / round trip</li><li>Car + Hotels</li><li>Date selection</li><li>Review</li></ul></li><li class="csx-ia-tab"><span>My Trips</span><ul><li>Upcoming flights</li><li>Flight history</li><li>Boarding pass</li></ul></li><li class="csx-ia-tab is-hl"><span>Rewards</span><ul><li>My Rewards</li><li>Missions</li><li>Credit</li><li>QR Code</li><li>Message Inbox</li></ul></li><li class="csx-ia-tab"><span>Profile</span><ul><li>Loyalty points</li><li>Track bag</li><li>Help</li><li>Wallet</li><li>Settings</li></ul></li></ol></div>
+                    <figcaption id="ia-cap">Before: loyalty sat at the bottom of Home, with points inside My Account. After: five tabs, and Rewards gets its own.</figcaption>
+                    </figure>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">4</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">My Design: Rewards</span>
+                      <h3>Put What Points Can Do Next to the Balance.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body">
+                    <div class="csx-step-copy">
+                      <p>The old rewards area mixed several points systems, offer cards and progress dials, with no clear next step. I rebuilt it around one point tracker, rewards you can claim, missions toward the next reward, and your United cards, with a member QR code and an inbox one tap away.</p>
+                      <p>Each reward opens to its details, where you choose how to use it: apply it to an upcoming flight or gift it to another passenger.</p>
+                    </div>
+                    <div class="csx-pair">
+                      <figure class="cs-visual">
+                        <span class="csx-device"><img src="assets/ua/rewards-before.webp" width="450" height="975" alt="The current MileagePlus screen: miles, passes, and three Premier progress dials for different point types." loading="lazy" decoding="async"></span>
+                        <figcaption>Current</figcaption>
+                      </figure>
+                      <figure class="cs-visual">
+                        <span class="csx-device"><img src="assets/ua/rewards-after.webp" width="450" height="975" alt="The redesigned Rewards screen: a 6,027-point tracker, reward tiles for extra luggage, a first class upgrade and a free meal, a mission card, and United cards." loading="lazy" decoding="async"></span>
+                        <figcaption>Updated</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </details>
+              </li>
+              <li>
+                <details class="csx-step" open>
+                  <summary>
+                    <span class="csx-num" aria-hidden="true">5</span>
+                    <span class="csx-step-head">
+                      <span class="csx-step-kind">Testing</span>
+                      <h3>Test With Travelers, Then Iterate.</h3>
+                    </span>
+                    <span class="csx-plus" aria-hidden="true"></span>
+                  </summary>
+                  <div class="csx-step-body">
+                    <div class="csx-step-copy">
+                      <p>We tested the prototype with 15+ users and collected 18 written critiques at our second checkpoint. Critiques asked for more contrast instead of shades of grey, consistent headers and spacing across screens, and questioned whether a friends feed fits what people open an airline app for.</p>
+                    </div>
+
+                  </div>
+                </details>
+              </li>
+            </ol>
+          </section>
+
+          <!-- FINAL DESIGN: my rewards screens. Swipeable on phones. -->
+          <section id="solution" class="csx-section" aria-labelledby="solution-title">
+            <h2 id="solution-title">Final Design</h2>
+            <p class="csx-lede csx-lede--one">The finished app: my rewards section, the Explore feed and the new boarding pass.</p>
+            <div class="csx-carousel" data-carousel>
+              <div class="csx-track" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Final design screens">
+                <figure class="cs-visual cs-phone csx-slide">
+                  <span class="csx-device"><img src="assets/ua/rewards-after.webp" width="450" height="975" alt="Rewards home: a 6,027-point tracker, reward tiles, a mission to fly 302 more miles, and United cards." loading="lazy" decoding="async"></span>
+                  <figcaption>Points, rewards, missions and cards in one place</figcaption>
+                </figure>
+                <figure class="cs-visual cs-phone csx-slide">
+                  <span class="csx-device"><img src="assets/ua/home-explore.webp" width="450" height="975" alt="Explore: suggested articles, trending stories and travel activity." loading="lazy" decoding="async"></span>
+                  <figcaption>Explore: travel stories picked for you</figcaption>
+                </figure>
+                <figure class="cs-visual cs-phone csx-slide">
+                  <span class="csx-device"><img src="assets/ua/pass-after.webp" width="450" height="975" alt="The boarding pass: passenger, class, seat, ATL to LAS, boarding time, terminal and gate, with expand, QR and help." loading="lazy" decoding="async"></span>
+                  <figcaption>Boarding pass: gate, seat and time up front</figcaption>
+                </figure>
+              </div>
+              <div class="csx-carousel-controls">
+                <button type="button" class="csx-arrow" data-dir="-1" aria-label="Previous screen"><span aria-hidden="true"></span></button>
+                <div class="csx-dots">
+                  <button type="button" class="csx-dot" aria-label="Show screen 1" aria-current="true"></button>
+                  <button type="button" class="csx-dot" aria-label="Show screen 2"></button>
+                  <button type="button" class="csx-dot" aria-label="Show screen 3"></button>
+                </div>
+                <button type="button" class="csx-arrow" data-dir="1" aria-label="Next screen"><span aria-hidden="true"></span></button>
+                <p class="csx-sr" aria-live="polite" data-status>Screen 1 of 3</p>
+              </div>
+            </div>
+            <div class="csx-two csx-decisions">
+              <div>
+                <h3>Show the Next Useful Action</h3>
+                <p>Pair the balance with rewards and missions, so points aren’t a dead end.</p>
+              </div>
+              <div>
+                <h3>Make Progress Visible</h3>
+                <p>A point tracker and missions show how close the next reward is.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- BEFORE & AFTER (team redesign)
+               With motion: the section pins and scrolling steps through each
+               part of the app, current screen beside the updated one.
+               Reduced motion / no JavaScript: the same pairs as a list.
+               Behaviour: assets/ba-scroll.js. Styles: assets/ba-scroll.css. -->
+          <section id="changes" class="csx-section ba-section" aria-labelledby="changes-title">
+            <h2 id="changes-title">Before &amp; After</h2>
+            <p class="csx-lede">How each part of the app changed, across the whole team’s redesign.</p>
+            <div class="ba" data-ba>
+              <div class="ba-sticky">
+                <ol class="ba-tabs" aria-label="Jump to a part of the app" hidden></ol>
+                <ol class="ba-steps">
+                <li class="ba-step" data-label="Home">
+                  <div class="ba-shots">
+                    <figure class="ba-shot is-before">
+                      <span class="csx-device"><img src="assets/ua/home-before.webp" width="450" height="975" alt="The current home screen: Your MileagePlus offers and United deals and news." loading="lazy" decoding="async"></span>
+                      <figcaption>Current</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/ua/home-after.webp" width="450" height="975" alt="The redesigned home screen: a trip memory photo, a Welcome back dashboard with check-in, add a trip and Wi-Fi, and suggested articles." loading="lazy" decoding="async"></span>
+                      <figcaption>Updated Home</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/ua/home-explore.webp" width="450" height="975" alt="The new Explore screen: suggested articles, trending stories and travel activity." loading="lazy" decoding="async"></span>
+                      <figcaption>Explore</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/ua/home-ai.webp" width="450" height="975" alt="Atlas AI, the in-app travel assistant, answering a request to upgrade a seat with upgrade options and quick-reply suggestions." loading="lazy" decoding="async"></span>
+                      <figcaption>Atlas AI Assistant</figcaption>
+                    </figure>
+                  </div>
+                  <div class="ba-copy">
+                    <p class="ba-name">Home</p>
+                    <p class="ba-credit">Designed by Kristine</p>
+                    <p class="ba-before"><strong>Before:</strong> Promotions and deals fill the screen.</p>
+                    <p class="ba-after"><strong>After:</strong> Trip memories, a dashboard for check-in and trips, suggested articles, an Explore page, a friends feed for sharing trips, and an AI travel assistant.</p>
+                  </div>
+                </li>
+                <li class="ba-step" data-label="Booking">
+                  <div class="ba-shots">
+                    <figure class="ba-shot is-before">
+                      <span class="csx-device"><img src="assets/ua/book-before.webp" width="450" height="975" alt="The current booking form with cities, dates, travelers, cabin and several toggles." loading="lazy" decoding="async"></span>
+                      <figcaption>Current</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/ua/book-after.webp" width="450" height="975" alt="The redesigned Bookings screen with destination, dates, travelers and a use-loyalty-points toggle." loading="lazy" decoding="async"></span>
+                      <figcaption>Updated</figcaption>
+                    </figure>
+                  </div>
+                  <div class="ba-copy">
+                    <p class="ba-name">Booking</p>
+                    <p class="ba-credit">Designed by Ryan</p>
+                    <p class="ba-before"><strong>Before:</strong> A long form, with fare toggles and extra options mixed together.</p>
+                    <p class="ba-after"><strong>After:</strong> One short form for one-way, round trip, or car and hotel, with a toggle to pay with points.</p>
+                  </div>
+                </li>
+                <li class="ba-step" data-label="My Trips">
+                  <div class="ba-shots">
+                    <figure class="ba-shot is-before">
+                      <span class="csx-device"><img src="assets/ua/trips-before.webp" width="450" height="975" alt="The current My Trips screen: an empty state and a large advertisement." loading="lazy" decoding="async"></span>
+                      <figcaption>Current</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/ua/trips-after.webp" width="450" height="975" alt="The redesigned My Trips screen listing upcoming flights with search and Add Flight." loading="lazy" decoding="async"></span>
+                      <figcaption>Updated</figcaption>
+                    </figure>
+                  </div>
+                  <div class="ba-copy">
+                    <p class="ba-name">My Trips</p>
+                    <p class="ba-credit">Designed by Madison</p>
+                    <p class="ba-before"><strong>Before:</strong> An empty trip list, filled with an ad.</p>
+                    <p class="ba-after"><strong>After:</strong> Upcoming flights and flight history, with search and a simpler Add Flight.</p>
+                  </div>
+                </li>
+                <li class="ba-step" data-label="Boarding Pass">
+                  <div class="ba-shots">
+                    <figure class="ba-shot is-before">
+                      <span class="csx-device"><img src="assets/ua/pass-before.webp" width="450" height="975" alt="The current boarding pass with a large QR code and small boarding details below." loading="lazy" decoding="async"></span>
+                      <figcaption>Current</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/ua/pass-after.webp" width="450" height="975" alt="The redesigned boarding pass: passenger, class, seat, ATL to LAS, boarding time, terminal and gate, with expand, QR and help." loading="lazy" decoding="async"></span>
+                      <figcaption>Updated</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/ua/pass-advisory.webp" width="450" height="975" alt="The boarding pass with a weather advisory banner above it warning of lightning and delays at LAS." loading="lazy" decoding="async"></span>
+                      <figcaption>Travel Alerts</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/ua/pass-qr.webp" width="450" height="975" alt="The boarding pass QR code expanded to fill the card for scanning at the gate, with a Send button below." loading="lazy" decoding="async"></span>
+                      <figcaption>Expanded QR</figcaption>
+                    </figure>
+                  </div>
+                  <div class="ba-copy">
+                    <p class="ba-name">Boarding Pass</p>
+                    <p class="ba-credit">Designed by Sara</p>
+                    <p class="ba-before"><strong>Before:</strong> Boarding details are hidden and hard to scan.</p>
+                    <p class="ba-after"><strong>After:</strong> Gate, seat and boarding time up front, loyalty status and travel alerts like weather delays on the pass, and a QR code to expand or send.</p>
+                  </div>
+                </li>
+                <li class="ba-step" data-label="Rewards">
+                  <div class="ba-shots">
+                    <figure class="ba-shot is-before">
+                      <span class="csx-device"><img src="assets/ua/rewards-before.webp" width="450" height="975" alt="The current MileagePlus screen with three Premier progress dials." loading="lazy" decoding="async"></span>
+                      <figcaption>Current</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/ua/rewards-after.webp" width="450" height="975" alt="The redesigned Rewards screen with point tracker, rewards, missions and cards." loading="lazy" decoding="async"></span>
+                      <figcaption>Updated Rewards</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/ua/rewards-qr.webp" width="450" height="975" alt="Member QR code: a QR code to scan at United facilities, a temporary code, and a button to add rewards or deals." loading="lazy" decoding="async"></span>
+                      <figcaption>Member QR Code</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/ua/rewards-upgrade.webp" width="450" height="975" alt="A First Class Upgrade reward, applied to an upcoming flight or gifted to another passenger." loading="lazy" decoding="async"></span>
+                      <figcaption>Upgrade</figcaption>
+                    </figure>
+                  </div>
+                  <div class="ba-copy">
+                    <p class="ba-name">Rewards <span class="ba-tag">My Design</span></p>
+                    <p class="ba-before"><strong>Before:</strong> Several points systems and scattered offers.</p>
+                    <p class="ba-after"><strong>After:</strong> One point tracker, rewards to claim, missions and cards, a member QR code to scan at United facilities, and rewards ready to use on a flight or gift.</p>
+                  </div>
+                </li>
+                <li class="ba-step" data-label="Profile">
+                  <div class="ba-shots">
+                    <figure class="ba-shot is-before">
+                      <span class="csx-device"><img src="assets/ua/profile-before.webp" width="450" height="975" alt="The current Account screen: a long list of account links." loading="lazy" decoding="async"></span>
+                      <figcaption>Current</figcaption>
+                    </figure>
+                    <figure class="ba-shot is-after">
+                      <span class="csx-device"><img src="assets/ua/profile-after.webp" width="450" height="975" alt="The redesigned Profile: loyalty points, track bags, help center and contact us above the account list." loading="lazy" decoding="async"></span>
+                      <figcaption>Updated</figcaption>
+                    </figure>
+                  </div>
+                  <div class="ba-copy">
+                    <p class="ba-name">Profile</p>
+                    <p class="ba-credit">Designed by Angelina</p>
+                    <p class="ba-before"><strong>Before:</strong> Account resources and help buried in a long list.</p>
+                    <p class="ba-after"><strong>After:</strong> Loyalty points, bag tracking, help and contact up top.</p>
+                  </div>
+                </li>
+                </ol>
+              </div>
+            </div>
+          </section>
+
+          <section id="reflection" class="csx-section" aria-labelledby="reflection-title">
+            <div class="cs-paper csx-note">
+              <h2 id="reflection-title">Outcome &amp; Reflection</h2>
+              <div class="csx-two">
+                <div>
+                  <h3>What Was Delivered</h3>
+                  <p>A research synthesis, a new five-tab structure, and a high-fidelity Figma prototype covering home, booking, trips, boarding, rewards and profile, presented to stakeholders at the end of the semester.</p>
+                </div>
+                <div>
+                  <h3>What Comes Next</h3>
+                  <p>Weigh each new feature against what travelers open the app for. Critique questioned the friends feed and removing home-screen ads entirely; both are worth testing against United’s business goals.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+      <div class="cs-back-top-wrap">
+        <a class="cs-back-top" href="#main">
+          <img src="assets/scroll-arrow.svg" alt="" aria-hidden="true" width="22" height="32">
+          <span>Back to top</span>
+        </a>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <p>© Sebastian Vega 2026</p>
+      <p>Always a little curious.</p>
+    </footer>
+    <div class="page-loader" hidden role="status" aria-live="polite">
+      <canvas width="96" height="96" aria-hidden="true"></canvas>
+      <p>Drawing things together…</p>
+    </div>
+  </body>
+</html>
